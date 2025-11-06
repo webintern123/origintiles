@@ -1,0 +1,62 @@
+import { Collection } from '../types';
+
+// Origin Tiles Product Collections
+// All products are under the "Origin Tiles" brand, organized by collection/series
+export const collections: Collection[] = [
+  {
+    id: "c1",
+    name: "Luxury Collection",
+    brand: "Origin Tiles",
+    description: "Premium luxury tiles with sophisticated designs and superior quality finishes",
+    image: "https://images.unsplash.com/photo-1572596116404-98f227c01ac1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 150
+  },
+  {
+    id: "c2",
+    name: "Modern Bathroom Series",
+    brand: "Origin Tiles",
+    description: "Contemporary bathroom tiles combining style with functionality",
+    image: "https://images.unsplash.com/photo-1695191388188-1141e9f50016?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 120
+  },
+  {
+    id: "c3",
+    name: "Kitchen Floor Collection",
+    brand: "Origin Tiles",
+    description: "Durable and stylish floor tiles designed specifically for kitchen spaces",
+    image: "https://images.unsplash.com/photo-1589530006797-d67347f18caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 95
+  },
+  {
+    id: "c4",
+    name: "Marble Pattern Series",
+    brand: "Origin Tiles",
+    description: "Exquisite marble-look tiles offering timeless elegance and luxury",
+    image: "https://images.unsplash.com/photo-1708919268837-2b4857323447?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 85
+  },
+  {
+    id: "c5",
+    name: "Wood Look Collection",
+    brand: "Origin Tiles",
+    description: "Natural wood aesthetic with the durability of ceramic tiles",
+    image: "https://images.unsplash.com/photo-1684783777567-1866b5221857?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 110
+  },
+  {
+    id: "c6",
+    name: "Designer Wall Series",
+    brand: "Origin Tiles",
+    description: "Artistic wall tiles featuring unique patterns and textures",
+    image: "https://images.unsplash.com/photo-1656646523907-97b094c7e63a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080",
+    productCount: 90
+  }
+];
+
+export const getCollectionById = (id: string): Collection | undefined => {
+  return collections.find(c => c.id === id);
+};
+
+export const getCollectionByName = (name: string): Collection | undefined => {
+  return collections.find(c => c.name === name);
+};

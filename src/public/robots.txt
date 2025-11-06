@@ -1,0 +1,11 @@
+# robots.txt for Origin Tiles
+
+User-agent: *
+Allow: /
+
+# Disallow admin or backend paths if any
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://origintiles.com/sitemap.xml
