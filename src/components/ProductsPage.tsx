@@ -443,24 +443,34 @@ export function ProductsPage({ onNavigate }: ProductsPageProps) {
                   </div>
 
                   {/* View Mode Toggles */}
-                  <div className="hidden sm:flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setViewMode("grid")}
-                      className={`rounded-lg transition-all ${viewMode === "grid" ? "bg-[#223B57] text-white hover:bg-[#1a2d43]" : "text-neutral-600 hover:bg-neutral-100"}`}
-                    >
-                      <Grid3x3 className="w-5 h-5" strokeWidth={1.5} />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setViewMode("list")}
-                      className={`rounded-lg transition-all ${viewMode === "list" ? "bg-[#223B57] text-white hover:bg-[#1a2d43]" : "text-neutral-600 hover:bg-neutral-100"}`}
-                    >
-                      <List className="w-5 h-5" strokeWidth={1.5} />
-                    </Button>
-                  </div>
+                  {/* View Mode Toggles */}
+<div className="hidden sm:flex items-center gap-2">
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={() => setViewMode("grid")}
+    className={`rounded-lg transition-all ${viewMode === "grid" ? "bg-[#223B57] text-white hover:bg-[#1a2d43]" : "text-neutral-600 hover:bg-neutral-100"}`}
+  >
+    <Grid3x3
+      className="w-5 h-5"
+      strokeWidth={1.5}
+      stroke={viewMode === "grid" ? "white" : "#223B57"}
+    />
+  </Button>
+  <Button
+    variant="ghost"
+    size="icon"
+    onClick={() => setViewMode("list")}
+    className={`rounded-lg transition-all ${viewMode === "list" ? "bg-[#223B57] text-white hover:bg-[#1a2d43]" : "text-neutral-600 hover:bg-neutral-100"}`}
+  >
+    <List
+      className="w-5 h-5"
+      strokeWidth={1.5}
+      stroke={viewMode === "list" ? "white" : "#223B57"}
+    />
+  </Button>
+</div>
+
                   
                   {/* Mobile Filters Button */}
                   <Button 

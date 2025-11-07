@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calculator, Info, Ruler, Zap, Printer, Download, Share2, ArrowRight, CheckCircle2, Layers, Grid3x3, Lightbulb, TrendingUp, Package } from "lucide-react";
+import { Calculator, Info, Ruler, Zap, ArrowRight, CheckCircle2, Layers, Grid3x3, Lightbulb, TrendingUp, Package } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -355,39 +355,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                           </div>
                         </div>
                       </div>
-                      <div className="grid grid-cols-3 gap-3 mt-6">
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="group border-[#223B57]/20 hover:bg-[#223B57] hover:border-[#223B57] rounded-xl transition-all duration-300"
-                          onClick={() => {
-                            window.print();
-                            toast.success("Print dialog opened");
-                          }}
-                        >
-                          <Printer className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
-                        </Button>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="group border-[#223B57]/20 hover:bg-[#223B57] hover:border-[#223B57] rounded-xl transition-all duration-300"
-                          onClick={() => {
-                            toast.success("PDF downloaded");
-                          }}
-                        >
-                          <Download className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
-                        </Button>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="group border-[#223B57]/20 hover:bg-[#223B57] hover:border-[#223B57] rounded-xl transition-all duration-300"
-                          onClick={() => {
-                            toast.success("Link copied!");
-                          }}
-                        >
-                          <Share2 className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
-                        </Button>
-                      </div>
+                      
                     </CardContent>
                   </Card>
                 </motion.div>

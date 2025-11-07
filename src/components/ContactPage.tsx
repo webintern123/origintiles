@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Building2, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, CheckCircle2, MessageCircleMore,HelpCircle} from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send,Sparkles ,MessageSquare, Building2, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, CheckCircle2, MessageCircleMore,HelpCircle} from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -564,47 +564,59 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         </div>
       </section>
 
-      {/* === CTA SECTION === */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="container">
+    
+     {/* === CTA SECTION === */}
+      <section className="py-20 bg-white">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative group"
+            className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
+            {/* Glow Effect */}
+            <div className="absolute -inset-1 bg-gradient-to-br from-[#223B57]/30 to-transparent rounded-3xl blur-2xl"></div>
             
             <div className="relative bg-gradient-to-br from-[#223B57] to-[#2d4a6a] rounded-3xl p-12 md:p-16 text-center overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-              
-              <div className="relative">
-                <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 px-4 py-2">
+              {/* Decorative Pattern */}
+              <div className="absolute inset-0 opacity-10">
+                <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <pattern id="cta-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <circle cx="20" cy="20" r="1.5" fill="white" />
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#cta-pattern)" />
+                </svg>
+              </div>
+
+              <div className="relative z-10">
+                <Badge className="mb-6 bg-white/20 text-white border-white/30">
+                  <Sparkles className="w-3 h-3 mr-1" />
                   Quick Actions
                 </Badge>
-                <h2 className="text-white text-4xl font-bold mb-4">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                   Explore More Options
                 </h2>
-                <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Browse our complete collection, calculate tiles needed, or request samples for your project.
+                <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                  Browse Our Complete Collection, Calculate tiles needed, or request samples for project.
                 </p>
+                
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    size="lg"
-                    onClick={() => onNavigate('Products')}
-                    className="bg-white text-[#223B57] hover:bg-white/90 [&_svg]:text-[#223B57]"
+                  <Button
+                    onClick={() => onNavigate("Products")}
+                    className="bg-white !text-[#223B57] hover:bg-white/90 rounded-xl h-12 px-8 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
                   >
+                    
                     View Products
-                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
-                  <Button 
-                    size="lg"
+                  <Button
+                    onClick={() => onNavigate("Sample Request")}
                     variant="outline"
-                    onClick={() => onNavigate('Sample Request')}
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 [&_svg]:text-white"
+                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 [&_svg]:text-white"
                   >
-                    Request Samples
+                    Request samples
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
               </div>
