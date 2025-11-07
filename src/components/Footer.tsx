@@ -7,6 +7,7 @@ import { useState } from "react";
 import { SITE_CONFIG } from "../constants";
 import { motion } from "motion/react";
 import { XIcon } from "./icons/XIcon";
+import OriginLogo from '../assets/Origin.svg';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -84,15 +85,14 @@ export function Footer({ onNavigate }: FooterProps) {
           {/* Company Info - Premium Design */}
           <div className="lg:col-span-4">
             {/* Logo Section */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative">
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-md"></div>
-                <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg border border-white/30">
-                  <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-                    <path d="M16 6L10 12H13V18H15V13H17V18H19V12H22L16 6Z" fill="white"/>
-                    <path d="M12 20L15 23L17 20H16V17H14V20H12Z" fill="white"/>
-                  </svg>
-                </div>
+  <div className = "flex items-center gap-3 mb-6">
+  <div className = "relative">
+  <div className = "absolute inset-0 bg-white/20 rounded-full blur-md"></div>
+  <div className = "relative w-16 h-16 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg border border-white/30 overflow-hidden">
+  <img src       = {OriginLogo} alt = "Origin Tiles Logo" className = "w-12 h-12 object-contain" />
+</div>
+
+
               </div>
               <div>
                 <div className="text-2xl font-bold text-white tracking-wide">ORIGIN TILES</div>
