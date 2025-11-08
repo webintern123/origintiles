@@ -7,7 +7,7 @@ interface AnnouncementBannerProps {
   onNavigate?: (page: string) => void;
 }
 
-// Announcement messages that rotate
+// Announcement messages that rotat
 const ANNOUNCEMENTS = [
   {
     id: 1,

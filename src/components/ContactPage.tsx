@@ -20,6 +20,8 @@ interface ContactPageProps {
   onNavigate: (page: string) => void;
 }
 
+
+
 export function ContactPage({ onNavigate }: ContactPageProps) {
   const [formData, setFormData] = useState({
     name: '',
