@@ -12,6 +12,55 @@ import { motion } from "motion/react";
 import { toast } from "sonner";
 
 import { products, getProductById } from "../data/products";
+import { Product } from "../types"; // Adjust the path to your types file
+
+import jsPDF from 'jspdf';
+export const downloadProductSpecs = (product: Product) => {
+  const doc = new jsPDF();
+  let y = 20; // initial vertical position
+
+  const safeText = (text: any) => String(text ?? 'N/A'); // ensures text is always string
+
+  // Title
+  doc.setFontSize(18);
+  doc.text(`${safeText(product.brand)} - ${safeText(product.name)}`, 20, y);
+  y += 15;
+
+  doc.setFontSize(12);
+  doc.text(`Category: ${safeText(product.category)}`, 20, y); y += 10;
+  doc.text(`Size: ${safeText(product.size)}`, 20, y); y += 10;
+  doc.text(`Finish: ${safeText(product.finish)}`, 20, y); y += 10;
+  doc.text(`Price: ${safeText(product.price)}`, 20, y); y += 15;
+
+  // Description
+  if (product.description) {
+    doc.text('Description:', 20, y); y += 8;
+    doc.text(safeText(product.description), 25, y); y += 15;
+  }
+
+  // Features
+  if (product.features?.length) {
+    doc.text('Features:', 20, y); y += 8;
+    product.features.forEach((feature) => {
+      doc.text(`- ${safeText(feature)}`, 25, y);
+      y += 8;
+    });
+    y += 5;
+  }
+
+  // Specifications
+  if (product.specifications && Object.keys(product.specifications).length > 0) {
+    doc.text('Specifications:', 20, y); y += 8;
+    Object.entries(product.specifications).forEach(([key, value]) => {
+      doc.text(`${safeText(key)}: ${safeText(value)}`, 25, y);
+      y += 8;
+    });
+  }
+
+  doc.save(`${safeText(product.name)}-spec-sheet.pdf`);
+};
+
+
 
 interface ProductDetailsPageProps {
   onNavigate: (page: string, productId?: string) => void;
@@ -225,16 +274,18 @@ export function ProductDetailsPage({ onNavigate, productId }: ProductDetailsPage
                     Request Sample
                   </Button>
                   <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="border-[#223B57]/20 text-[#223B57] hover:bg-[#223B57]/5 rounded-xl"
-                    onClick={() => {
-                      toast.success("Downloading spec sheet");
-                    }}
-                  >
-                    <Download className="w-5 h-5 mr-2" />
-                    Spec Sheet
-                  </Button>
+  variant="outline" 
+  size="lg"
+  className="border-[#223B57]/20 text-[#223B57] hover:bg-[#223B57]/5 rounded-xl"
+  onClick={() => {
+    downloadProductSpecs(currentProduct);
+    toast.success("Spec sheet downloaded");
+  }}
+>
+  <Download className="w-5 h-5 mr-2" />
+  Spec Sheet
+</Button>
+
                 </div>
               </div>
 

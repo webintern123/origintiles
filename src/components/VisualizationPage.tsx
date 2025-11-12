@@ -12,6 +12,7 @@ import { ThreeDRoomViewer } from "./ThreeDRoomViewer";
 import { motion } from "motion/react";
 import { toast } from "sonner";
 
+
 interface VisualizationPageProps {
   onNavigate: (page: string) => void;
 }
@@ -247,29 +248,33 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                   
                   <CardContent className="p-6">
                     <div className="space-y-3">
+                     <Button
+  onClick={() => {
+    localStorage.setItem(
+      "savedDesign",
+      JSON.stringify({
+        tile: selectedTile,
+        room: selectedRoom,
+        opacity: opacity[0]
+      })
+    );
+    toast.success("Design saved locally!");
+  }}
+  className="w-full bg-[#223B57] hover:bg-[#1a2d43] text-white rounded-xl"
+>
+  <Save className="w-4 h-4 mr-2" />
+  Save This Design
+</Button>
+
                       <Button
-                        onClick={() => {
-                          toast.success("Design saved successfully!", {
-                            description: "Your visualization has been saved to your account"
-                          });
-                        }}
-                        className="w-full bg-[#223B57] hover:bg-[#1a2d43] text-white rounded-xl"
-                      >
-                        <Save className="w-4 h-4 mr-2" />
-                        Save This Design
-                      </Button>
-                      <Button
-                        onClick={() => {
-                          toast.info("Upload feature coming soon!", {
-                            description: "Upload your own room photo to visualize tiles"
-                          });
-                        }}
-                        variant="outline"
-                        className="w-full border-[#223B57]/20 text-[#223B57] hover:bg-[#223B57]/5 rounded-xl"
-                      >
-                        <Upload className="w-4 h-4 mr-2" />
-                        Upload Your Photo
-                      </Button>
+  onClick={() => document.getElementById("upload-room")?.click()}
+  variant="outline"
+  className="w-full border-[#223B57]/20 text-[#223B57] hover:bg-[#223B57]/5 rounded-xl"
+>
+  <Upload className="w-4 h-4 mr-2" />
+  Upload Your Photo
+</Button>
+
                       <Button
                         onClick={() => {
                           setOpacity([80]);
@@ -302,16 +307,38 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                           <Printer className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
                         </Button>
                         <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="group border-[#223B57]/20 hover:bg-[#223B57] hover:border-[#223B57] rounded-xl transition-all duration-300"
-                          onClick={() => {
-                            toast.success("Image downloaded");
-                          }}
-                          aria-label="Download"
-                        >
-                          <Download className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
-                        </Button>
+  variant="outline" 
+  size="sm"
+  className="group border-[#223B57]/20 hover:bg-[#223B57] hover:border-[#223B57] rounded-xl transition-all duration-300"
+  onClick={() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1080;
+    canvas.height = 720;
+    const ctx = canvas.getContext("2d");
+
+    const roomImg = new Image();
+    const tileImg = new Image();
+
+    roomImg.src = selectedRoomData?.image || "";
+    tileImg.src = selectedTileData?.image || "";
+
+    roomImg.onload = () => {
+      ctx?.drawImage(roomImg, 0, 0, canvas.width, canvas.height);
+      tileImg.onload = () => {
+        ctx!.globalAlpha = opacity[0] / 100;
+        ctx?.drawImage(tileImg, 0, canvas.height - canvas.height * 0.4, canvas.width, canvas.height * 0.4);
+        const link = document.createElement("a");
+        link.download = "room-visualization.png";
+        link.href = canvas.toDataURL();
+        link.click();
+      };
+    };
+  }}
+  aria-label="Download"
+>
+  <Download className="w-4 h-4 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={2} />
+</Button>
+
                         <Button 
                           variant="outline" 
                           size="sm"

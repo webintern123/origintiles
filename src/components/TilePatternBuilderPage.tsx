@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Grid3x3, Shuffle, Trash2, Download, Share2, Save, ArrowRight, Sparkles, Palette } from 'lucide-react';
+import { Grid3x3, Shuffle, Trash2, Download,  Save, ArrowRight, Sparkles, Palette } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { PageBanner } from './PageBanner';
 import { toast } from 'sonner';
+import html2canvas from 'html2canvas'; 
 
 interface TilePatternBuilderPageProps {
   onNavigate: (page: string) => void;
@@ -114,23 +115,27 @@ export function TilePatternBuilderPage({ onNavigate }: TilePatternBuilderPagePro
     });
   };
 
-  const savePattern = () => {
-    toast.success('Pattern saved!', {
-      description: 'Your design has been saved to your account'
-    });
-  };
+  
 
-  const downloadPattern = () => {
-    toast.success('Downloading pattern...', {
-      description: 'Your pattern is being prepared for download'
-    });
-  };
 
-  const sharePattern = () => {
-    toast.success('Share link copied!', {
-      description: 'Pattern link copied to clipboard'
-    });
-  };
+  
+
+const downloadPattern = async () => {
+  const canvasElement = document.getElementById('tile-canvas');
+  if (!canvasElement) return;
+
+  const canvas = await html2canvas(canvasElement);
+  const link = document.createElement('a');
+  link.href = canvas.toDataURL('image/png');
+  link.download = 'tile-pattern.png';
+  link.click();
+
+  toast.success('Pattern downloaded!', { description: 'Your pattern image is ready.' });
+};
+
+
+ 
+
 
   const features = [
     { icon: Grid3x3, title: "10x10 Grid", description: "Large canvas for designs" },
@@ -303,13 +308,7 @@ export function TilePatternBuilderPage({ onNavigate }: TilePatternBuilderPagePro
                         Clear Canvas
                       </Button>
                       <div className="h-px bg-neutral-200 my-3"></div>
-                      <Button
-                        onClick={savePattern}
-                        className="w-full bg-[#223B57] hover:bg-[#1a2d43] text-white rounded-xl"
-                      >
-                        <Save className="w-4 h-4 mr-2" />
-                        Save Pattern
-                      </Button>
+                      
                       <Button
                         onClick={downloadPattern}
                         variant="outline"
@@ -318,14 +317,7 @@ export function TilePatternBuilderPage({ onNavigate }: TilePatternBuilderPagePro
                         <Download className="w-4 h-4 mr-2" />
                         Download
                       </Button>
-                      <Button
-                        onClick={sharePattern}
-                        variant="outline"
-                        className="w-full border-[#223B57]/20 text-[#223B57] hover:bg-[#223B57]/5 rounded-xl"
-                      >
-                        <Share2 className="w-4 h-4 mr-2" />
-                        Share
-                      </Button>
+                     
                     </div>
                   </CardContent>
                 </Card>
@@ -352,16 +344,18 @@ export function TilePatternBuilderPage({ onNavigate }: TilePatternBuilderPagePro
 
                     {/* Tile Grid */}
                     <div className="bg-neutral-50 p-8 rounded-2xl">
-                      <div
-                        className="grid gap-1.5 mx-auto"
-                        style={{
-                          gridTemplateColumns: `repeat(${gridSize.cols}, 1fr)`,
-                          maxWidth: '600px'
-                        }}
-                        onMouseDown={() => setIsDrawing(true)}
-                        onMouseUp={() => setIsDrawing(false)}
-                        onMouseLeave={() => setIsDrawing(false)}
-                      >
+                     <div
+  id="tile-canvas"  // <-- ADD THIS LINE
+  className="grid gap-1.5 mx-auto"
+  style={{
+    gridTemplateColumns: `repeat(${gridSize.cols}, 1fr)`,
+    maxWidth: '600px'
+  }}
+  onMouseDown={() => setIsDrawing(true)}
+  onMouseUp={() => setIsDrawing(false)}
+  onMouseLeave={() => setIsDrawing(false)}
+>
+
                         {tiles.map((tile, index) => (
                           <motion.div
                             key={tile.id}
