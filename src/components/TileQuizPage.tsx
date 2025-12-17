@@ -389,7 +389,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
         title="Find Your Perfect Tiles"
         subtitle="Tile Selection Quiz"
         description="Answer 5 simple questions and get personalized tile recommendations tailored to your space, style, and needs. Our expert algorithm matches you with the perfect tiles."
-        icon={HelpCircle}
+       
         variant="gradient"
         badge="5 Questions • 2 Minutes • Personalized Results"
         breadcrumbs={[

@@ -92,7 +92,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
         title="Calculate Your Tile Needs"
         subtitle="Tile Calculator"
         description="Professional estimation tool for accurate tile quantity calculation. Includes 10% wastage allowance for cuts and breakage. Get instant results for your project."
-        icon={Calculator}
+        
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1589530006797-d67347f18caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="Free Professional Tool • Instant Results"

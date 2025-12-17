@@ -96,7 +96,7 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
         title="Download Center"
         subtitle="Resources & Documentation"
         description="Access our complete library of product catalogs, technical specifications, installation guides, CAD/BIM files, and certificates. Everything you need for your project."
-        icon={Download}
+       
         variant="gradient"
         badge="50+ Resources • Free Downloads • Always Updated"
         breadcrumbs={[

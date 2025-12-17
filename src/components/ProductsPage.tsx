@@ -198,7 +198,7 @@ export function ProductsPage({ onNavigate }: ProductsPageProps) {
         title="Browse Our Premium Collection"
         subtitle="Product Catalog"
         description="Discover over 650+ ceramic tile designs across 6 premium collections. Use our advanced filters to find the perfect tiles for your space—whether it's bathrooms, kitchens, floors, or walls."
-        icon={Package}
+        
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1630699144035-c0f6311ec482?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge={`${products.length} Featured Products • ${productCategories.length} Categories • ${trendingProducts.length}+ Trending Formats`}

@@ -61,7 +61,7 @@ export function WarrantyPage() {
   title="Product Warranty"
   subtitle="Warranty Registration & Coverage"
   description="Register your products and understand our comprehensive warranty coverage for peace of mind."
-  icon={Shield}
+  
   variant="image"
   backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
   badge="10-Year Standard Coverage"

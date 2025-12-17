@@ -1,4 +1,4 @@
-import { Download, Video, FileText, BookOpen, Play, ArrowRight, CheckCircle2, Lightbulb, TrendingUp, Users, Search, Sparkles, Clock, Shield } from 'lucide-react';
+import { Download, Video, FileText, Play, ArrowRight, CheckCircle2, Lightbulb, TrendingUp, Users, Search, Sparkles, Clock, Shield } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -47,7 +47,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
         title="Installation Guides & Resources"
         subtitle="Expert Knowledge Base"
         description="Everything you need to know about tile installation, maintenance, and care. Free guides, videos, and expert tips from industry professionals."
-        icon={BookOpen}
+       
         variant="gradient"
         badge="10+ Resources • Video Tutorials • Expert Support"
         breadcrumbs={[

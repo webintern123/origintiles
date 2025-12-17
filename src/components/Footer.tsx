@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import { XIcon } from "./icons/XIcon";
 import OriginLogo from '../assets/Origin.svg';
 
+
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
@@ -85,22 +86,18 @@ export function Footer({ onNavigate }: FooterProps) {
           {/* Company Info - Premium Design */}
           <div className="lg:col-span-4">
             {/* Logo Section */}
-  <div className = "flex items-center gap-3 mb-6">
-  <div className = "relative">
-  <div className = "absolute inset-0 bg-white/20 rounded-full blur-md"></div>
-  <div className = "relative w-16 h-16 rounded-full bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm flex items-center justify-center shadow-lg border border-white/30 overflow-hidden">
-  <img src       = {OriginLogo} alt = "Origin Tiles Logo" className = "w-12 h-12 object-contain" />
+  <div className="flex items-center gap-4 mb-3">
+  <div className="relative w-32 h-28 flex items-center justify-center">
+    <img
+      src={OriginLogo}
+      alt="Origin Tiles Logo"
+      className="w-28 h-28 object-contain"
+      style={{ filter: 'brightness(0) saturate(100%) invert(1)' }}
+    />
+  </div>
 </div>
 
-
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-white tracking-wide">ORIGIN TILES</div>
-                <div className="text-xs text-white/60">Since 1985</div>
-              </div>
-            </div>
-
-            <p className="text-sm text-white/80 leading-relaxed mb-6">
+<p className="text-sm text-white/80 leading-relaxed mb-6">
               Leading manufacturer of premium ceramic tiles, delivering exceptional quality, innovative designs, and timeless elegance to transform your spaces.
             </p>
 

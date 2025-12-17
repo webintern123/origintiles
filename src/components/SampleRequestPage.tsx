@@ -146,7 +146,7 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
   title="Request Tile Samples"
   subtitle="Free Sample Selection"
   description="Experience our tiles firsthand. Request up to 5 samples and our expert will contact you to arrange delivery and discuss your project needs."
-  icon={Package}
+
   variant="image"
   backgroundImage="https://images.unsplash.com/photo-1618220179428-22790b461013?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
   badge="Expert Consultation Included"

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookOpen, ArrowRight, User, Calendar, Clock, Search, Tag, Rss, TrendingUp, FileText } from 'lucide-react';
+import { ArrowRight, User, Calendar, Clock, Search, Tag, Rss, TrendingUp, FileText } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { PageBanner } from './PageBanner';
 import { Button } from './ui/button';
@@ -46,7 +46,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
         title="Tile Inspiration & Expertise"
         subtitle="Design Insights & Expert Tips"
         description="Discover the latest trends, expert installation advice, and design inspiration for your next tile project. Your complete resource for ceramic tile excellence."
-        icon={BookOpen}
+       
         variant="gradient"
         badge="Weekly Updates • Expert Articles • Design Trends"
         breadcrumbs={[

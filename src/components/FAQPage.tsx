@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Phone, Mail, HelpCircle } from 'lucide-react';
+import { Search, Phone, Mail,} from 'lucide-react';
 import { SITE_CONFIG } from '../constants';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
@@ -30,7 +30,7 @@ export function FAQPage() {
         title="Frequently Asked Questions"
         subtitle="HELP CENTER"
         description="Find answers to common questions about our tiles, ordering process, installation, and maintenance."
-        icon={HelpCircle}
+       
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920"
         badge="24/7 Support Available"

@@ -367,7 +367,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* === FLOATING STATS CARDS - Match AboutPage === */}
-      <section className="relative -mt-20 z-10">
+      <section className="relative py-20 bg-white z-10">
+
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -586,15 +587,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {featuredProducts.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group cursor-pointer"
-                onClick={() => onNavigate("Product Details")}
-              >
+             <motion.div
+  key={index}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: index * 0.1 }}
+  className="group cursor-pointer"
+  onClick={() => onNavigate("Product Details", product.id)}
+>
+
                 {/* Premium Card with Shadow */}
                 <div className="relative">
                   {/* Card Shadow Layer */}

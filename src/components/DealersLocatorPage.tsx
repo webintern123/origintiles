@@ -112,7 +112,7 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         title           = "Find Origin Tiles Near You"
         subtitle        = "Dealers Locator"
         description     = "Connect with our authorized dealers across the country. Professional service, expert advice, and genuine Origin Tiles products guaranteed."
-        icon            = {MapPin}
+       
         variant         = "image"
         backgroundImage = "https://images.unsplash.com/photo-1594873604892-b599f847e859?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjE2NDcwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
         badge           = {`${dealers.length} Locations`}

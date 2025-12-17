@@ -370,7 +370,14 @@ export function LiveChatRealtime({
             aria-label="Open live chat"
           >
             {/* Glassmorphism Button */}
-            <div className="relative p-4 rounded-full bg-[#223b57] text-white shadow-xl hover:shadow-2xl transition-all duration-300">
+            <div className="
+  relative p-4 rounded-full bg-[#223b57] text-white
+  shadow-xl hover:shadow-2xl transition-all duration-300
+
+  ring-1 ring-white/40
+  shadow-[0_0_0_1px_rgba(255,255,255,0.5),0_0_22px_rgba(255,255,255,0.25)]
+">
+
               <MessageCircle className="w-6 h-6" />
               
               {/* Unread Badge */}

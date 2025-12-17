@@ -1,4 +1,4 @@
-import { ArrowRight, Grid3x3, Sparkles, Package, Eye, Star, Award, TrendingUp, Globe, Users, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Package, Star, Award, TrendingUp, Globe, Users, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -130,7 +130,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         title="Discover Our Exclusive Collections"
         subtitle="Origin Tiles Collections"
         description="Explore our 6 distinguished ceramic collections, each offering unique character and superior craftsmanship. From modern minimalism to timeless elegance, discover the perfect tiles to bring your architectural vision to life."
-        icon={Grid3x3}
+       
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="6 Premium Collections • 650+ Products"
@@ -259,7 +259,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                         }}
                         className="w-full bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] text-white rounded-xl h-12 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
                       >
-                        <Eye className="w-4 h-4 mr-2" />
+                       
                         Explore {collection.name}
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>

@@ -13,6 +13,9 @@ import { motion } from 'motion/react';
 import { toast } from 'sonner';
 import { SITE_CONFIG, CONTACT_INFO, SOCIAL_MEDIA } from '../constants';
 import { IndiaMap } from './IndiaMap';
+const buttonLikeInput =
+  "w-full h-14 rounded-xl border-2 border-neutral-300 bg-[#F5F3F0] px-4 text-sm transition-colors focus-visible:outline-none focus-visible:ring-0 focus:border-[#223B57]";
+
 
 
 
@@ -106,7 +109,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
         title="Get in Touch"
         subtitle="Contact Us"
         description="Have questions about our tiles? We're here to help. Reach out to our team for product inquiries, design consultations, or dealer information."
-        icon={MessageSquare}
+       
         variant="gradient"
         badge="24/7 Customer Support • Expert Consultation • Fast Response"
         breadcrumbs={[
@@ -194,7 +197,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                               if (formErrors.name) setFormErrors({ ...formErrors, name: '' });
                             }}
                             placeholder="John Doe"
-                            className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${formErrors.name ? 'border-red-500 focus:border-red-500' : ''}`}
+                            className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${buttonLikeInput} ${formErrors.name ? 'border-red-500 focus:border-red-500' : ''}`}
                           />
                           {formErrors.name && <p className="text-xs text-red-500 mt-2">{formErrors.name}</p>}
                         </div>
@@ -210,7 +213,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                               if (formErrors.email) setFormErrors({ ...formErrors, email: '' });
                             }}
                             placeholder="john@example.com"
-                            className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${formErrors.email ? 'border-red-500 focus:border-red-500' : ''}`}
+                            className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${buttonLikeInput} ${formErrors.email ? 'border-red-500 focus:border-red-500' : ''}`}
                           />
                           {formErrors.email && <p className="text-xs text-red-500 mt-2">{formErrors.email}</p>}
                         </div>
@@ -223,7 +226,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                             value={formData.phone}
                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                             placeholder="+91 9093833833"
-                            className="h-14 border-neutral-200 focus:border-[#223B57] rounded-xl"
+                            className="{buttonLikeInput} h-14 border-neutral-200 focus:border-[#223B57] rounded-xl"
                           />
                         </div>
 
@@ -233,7 +236,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                             setFormData({ ...formData, subject: value });
                             if (formErrors.subject) setFormErrors({ ...formErrors, subject: '' });
                           }}>
-                            <SelectTrigger className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${formErrors.subject ? 'border-red-500' : ''}`}>
+                            <SelectTrigger className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${buttonLikeInput}  ${formErrors.subject ? 'border-red-500' : ''}`}>
                               <SelectValue placeholder="Select a subject" />
                             </SelectTrigger>
                             <SelectContent>
@@ -258,7 +261,9 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                               if (formErrors.message) setFormErrors({ ...formErrors, message: '' });
                             }}
                             placeholder="Tell us about your project or inquiry..."
-                            className={`border-neutral-200 focus:border-[#223B57] rounded-xl resize-none ${formErrors.message ? 'border-red-500 focus:border-red-500' : ''}`}
+                             className={`rounded-xl border-2 border-neutral-300 bg-[#F5F3F0] px-4 py-3 focus-visible:outline-none focus-visible:ring-0 focus:border-[#223B57] resize-none ${
+    formErrors.message ? "border-red-500 focus:border-red-500" : ""
+  }`}
                           />
                           {formErrors.message && <p className="text-xs text-red-500 mt-2">{formErrors.message}</p>}
                         </div>
@@ -337,8 +342,8 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                       </div>
                       <h3 className="font-bold text-[#223B57] mb-3">Head Office</h3>
                       <p className="text-sm text-neutral-600 leading-relaxed mb-2">{CONTACT_INFO.headOffice.address}</p>
-                      <p className="text-sm text-neutral-600">{SITE_CONFIG.city}, {SITE_CONFIG.state} {SITE_CONFIG.pincode}</p>
-                      <p className="text-sm text-neutral-600">{SITE_CONFIG.country}</p>
+                    
+                     
                     </CardContent>
                   </Card>
                 </div>

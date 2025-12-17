@@ -69,8 +69,16 @@ export function QuickActions({ onNavigate }: QuickActionsProps) {
                   {action.label}
                 </span>
                 <Button
-                  size="icon"
-                  className={`${action.color} shadow-lg h-12 w-12 rounded-full transition-colors duration-200`}
+  size="icon"
+  className={`
+    relative h-12 w-12 rounded-full
+    ${action.color}
+    shadow-lg transition-all duration-300
+
+    ring-1 ring-white/35
+    shadow-[0_0_0_1px_rgba(255,255,255,0.4),0_0_18px_rgba(255,255,255,0.22)]
+  `}
+
                   onClick={() => {
                     if (action.page) {
                       onNavigate(action.page);
@@ -89,9 +97,17 @@ export function QuickActions({ onNavigate }: QuickActionsProps) {
       </AnimatePresence>
 
       <Button
-        size="icon"
-        className="h-14 w-14 rounded-full bg-[#223b57] hover:bg-[#2a4561] shadow-xl"
-      >
+  size="icon"
+  className="
+    relative h-14 w-14 rounded-full
+    bg-[#223b57] hover:bg-[#2a4561]
+    shadow-xl transition-all duration-300
+
+    ring-1 ring-white/40
+    shadow-[0_0_0_1px_rgba(255,255,255,0.45),0_0_22px_rgba(255,255,255,0.25)]
+  "
+>
+
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}

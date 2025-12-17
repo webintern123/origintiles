@@ -98,7 +98,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         title="Built by Experienced Professionals"
         subtitle="About Origin Tiles"
         description="A brand showcasing expertise, creativity, and commitment to design excellence. Transforming spaces with premium tiles that blend timeless craftsmanship with contemporary innovation. Trusted by architects, designers, and homeowners worldwide."
-        icon={Building2}
+       
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="Design. Detail. Durability. Delivered"
@@ -146,9 +146,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
           </div>
         </div>
       </section>
-
+<br></br>
+<br></br>
+<br></br>
+<br></br>
       {/* === WHO WE ARE - PREMIUM SPLIT === */}
-      <section className="py-20 bg-white">
+       <section className="relative -mt-20 z-10 mb-10">
         <div className="container">
           <div className="grid grid-cols-12 gap-12 items-center">
             {/* Left: Text Content */}
