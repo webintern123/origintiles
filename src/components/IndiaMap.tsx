@@ -18,7 +18,7 @@ export function IndiaMap() {
 
       {/* Title Top Left */}
       <motion.div 
-        className="absolute top-6 left-6"
+        className="absolute top-6 right-6"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}

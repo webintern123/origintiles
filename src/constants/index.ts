@@ -61,42 +61,42 @@ export const COLLECTIONS = [
   {
     id: "luxury",
     name: "Luxury Collection",
-    description: "Premium luxury tiles with sophisticated designs and superior quality finishes",
+    description: "Premium tiles with refined designs and high-quality finishes, created for elegant and statement interiors.",
     established: 1985,
     brand: "Origin Tiles"
   },
   {
     id: "bathroom",
     name: "Modern Bathroom Series",
-    description: "Contemporary bathroom tiles combining style with functionality",
+    description: "Contemporary bathroom tiles are designed for safety, comfort, and everyday use.",
     established: 1990,
     brand: "Origin Tiles"
   },
   {
     id: "kitchen",
     name: "Kitchen Floor Collection",
-    description: "Durable and stylish floor tiles designed specifically for kitchen spaces",
+    description: "Strong, easy-to-maintain tiles designed to handle daily kitchen activity.",
     established: 1995,
     brand: "Origin Tiles"
   },
   {
     id: "marble",
     name: "Marble Pattern Series",
-    description: "Exquisite marble-look tiles offering timeless elegance and luxury",
+    description: "Marble-inspired designs that bring a classic and spacious feel to interiors.",
     established: 2000,
     brand: "Origin Tiles"
   },
   {
     id: "wood",
     name: "Wood Look Collection",
-    description: "Natural wood aesthetic with the durability of ceramic tiles",
+    description: "Natural wood-style tiles that offer warmth with ceramic durability.",
     established: 2005,
     brand: "Origin Tiles"
   },
   {
     id: "designer",
     name: "Designer Wall Series",
-    description: "Artistic wall tiles featuring unique patterns and textures",
+    description: "Creative wall tiles with bold patterns and surface textures.",
     established: 2010,
     brand: "Origin Tiles"
   }
@@ -221,12 +221,28 @@ export const PAYMENT_METHODS = [
   "Cash on Delivery",
 ] as const;
 
-export const CERTIFICATIONS = [
-  { name: "ISO 9001:2015", year: 2022 },
-  { name: "ISO 14001:2015", year: 2023 },
-  { name: "CE Certification", year: 2021 },
-  { name: "Green Building Certification", year: 2023 },
+ export const CERTIFICATIONS = [
+  {
+    id: "iso-9001",
+    name: "ISO 9001:2015",
+    year: 2022,
+    description: "Quality management systems certified since 2022",
+  },
+  {
+    id: "iso-14001",
+    name: "ISO 14001:2015",
+    year: 2023,
+    description: "Environmental management systems certified since 2023",
+  },
+  {
+    id: "green-building",
+    name: "Green Building Certification",
+    year: 2023,
+    description:
+      "Aligned with sustainable and eco-friendly manufacturing practices",
+  },
 ] as const;
+
 
 export const LEADERSHIP = [
   {

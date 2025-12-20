@@ -143,12 +143,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   const inspirationGallery = [
     {
-      title: "Modern Bathroom Design",
+      title: "Modern Bathroom Inspire",
       image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
       category: "Bathroom"
     },
     {
-      title: "Luxury Kitchen Space",
+      title: "Luxury Kitchen Spaces",
       image: "https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
       category: "Kitchen"
     },
@@ -158,7 +158,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       category: "Living Room"
     },
     {
-      title: "Outdoor Terrace",
+      title: "Outdoor Terrace Area",
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80",
       category: "Outdoor"
     }
@@ -228,17 +228,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   transition={{ delay: 0.2 }}
                 >
                   <Sparkles className="w-4 h-4 text-white" />
-                  <span className="text-sm font-medium">Premium Ceramic Tiles Since 1985</span>
+                  <span className="text-sm font-medium">Crafting Premium Tiles for Over 2 Decades</span>
                 </motion.div>
 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                  Transform Your
-                  <span className="block text-[#F5F3F0] mt-2 drop-shadow-[0_2px_8px_rgba(245,243,240,0.3)]">Space with Elegance</span>
+                  Grounded in Earth, 
+                  <span className="block text-[#F5F3F0] mt-2 drop-shadow-[0_2px_8px_rgba(245,243,240,0.3)]">Elevated in Design</span>
                 </h1>
 
                 <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-                  Discover premium ceramic tiles that blend luxury, durability, and timeless design. 
-                  Your journey to a beautiful home starts here.
+                  Explore high-quality tiles designed for homes, commercial spaces, and architectural projects. At Origin Tiles, thoughtful design and lasting strength come together to create spaces that stay beautiful over time.
                 </p>
               </div>
 
@@ -250,7 +249,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   className="bg-white !text-[#223B57] hover:bg-[#F5F3F0] active:bg-white active:!text-[#223B57] focus:ring-4 focus:ring-white/50 h-14 px-8 text-lg group"
                   aria-label="Explore our ceramic tile collections"
                 >
-                  Explore Collections
+                  View Our Collections
                   <ArrowRight className="ml-2 w-5 h-5 text-[#223B57] group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button 
@@ -273,13 +272,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   transition={{ duration: 0.2 }}
                 >
                   <div className="flex -space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.2)]" />
-                    ))}
+                   
                   </div>
                   <div>
                     <div className="font-bold text-lg">4.9/5</div>
-                    <div className="text-sm text-white/80">2,500+ reviews</div>
+                    <div className="text-sm text-white/80">Rating</div>
                   </div>
                 </motion.div>
                 <div className="h-12 w-px bg-white/30"></div>
@@ -295,8 +292,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="font-bold text-2xl">40+ Years</div>
-                  <div className="text-sm text-white/80">Excellence</div>
+                  <div className="font-bold text-2xl">25+ Years of</div>
+                  <div className="text-sm text-white/80">Industry Experience</div>
                 </motion.div>
               </div>
             </motion.div>
@@ -373,9 +370,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: "25+", label: "Years Experience", icon: Award },
-              { value: "650+", label: "Unique Designs", icon: Palette },
-              { value: "15+", label: "Countries Served", icon: TrendingUp },
-              { value: "50M+", label: "Sq Ft Installed", icon: Building2 }
+              { value: "650+", label: "Distinct Tile Designs", icon: Palette },
+              { value: "PAN India", label: "Tile Delivery", icon: TrendingUp },
+              { value: "50M+ Sq. Ft.", label: "of Tiles Successfully Installed", icon: Building2 }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -424,10 +421,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Our Premium Collections
+              Explore Our SIGNATURE Collections
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Explore our curated collections designed to transform your space
+              Designed for Every Space, Built to Last
             </p>
           </motion.div>
 
@@ -464,7 +461,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       {collection.description}
                     </p>
                     <div className="inline-flex items-center gap-2 text-white group-hover:gap-3 transition-all font-semibold">
-                      <span>Explore Collection</span>
+                      <span>See Our Collection </span>
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -495,7 +492,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Why Choose Origin Tiles
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Experience excellence in every tile with our commitment to quality and innovation
+              Every tile is made with care, combining reliable quality and modern design. 
             </p>
           </motion.div>
 
@@ -503,23 +500,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {[
               {
                 icon: Award,
-                title: "Premium Quality",
-                description: "ISO certified ceramic tiles with superior durability and finish"
+                title: "ISO Certified",
+                description: "Manufactured in ISO-certified facilities."
               },
               {
                 icon: Truck,
-                title: "Free Delivery",
-                description: "Complimentary shipping on bulk orders"
+                title: "Free Delivery on Bulk Orders",
+                description: "Easy delivery for large and project orders."
               },
               {
                 icon: Shield,
-                title: "10-Year Warranty",
-                description: "Complete protection with our comprehensive warranty coverage"
+                title: "Lifetime Warranty",
+                description: "Long-term coverage on quality and performance."
               },
               {
                 icon: HeadphonesIcon,
-                title: "24/7 Support",
-                description: "Expert assistance whenever you need guidance"
+                title: "24×7 Customer Support",
+                description: "Support available anytime you need help."
               }
             ].map((feature, index) => (
               <motion.div
@@ -569,10 +566,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
           >
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-2">
-                Featured Products
+                Top Highlighted Products
               </h2>
               <p className="text-neutral-600">
-                Hand-picked selections from our premium range
+                Hand-picked tiles that are popular among homeowners, architects, and builders this year.
               </p>
             </div>
             <Button 
@@ -602,83 +599,53 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   {/* Card Shadow Layer */}
                   <div className="absolute inset-0 bg-neutral-900/5 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  <Card className="relative overflow-hidden bg-white rounded-3xl border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500">
-                    {/* Product Image */}
-                    <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100">
-                      <ImageWithFallback
-                        src={product.image}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                      />
-                      
-                      {/* Premium Badge */}
-                      {product.badge && (
-                        <div className="absolute top-4 right-4">
-                          <div className="bg-[#223B57] text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">
-                            {product.badge}
-                          </div>
-                        </div>
-                      )}
-                      
-                      {/* Overlay gradient on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    </div>
+                 <Card className="relative h-[400px] rounded-3xl overflow-hidden group border-0 shadow-lg hover:shadow-2xl transition-all duration-500">
+  
+  {/* Full Image */}
+  <ImageWithFallback
+    src={product.image}
+    alt={product.name}
+    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+  />
 
-                    {/* Product Info */}
-                    <CardContent className="p-6 space-y-3">
-                      {/* Brand & Name */}
-                      <div>
-                        <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1.5">{product.brand}</p>
-                        <h3 className="font-semibold text-[#223B57] leading-tight line-clamp-2 group-hover:text-[#1a2d43] transition-colors">
-                          {product.name}
-                        </h3>
-                      </div>
-                      
-                      {/* Divider */}
-                      <div className="h-px bg-gradient-to-r from-neutral-200 via-neutral-100 to-transparent"></div>
-                      
-                      {/* Specs Row */}
-                      <div className="flex items-center gap-2 text-xs text-neutral-600">
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-1 h-1 rounded-full bg-[#223B57]"></div>
-                          <span>{product.size}</span>
-                        </div>
-                        <div className="w-1 h-1 rounded-full bg-neutral-300"></div>
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-1 h-1 rounded-full bg-[#223B57]"></div>
-                          <span>{product.finish}</span>
-                        </div>
-                      </div>
-                      
-                      {/* CTA Buttons - Redesigned for Better Visibility */}
-                      <div className="flex flex-col gap-2.5 pt-3">
-                        <Button 
-  size="sm" 
-  className="w-full bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] text-white shadow-md hover:shadow-xl transition-all duration-300 rounded-xl h-10"
-  onClick={(e) => {
-    e.stopPropagation();  // Prevent card click
-    onNavigate("Product Details", product.id); // Pass the product ID
-  }}
->
-  <span>View Details</span>
-  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-</Button>
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-[#223B57]/95 via-[#223B57]/60 to-transparent"></div>
 
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            onNavigate("Contact");
-                          }}
-                          className="w-full border-[#223B57]/30 text-[#223B57] hover:bg-[#223B57]/5 hover:border-[#223B57] transition-all duration-300 rounded-xl h-10"
-                        >
-                          <Phone className="w-3.5 h-3.5 mr-2 text-[#223B57]" />
-                          <span>Request Quote</span>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
+  {/* Bottom Content (Glass Effect) */}
+  <div className="absolute bottom-0 left-0 right-0 p-6">
+    <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-white transition-all duration-300 group-hover:bg-white/15">
+
+      <p className="text-xs uppercase tracking-wider text-white/80 mb-1">
+        {product.brand}
+      </p>
+
+      <h3 className="font-bold text-xl leading-tight mb-3">
+        {product.name}
+      </h3>
+
+      <div className="flex items-center gap-3 text-sm text-white/90 mb-4">
+        <span>{product.size}</span>
+        <span className="opacity-50">•</span>
+        <span>{product.finish}</span>
+      </div>
+
+      <Button
+        size="sm"
+        className="w-full  rounded-xl h-10 font-semibold"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNavigate("Product Details", product.id);
+        }}
+      >
+        View Details
+        <ArrowRight className="w-4 h-4 ml-2" />
+      </Button>
+
+    </div>
+  </div>
+
+</Card>
+
                 </div>
               </motion.div>
             ))}
@@ -706,10 +673,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Design Inspiration
+              Inspiring Designs by Space
             </h2>
             <p className="text-lg text-neutral-600">
-              See how our tiles transform real spaces
+              See How Our Tiles Come to Life
             </p>
           </motion.div>
 
@@ -754,10 +721,327 @@ export function HomePage({ onNavigate }: HomePageProps) {
               size="lg"
               className="bg-[#223B57] hover:bg-[#1a2d43] text-white"
             >
-              Explore All Products
+              View All Desings
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
+        </div>
+      </section>
+{/* === TECHNICAL EXCELLENCE SECTION === */}
+<section className="relative py-24 bg-white ">
+  {/* Subtle Background Pattern */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#F5F3F0] to-white"></div>
+
+  <div className="container relative z-10">
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-20"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        Technical Excellence
+      </Badge>
+
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Engineered for Performance,
+        <span className="block">Tested for Trust</span>
+      </h2>
+
+      <p className="text-lg text-neutral-600">
+        Our tiles are designed to meet high technical standards, making them
+        suitable for both residential and commercial use.
+      </p>
+    </motion.div>
+
+    {/* Technical Points Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          icon: Zap,
+          title: "Optimized Tile Thickness",
+          description:
+            "Designed for strength, stability, and long-term performance.",
+        },
+        {
+          icon: Shield,
+          title: "Low Water Absorption",
+          description:
+            "Helps tiles last longer and perform better in daily use.",
+        },
+        {
+          icon: CheckCircle2,
+          title: "Slip-Resistant Finishes",
+          description:
+            "Safer surfaces for bathrooms and high-use areas.",
+        },
+        {
+          icon: Award,
+          title: "Strict Quality Testing",
+          description:
+            "Every tile is tested at multiple stages before dispatch.",
+        },
+        {
+          icon: Package,
+          title: "Precision Cutting & Shade Matching",
+          description:
+            "Accurate sizing, batching, and quantity checks for uniform results.",
+        },
+        {
+          icon: HelpCircle,
+          title: "Installation & Grouting Guidance",
+          description:
+            "Support on adhesives, primers, moisture barriers, and grouting.",
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            {/* Glass Border */}
+            <div className="absolute inset-0 border border-white/30 rounded-2xl pointer-events-none"></div>
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8">
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-500">
+                  <item.icon
+                    className="w-8 h-8 text-[#223B57] group-hover:text-white transition-colors"
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-[#223B57] mb-3 text-center">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-center leading-relaxed">
+                {item.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    {/* Tagline */}
+    <motion.div
+      className="text-center mt-20"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      <p className="text-2xl font-semibold text-[#223B57] italic">
+        “Beyond Tiles, a Promise of Perfection”
+      </p>
+    </motion.div>
+  </div>
+</section> 
+      
+      {/* === TILE DURABILITY & TRUST SECTION === */}
+<section className="relative py-24 bg-[#F5F3F0] overflow-hidden">
+  <div className="container relative z-10">
+
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-20"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        What Makes Our Tiles Last Longer?
+      </h2>
+      <p className="text-lg text-neutral-600">
+        It’s not just design — it’s how the tile is made.
+      </p>
+    </motion.div>
+
+    {/* Durability Points */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        {
+          icon: Package,
+          title: "Carefully Selected Raw Materials",
+          description: "Premium-grade raw materials ensure structural integrity and long life."
+        },
+        {
+          icon: Zap,
+          title: "Advanced Manufacturing Technology",
+          description: "Modern machinery delivers precision, consistency, and reliability."
+        },
+        {
+          icon: Award,
+          title: "Uniform Firing for Strength",
+          description: "Controlled firing process ensures even density and durability."
+        },
+        {
+          icon: Shield,
+          title: "Wear & Fade Resistant Surfaces",
+          description: "Surfaces stay strong and visually consistent over years of use."
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500">
+            <CardContent className="p-8 text-center">
+              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all">
+                <item.icon className="w-8 h-8 text-[#223B57]" strokeWidth={1.5} />
+              </div>
+              <h3 className="text-xl font-bold text-[#223B57] mb-3">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+{/* === TRUSTED BY PROFESSIONALS SECTION === */}
+<section className="relative py-24 bg-white overflow-hidden">
+  <div className="container relative z-10">
+
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Trusted by Architects, Designers & Builders
+      </h2>
+      <p className="text-lg text-neutral-600">
+        Professionals across India and global markets rely on Origin Tiles for:
+      </p>
+    </motion.div>
+
+    {/* Trust Points */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20">
+      {[
+        "Reliable Supply",
+        "Consistent Quality",
+        "Detailed Technical Specifications & Data Sheet",
+        "Long-Term Performance on Site",
+      ].map((point, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="flex items-start gap-4"
+        >
+          <CheckCircle2 className="w-6 h-6 text-[#223B57] mt-1" />
+          <p className="text-lg text-neutral-700">{point}</p>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    {/* Professional Zones */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      
+      {/* Architect & Designer Zone */}
+     {/* Builder & Dealer Support */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="group"
+      >
+        <Card className="relative h-full border-0 rounded-3xl bg-white shadow-xl overflow-hidden">
+          <CardContent className="p-10">
+            <Building2 className="w-10 h-10 mb-6 text-[#223B57]" />
+            <h3 className="text-2xl font-bold text-[#223B57] mb-4">
+              Builder & Dealer Support
+            </h3>
+            <p className="text-neutral-600 leading-relaxed mb-8">
+              Bulk supply, logistics coordination, and dependable after-sales
+              service for smooth project execution.
+            </p>
+
+            
+          </CardContent>
+
+          {/* Glass Border */}
+          <div className="absolute inset-0 border border-[#223B57]/10 rounded-3xl pointer-events-none"></div>
+        </Card>
+      </motion.div>
+
+      {/* Builder & Dealer Support */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="group"
+      >
+        <Card className="relative h-full border-0 rounded-3xl bg-white shadow-xl overflow-hidden">
+          <CardContent className="p-10">
+            <Building2 className="w-10 h-10 mb-6 text-[#223B57]" />
+            <h3 className="text-2xl font-bold text-[#223B57] mb-4">
+              Builder & Dealer Support
+            </h3>
+            <p className="text-neutral-600 leading-relaxed mb-8">
+              Bulk supply, logistics coordination, and dependable after-sales
+              service for smooth project execution.
+            </p>
+
+          
+          </CardContent>
+
+          {/* Glass Border */}
+          <div className="absolute inset-0 border border-[#223B57]/10 rounded-3xl pointer-events-none"></div>
+        </Card>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+{/* === COLLECTION SHOWCASE === */}
+      <section className="py-20 bg-[#F5F3F0]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+              <Package className="w-3 h-3 mr-1" />
+              Proven Performance in Real Spaces
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+              Real Projects & Case Studies 
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Explore completed Residential, Commercial, and Architectural Projects where Origin Tiles were used - showing tile type, application, and results.
+            </p>
+          </motion.div>
+
+         
         </div>
       </section>
 
@@ -771,10 +1055,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              How It Works
+                 How Original Tiles Work?
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Your journey to beautiful tiles in three simple steps
+              A simple & transparent process to choose the right tiles
             </p>
           </motion.div>
 
@@ -786,20 +1070,20 @@ export function HomePage({ onNavigate }: HomePageProps) {
               {
                 step: "01",
                 icon: Palette,
-                title: "Browse & Select",
-                description: "Explore our premium collection of ceramic tiles. Filter by style, size, color, and room type to find your perfect match."
+                title: "Browse & Choose",
+                description: "Explore our tile collections and select designs based on size, finish, and usage with expert guidance."
               },
               {
                 step: "02",
                 icon: Calculator,
-                title: "Calculate & Plan",
-                description: "Use our smart calculator to determine exactly how many tiles you need. Get instant wastage calculations and cost estimates."
+                title: "Plan Your Requirement",
+                description: "Use our tile calculator to know the exact quantity needed, including wastage."
               },
               {
                 step: "03",
                 icon: Zap,
-                title: "Order & Install",
-                description: "Place your order with confidence. Get free delivery on bulk orders and expert installation guidance."
+                title: "Order with Support",
+                description: "Place your order easily with delivery assistance, warranty support, and guidance when required."
               }
             ].map((step, index) => (
               <motion.div
@@ -851,7 +1135,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               size="lg"
               className="bg-[#223B57] hover:bg-[#1a2d43] text-white h-14 px-8"
             >
-              Start Browsing
+              Quick Exploring 
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </motion.div>
@@ -877,10 +1161,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="container relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
             {[
-              { value: 10000, suffix: "+", label: "Happy Customers", icon: Users },
-              { value: 500, suffix: "+", label: "Products", icon: Package },
-              { value: 50, suffix: "+", label: "Countries Served", icon: MapPin },
-              { value: 40, suffix: " Years", label: "Excellence", icon: Award }
+              { value: 200, suffix: "+", label: "Finishes", icon: Users },
+              { value: 100, suffix: "%", label: "Trusted Quality", icon: Package },
+              { value: 5000 , suffix: "+", label: "Homes", icon: MapPin },
+              { value: 100, suffix: "+", label: "Projects", icon: Award }
+            
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -934,7 +1219,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-neutral-600">
-              Quick answers to common questions about our tiles
+              Clear answers to common tile-related questions
             </p>
           </motion.div>
 
@@ -942,24 +1227,34 @@ export function HomePage({ onNavigate }: HomePageProps) {
             {[
               {
                 icon: HelpCircle,
-                question: "What sizes are available?",
-                answer: "We offer tiles in various sizes from 7.5x15cm to 120x240cm, including popular sizes like 60x60cm and 30x30cm."
+                question: "What Tile Sizes Do You Offer?",
+                answer: "We offer a wide range of tile sizes, starting from 7.5×15 cm up to 120×240 cm. Popular options like 60×60 cm and 30×30 cm are also available."
               },
               {
                 icon: Truck,
-                question: "Do you provide delivery?",
-                answer: "Yes! Free delivery on bulk orders. For standard orders, delivery charges apply based on location and order size."
+                question: "Which Tile Finish Is Best For Bathrooms?",
+                answer: "Matt or anti-slip finishes are best for bathrooms, as they provide better grip and safety in wet areas."
               },
               {
                 icon: Shield,
-                question: "What's the warranty period?",
-                answer: "All our ceramic tiles come with a comprehensive 10-year warranty covering manufacturing defects."
+                question: "Do You Provide Delivery?",
+                answer: "Yes, we offer free delivery on bulk orders. Delivery charges for regular orders depend on location and order quantity."
               },
               {
                 icon: Phone,
-                question: "Can I get samples?",
-                answer: "Absolutely! Request up to 5 free tile samples. We'll ship them to you within 3-5 business days."
-              }
+                question: "Can I Request Tile Samples?",
+                answer: "Yes, you can request up to 5 tile samples. Samples are delivered within 3–5 working days."
+              },
+              {
+                icon: HelpCircle,
+                question: "Are Your Tiles Suitable for Heavy Traffic Areas?",
+                answer: "Yes, we offer tiles designed for high-traffic spaces such as living rooms, commercial areas, and parking zones."
+              },
+               {
+                icon: Shield,
+                question: "Do You Support Architects And Builders?",
+                answer: "Yes, we work closely with architects and builders by providing technical details, samples, and project support."
+              },
             ].map((faq, index) => (
               <motion.div
                 key={index}
@@ -1075,7 +1370,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    Experience Tiles in Person
+                    Experience Tiles in Person Before You Choose
                   </motion.h2>
 
                   <motion.p
@@ -1085,7 +1380,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                   >
-                    Visit our premium showrooms across India to see, touch, and feel our tiles. Our expert staff will help you find the perfect match for your project.
+                    Visit our showrooms to see the designs, finishes, and textures firsthand. Our experts are there to help you make the right selection.
                   </motion.p>
 
                   <motion.div
@@ -1101,7 +1396,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       className="bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] active:scale-95 text-white h-14 px-8 shadow-lg hover:shadow-xl transition-all group"
                     >
                       <MapPin className="mr-2 w-5 h-5" />
-                      Find Nearest Showroom
+                      Find Nearest Showroom 
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <Button
@@ -1111,7 +1406,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white active:bg-[#223B57] active:text-white active:scale-95 h-14 px-8 transition-all"
                     >
                       <Package className="mr-2 w-5 h-5" />
-                      Request Samples
+                      Book Showroom Visit
                     </Button>
                   </motion.div>
 
@@ -1152,10 +1447,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Customer Stories
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              What Our Clients Say
+              Real People, Real Projects, Real Results
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Real experiences from homeowners, architects, and builders who transformed their spaces with Origin Tiles
+              See how homeowners, architects, and builders have used Origin Tiles across different projects. Each story highlights the project type and tiles used, making it easier to relate and decide.
             </p>
           </motion.div>
 
@@ -1209,52 +1504,52 @@ export function HomePage({ onNavigate }: HomePageProps) {
             >
               {[
                 {
-                  name: "Priya Sharma",
-                  role: "Homeowner, Mumbai",
+                  name: "Priya",
+                  role: "Homeowner, Vijayawada",
                   image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "Origin Tiles completely transformed our bathroom! The quality is exceptional, and the team helped us choose the perfect design. The glassmorphism effect looks stunning in natural light.",
-                  project: "Bathroom Renovation"
+                  text: "Origin Tiles completely changed the look of our bathroom. The quality is excellent, and the team helped us choose the right design. The finish looks beautiful in natural light.",
+                  project: "Bathroom Renovation | Bathroom Tiles"
                 },
                 {
                   name: "Rajesh Kumar",
-                  role: "Interior Designer, Delhi",
+                  role: "Interior Designer, Hyderabad",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "As an interior designer, I recommend Origin Tiles to all my clients. Their collection is diverse, quality is top-notch, and the customer service is unmatched. The 3D visualization tool is a game-changer!",
-                  project: "Commercial Projects"
+                  text: "I recommend Origin Tiles to my clients because of the wide range and reliable quality. The support team is always helpful, which makes project planning easier.",
+                  project: "Commercial Projects | Wall & Floor Tiles"
                 },
                 {
                   name: "Anita Patel",
                   role: "Architect, Bangalore",
                   image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "Working with Origin Tiles has been a pleasure. Their technical specifications are detailed, delivery is always on time, and the tiles exceed expectations every single time. Perfect for premium projects.",
-                  project: "Luxury Villa Project"
+                  text: "Working with Origin Tiles has always been smooth. The technical details are clear, delivery is on time, and the tiles perform well in premium projects.",
+                  project: "Luxury Villa Project | PGVT Tiles"
                 },
                 {
-                  name: "Vikram Singh",
-                  role: "Contractor, Pune",
+                  name: "Vikram ",
+                  role: "Contractor, Chennai",
                   image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "I've been using Origin Tiles for over 5 years. The consistency in quality, competitive pricing, and excellent dealer support makes them my first choice for all residential and commercial projects.",
-                  project: "Multiple Projects"
+                  text: "I have been using Origin Tiles for several years. The quality stays consistent, pricing is fair, and dealer support is strong across all projects.",
+                  project: "Multiple Projects | Floor & Parking Tiles"
                 },
                 {
                   name: "Meera Reddy",
                   role: "Homeowner, Hyderabad",
                   image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "We used Origin Tiles for our entire home renovation. The kitchen backsplash and living room floor tiles are absolutely gorgeous. Guests always compliment the beautiful design!",
-                  project: "Full Home Renovation"
+                  text: "We used Origin Tiles throughout our home. The kitchen and living room tiles look great, and visitors often appreciate the design.",
+                  project: "Full Home Renovation | Kitchen & Living Room Tiles"
                 },
                 {
-                  name: "Arjun Mehta",
-                  role: "Builder, Ahmedabad",
+                  name: "Arjun Reddy",
+                  role: "Builder, Nellore",
                   image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=faces",
                   rating: 5,
-                  text: "Origin Tiles is our trusted partner for all our construction projects. Bulk orders are handled efficiently, and the warranty support gives our buyers complete peace of mind. Highly recommended!",
-                  project: "Residential Complex"
+                  text: "Origin Tiles is a reliable partner for our construction projects. Bulk supply is well managed, and the warranty support gives confidence to buyers.",
+                  project: "Residential Complex | Project Supply Tiles"
                 }
               ].map((testimonial, index) => (
                 <motion.div
@@ -1442,7 +1737,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     viewport={{ once: true }}
                   >
                     <Sparkles className="w-4 h-4 text-[#223B57]" />
-                    <span className="text-sm font-semibold text-[#223B57]">Smart Planning Tool</span>
+                    <span className="text-sm font-semibold text-[#223B57]">Smart Tile Planning Tool</span>
                   </motion.div>
 
                   {/* Heading */}
@@ -1453,7 +1748,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                   >
-                    Calculate Your Tile Needs
+                    Calculate Your Tile Requirement
                   </motion.h2>
 
                   {/* Subheading */}
@@ -1464,7 +1759,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 }}
                   >
-                    Use our intelligent calculator to determine exactly how many tiles you need for your project. Get instant results with wastage calculations and cost estimates.
+                    Use our tile calculator to find out how many tiles your project needs. Get quick results with built-in wastage and estimated costs.
                   </motion.p>
 
                   {/* Features List */}
@@ -1478,8 +1773,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     {[
                       { icon: Calculator, text: "Instant Calculations" },
                       { icon: TrendingUp, text: "Wastage Included" },
-                      { icon: Badge, text: "Cost Estimation" },
-                      { icon: CheckCircle2, text: "100% Free" }
+                      { icon: Badge, text: "Cost Estimation Available" },
+                      { icon: CheckCircle2, text: "Free to Use" }
                     ].map((feature, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-[#223B57]/10 flex items-center justify-center flex-shrink-0">
@@ -1537,8 +1832,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                       ))}
                     </div>
                     <div className="text-sm">
-                      <div className="font-semibold text-[#223B57]">Join 10,000+ happy customers</div>
-                      <div className="text-neutral-500">who planned their projects with us</div>
+                      <div className="font-semibold text-[#223B57]">Trusted by 10,000+ customers</div>
+                      <div className="text-neutral-500">who planned their tile projects with Origin Tiles</div>
                     </div>
                   </motion.div>
                 </div>
@@ -1547,6 +1842,65 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
       </section>
+       {/* === CTA SECTION === */}
+            <section className="py-20 bg-white">
+              <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-br from-[#223B57]/30 to-transparent rounded-3xl blur-2xl"></div>
+                  
+                  <div className="relative bg-gradient-to-br from-[#223B57] to-[#2d4a6a] rounded-3xl p-12 md:p-16 text-center overflow-hidden">
+                    {/* Decorative Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <pattern id="cta-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <circle cx="20" cy="20" r="1.5" fill="white" />
+                          </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#cta-pattern)" />
+                      </svg>
+                    </div>
+      
+                    <div className="relative z-10">
+                      <Badge className="mb-6 bg-white/20 text-white border-white/30">
+                        <Sparkles className="w-3 h-3 mr-1" />
+                        Let's Work Together
+                      </Badge>
+                      <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Ready to Start Your Tile Journey?
+                      </h2>
+                      <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                        Explore our collections, visit a showroom, or connect with our team for expert guidance
+                      </p>
+                      
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Button
+                          onClick={() => onNavigate("Collection")}
+                          className="bg-white !text-[#223B57] hover:bg-white/90 rounded-xl h-12 px-8 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+                        >
+                          <Palette className="w-4 h-4 mr-2 text-[#223B57]" />
+                          Explore Collections
+                        </Button>
+                        <Button
+                          onClick={() => onNavigate("Contact")}
+                          variant="outline"
+                          className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 [&_svg]:text-white"
+                        >
+                          Talk to an Expert
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
     </div>
   );
 }

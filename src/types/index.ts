@@ -25,7 +25,14 @@ export interface Collection {
   description: string;
   image: string;
   productCount?: number;
+  recommended?: boolean;
+  bestSuitedFor?: string[];
+  availableFinishes?: string[];
+  applications?: string[];
+  ctaText?: string;
+  established?: number;
 }
+
 
 
 

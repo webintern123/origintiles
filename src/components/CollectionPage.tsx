@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Package, Star, Award, TrendingUp, Globe, Users, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Package, Star, Award,  Globe, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2, Factory, Home,Coffee,Briefcase,Trees,Users,Shield} from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -54,7 +54,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
   }));
 
   // Calculate total products across all collections
-  const totalProducts = collections.reduce((sum, col) => sum + (col.productCount || 0), 0);
+  
 
 
   // Featured Products Carousel
@@ -93,47 +93,43 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
 
   // Stats data
   const stats = [
-    {
-      icon: Package,
-      value: collections.length,
-      suffix: "",
-      label: "Premium Collections",
-      description: "Curated series"
-    },
-    {
-      icon: TrendingUp,
-      value: totalProducts,
-      suffix: "+",
-      label: "Total Products",
-      description: "Diverse selection"
-    },
-    {
-      icon: Globe,
-      value: 15,
-      suffix: "+",
-      label: "Countries",
-      description: "Global reach"
-    },
-    {
-      icon: Users,
-      value: 25,
-      suffix: "+",
-      label: "Years Experience",
-      description: "Trusted expertise"
-    }
-  ];
+  {
+    icon: Sparkles,
+    value: 650,
+    suffix: "+",
+    label: "Distinct Tile Designs",
+  },
+  {
+    icon: Globe,
+    value: "PAN India",
+    label: "Tile Delivery",
+  },
+  {
+    icon: Package,
+    value: 50,
+    suffix: "M+ Sq. Ft.",
+    label: "of Tiles Successfully Installed",
+  },
+  {
+    icon: Award,
+    value: 25,
+    suffix: "+ Years",
+    label: "Experience",
+  },
+];
+
 
   return (
     <div className="min-h-screen bg-[#F5F3F0]">
       {/* === ENHANCED PAGE BANNER === */}
       <PageBanner
-        title="Discover Our Exclusive Collections"
-        subtitle="Origin Tiles Collections"
-        description="Explore our 6 distinguished ceramic collections, each offering unique character and superior craftsmanship. From modern minimalism to timeless elegance, discover the perfect tiles to bring your architectural vision to life."
+        title="High Quality Collections Designed for Every Space"
+        subtitle="Origin Tiles Collections Range "
+        description="Explore Origin Tiles 6 carefully developed collections, created for bathrooms, kitchens, living spaces, outdoor areas, and commercial projects. Each collection is designed with a clear purpose, balancing design, and long-term use."
        
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
-        badge="6 Premium Collections • 650+ Products"
+        badge="6 Designer Collections | 650+ Products"
       />
 
       {/* === FLOATING STATS CARDS === */}
@@ -165,7 +161,14 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                       </div>
                     </div>
                     <div className="text-3xl font-bold text-[#223B57] mb-1">
-                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                      {typeof stat.value === "number" ? (
+  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+) : (
+  <span className="text-3xl font-bold text-[#223B57]">
+    {stat.value}
+  </span>
+)}
+
                     </div>
                     <div className="text-sm text-neutral-600">{stat.label}</div>
                   </CardContent>
@@ -177,7 +180,24 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
       </section>
 
       {/* === COLLECTIONS GRID === */}
-      <section className="py-20">
+      <section className="py-20 bg-[#F5F3F0]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+          {/* Header */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+              Our Exclusive Range Of Collections
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+             A thoughtfully designed range of tile collections created for different spaces, styles, and everyday needs.
+            </p>
+          
+          </motion.div>
+      
         <div className="container">
           <div className="grid grid-cols-12 gap-8">
             {collectionsData.map((collection, index) => (
@@ -212,32 +232,40 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                       <div className="absolute top-6 right-6">
                         <Badge className="bg-white/95 backdrop-blur-md text-[#223B57] border-0 shadow-lg font-semibold hover:bg-white transition-colors">
                           <Star className="w-3 h-3 mr-1 fill-[#223B57]" />
-                          FEATURED
+                          Recommended
                         </Badge>
                       </div>
 
                       {/* Bottom Content - Glassmorphism */}
                       <div className="absolute bottom-0 left-0 right-0 p-8">
                         <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 group-hover:bg-white/15 group-hover:scale-[1.02] transition-all duration-300">
-                          <div className="mb-2 text-sm text-white/80 uppercase tracking-wider font-semibold">
-                            Est. {collection.established}
-                          </div>
+                          
                           <h2 className="text-white text-3xl font-bold mb-2">{collection.name}</h2>
                           <p className="text-white/90 mb-4">{collection.tagline}</p>
                           
-                          {/* Features Pills */}
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {collection.features.map((feature, idx) => (
-                              <Badge key={idx} className="bg-white/20 backdrop-blur-sm text-white border-white/30 text-xs">
-                                {feature}
-                              </Badge>
-                            ))}
-                          </div>
+                         <div className="flex flex-col gap-1 mb-4">
+  {collection.bestSuitedFor && (
+    <span className="text-sm text-white/90">
+      <strong>Best Suited For:</strong> {collection.bestSuitedFor.join(", ")}
+    </span>
+  )}
+  {collection.availableFinishes && (
+    <span className="text-sm text-white/90">
+      <strong>Available Finishes:</strong> {collection.availableFinishes.join(", ")}
+    </span>
+  )}
+  {collection.applications && (
+    <span className="text-sm text-white/90">
+      <strong>Recommended Applications:</strong> {collection.applications.join(", ")}
+    </span>
+  )}
+</div>
+
 
                           {/* View Products Count */}
                           <div className="flex items-center gap-2 text-white/90">
                             <Package className="w-4 h-4" />
-                            <span className="text-sm font-semibold">{collection.productCount}+ Products Available</span>
+                            <span className="text-sm font-semibold">{collection.productCount}+ Products</span>
                           </div>
                         </div>
                       </div>
@@ -266,22 +294,25 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                     </CardContent>
                   </Card>
                 </div>
+               
               </motion.div>
             ))}
           </div>
+           </div>
         </div>
       </section>
+
 
       {/* === WHY CHOOSE OUR COLLECTIONS === */}
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-              Why Choose Us
+              Why We Are a Trusted Tile Brand?
             </Badge>
-            <h2 className="mb-4 text-4xl font-bold text-[#223B57]">Premium Quality Across All Collections</h2>
+            <h2 className="mb-4 text-4xl font-bold text-[#223B57]">Quality You Can Rely On Across Every Collection</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Every collection represents our commitment to excellence, innovation, and timeless design
+             Each Origin Tiles collection is created with a strong focus on design clarity, consistent quality, and long-term performance.
             </p>
           </div>
 
@@ -289,23 +320,23 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
             {[
               {
                 icon: Sparkles,
-                title: "Unique Designs",
-                description: "Each collection offers distinctive styles from modern to classical, ensuring perfect match for your vision"
+                title: "Distinct Designs",
+                description: "A wide range of styles from modern to classic, to suit different spaces and preferences."
               },
               {
                 icon: Award,
-                title: "Premium Quality",
-                description: "ISO certified manufacturing with rigorous quality control ensuring durability and beauty"
+                title: "Reliable Quality",
+                description: "Manufactured in ISO-certified facilities with strict quality checks for lasting performance."
               },
               {
                 icon: Package,
-                title: "Wide Selection",
-                description: `${totalProducts}+ products across ${collections.length} collections, comprehensive range for every space and budget`
+                title: "Wide Range of Options",
+                description: "650+ tile options across six collections, suitable for homes, commercial spaces, and varied budgets.",
               },
               {
                 icon: Star,
-                title: "Proven Excellence",
-                description: "40+ years of expertise, trusted by 10,000+ customers in 50+ countries worldwide"
+                title: "Proven Experience",
+                description: "Decades of industry experience, trusted by thousands of customers across India."
               }
             ].map((feature, index) => (
               <motion.div
@@ -333,16 +364,190 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         </div>
       </section>
 
+{/* === WHY CHOOSE US === */}
+     <section className="py-20 bg-[#F5F3F0]">
+  <div className="container">
+    <motion.div
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Browse Collections By Application
+      </h2>
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        Quickly find the right collection based on where you plan to use it.
+      </p>
+    </motion.div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          icon: Factory, // Bathroom
+          title: "Bathroom Collections",
+          description: "Modern Bathroom Series"
+        },
+        {
+          icon: Home, // Kitchen Floor (replace Kitchen with a suitable icon from lucide-react)
+          title: "Kitchen Floor Collections",
+          description: "Kitchen Floor Collection"
+        },
+        {
+          icon: Home, // Living Room
+          title: "Living Room Collections",
+          description: "Marble Pattern Series, Luxury Collection"
+        },
+        {
+          icon: Coffee, // Bedroom (use any suitable icon for bedroom, e.g., Bed icon if available)
+          title: "Bedroom Collections",
+          description: "Wood Look Collection"
+        },
+        {
+          icon: Trees, // Outdoor & Parking
+          title: "Outdoor & Parking Collections",
+          description: "Designer Wall Series (textured finishes)"
+        },
+        {
+          icon: Briefcase, // Commercial Use
+          title: "Commercial Use Collections",
+          description: "Kitchen Floor & selected Marble Pattern tiles"
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
+            {/* Glassmorphism Border */}
+            <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+
+            {/* Hover Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8 text-center">
+              <div className="relative inline-block mb-6">
+                {/* Icon Background with Glass Effect */}
+                <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center border border-[#223B57]/20 group-hover:scale-110 group-hover:rotate-3 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] group-hover:border-[#223B57] transition-all duration-500">
+                  <item.icon className="w-10 h-10 text-[#223B57] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                </div>
+              </div>
+              <h3 className="font-bold text-xl mb-3 text-[#223B57]">{item.title}</h3>
+              <p className="text-neutral-600 leading-relaxed">{item.description}</p>
+            </CardContent>
+
+            {/* Bottom Accent Line */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#223B57]/20 to-transparent"></div>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+{/* === WHY CHOOSE US === */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+           
+            <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-4">
+              Why Origin Tiles Collections Last Longer?
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              Consistency You Can Trust, Project After Project
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Factory,
+                title: "Consistent Shade Control",
+                description: "Uniform colour matching across batches to maintain visual consistency."
+              },
+              {
+                icon: Users,
+                title: "Even Surface Finish",
+                description: "Smooth and uniform finish across large areas and installations."
+              },
+              {
+                icon: Package,
+                title: "Reliable Availability",
+                description: " Continuous supply to support phased and long-duration projects."
+              },
+             
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Card className="relative h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
+                  {/* Glassmorphism Border */}
+                  <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+                  
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="relative p-8 text-center">
+                    <div className="relative inline-block mb-6">
+                      {/* Icon Background with Glass Effect */}
+                      <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center border border-[#223B57]/20 group-hover:scale-110 group-hover:rotate-3 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] group-hover:border-[#223B57] transition-all duration-500">
+                        <feature.icon className="w-10 h-10 text-[#223B57] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-[#223B57]">{feature.title}</h3>
+                    <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
+                  </CardContent>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#223B57]/20 to-transparent"></div>
+                </Card>
+              </motion.div>
+            ))}
+
+          </div>
+          
+        </div>
+        <br></br>
+        {/* Tagline */}
+            <motion.div
+              className="text-center mt-20 mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-1xl font-semibold text-[#223B57] italic mb-4">
+                “This ensures your space looks consistent and even in large or multi-stage installations.”
+              </p>
+            </motion.div>
+      </section>
+
+      
+
       {/* === FEATURED PRODUCTS CAROUSEL === */}
       <section className="py-20 bg-white">
         <div className="container">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-              Featured Products
+              Highlighted Products
             </Badge>
-            <h2 className="text-3xl font-bold text-[#223B57] mb-3">Discover Products Across Collections</h2>
+            <h2 className="text-3xl font-bold text-[#223B57] mb-3">Popular Picks from Our Collections</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Explore our handpicked selection of premium Origin Tiles across all collections
+              Explore a curated selection of tiles from different Origin Tiles collections, chosen for their design appeal and everyday performance.
             </p>
           </div>
 
@@ -505,24 +710,24 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
             >
               <Badge className="mb-6 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20 px-4 py-2">
                 <Send className="w-3.5 h-3.5 mr-2" />
-                Free Sample Service
+                  Free Tile Samples
               </Badge>
               
               <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-6 leading-tight">
-                See & Feel the Quality Before You Buy
+                Experience the Quality Before You Choose
               </h2>
               
               <p className="text-base text-neutral-600 mb-6 leading-relaxed">
-                Experience the premium quality of Origin Tiles firsthand. We offer <span className="font-semibold text-[#223B57]">free samples</span> from any collection to help you make the perfect choice for your space.
+               Get a real feel of Origin Tiles before making your final choice. We offer  <span className="font-semibold text-[#223B57]">free samples</span> from our collections to help you select the right tile for your space.
               </p>
 
               {/* Benefits List */}
               <div className="space-y-4 mb-8">
                 {[
                   "Order up to 5 free samples per request",
-                  "Fast delivery within 3-5 business days",
-                  "See exact colors, textures, and finishes",
-                  "No obligation - completely free of charge"
+"Delivered within 3 - 5 working days",
+"	Check actual colours, textures, and finishes",
+"	No commitment — completely free.",
                 ].map((benefit, index) => (
                   <motion.div
                     key={index}
@@ -561,7 +766,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                   className="border-[#223B57]/30 text-[#223B57] hover:bg-[#223B57]/5 hover:border-[#223B57] h-14 px-8 transition-all"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Talk to Expert
+                  Talk to an Expert
                 </Button>
               </div>
             </motion.div>

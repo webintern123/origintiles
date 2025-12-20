@@ -8,7 +8,7 @@ export const products: Product[] = [
   {
     id: "p1",
     name: "Classic White Wall Tile",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wall Tiles",
     size: "12\"x24\" (30x60 cm)",
     finish: "Glossy",
@@ -33,7 +33,7 @@ export const products: Product[] = [
   {
     id: "p2",
     name: "Beige Elegance Wall",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wall Tiles",
     size: "12\"x18\" (30x45 cm)",
     finish: "Matte",
@@ -58,7 +58,7 @@ export const products: Product[] = [
   {
     id: "p3",
     name: "Metro White Subway",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wall Tiles",
     size: "10\"x15\" (25x37.5 cm)",
     finish: "Glossy",
@@ -88,7 +88,7 @@ export const products: Product[] = [
   {
     id: "p4",
     name: "Ivory Porcelain Classic",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Polished",
@@ -113,7 +113,7 @@ export const products: Product[] = [
   {
     id: "p5",
     name: "Terracotta Porcelain",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x48\" (60x120 cm)",
     finish: "Semi-Polished",
@@ -143,7 +143,7 @@ export const products: Product[] = [
   {
     id: "p6",
     name: "Statuario Marble GVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x48\" (60x120 cm)",
     finish: "High Gloss",
@@ -169,7 +169,7 @@ export const products: Product[] = [
   {
     id: "p7",
     name: "Calacatta Gold PGVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "32\"x64\" (80x160 cm)",
     finish: "Polished",
@@ -195,7 +195,7 @@ export const products: Product[] = [
   {
     id: "p8",
     name: "Emperador Dark GVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "48\"x72\" (120x180 cm)",
     finish: "High Gloss",
@@ -221,7 +221,7 @@ export const products: Product[] = [
   {
     id: "p9",
     name: "Concrete Gray GVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "48\"x48\" (120x120 cm)",
     finish: "Matte",
@@ -246,7 +246,7 @@ export const products: Product[] = [
   {
     id: "p10",
     name: "Sandstone Beige GVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "48\"x96\" (120x240 cm)",
     finish: "Textured",
@@ -271,7 +271,7 @@ export const products: Product[] = [
   {
     id: "p11",
     name: "Carrara White GVT",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Polished",
@@ -301,7 +301,7 @@ export const products: Product[] = [
   {
     id: "p12",
     name: "Granite Gray Full Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Matte",
@@ -326,7 +326,7 @@ export const products: Product[] = [
   {
     id: "p13",
     name: "Salt & Pepper Full Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x48\" (60x120 cm)",
     finish: "Polished",
@@ -351,7 +351,7 @@ export const products: Product[] = [
   {
     id: "p14",
     name: "Basalt Black Full Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "48\"x72\" (120x180 cm)",
     finish: "Textured",
@@ -380,7 +380,7 @@ export const products: Product[] = [
   {
     id: "p15",
     name: "Heavy Duty Red Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Anti-Slip",
@@ -405,7 +405,7 @@ export const products: Product[] = [
   {
     id: "p16",
     name: "Industrial Gray Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "24\"x36\" (60x90 cm)",
     finish: "Rough Textured",
@@ -430,7 +430,7 @@ export const products: Product[] = [
   {
     id: "p17",
     name: "Outdoor Beige Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "24\"x48\" (60x120 cm)",
     finish: "Anti-Slip",
@@ -460,7 +460,7 @@ export const products: Product[] = [
   {
     id: "p18",
     name: "Economy Parking Gray",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "16\"x16\" (40x40 cm)",
     finish: "Anti-Slip",
@@ -485,7 +485,7 @@ export const products: Product[] = [
   {
     id: "p19",
     name: "Standard Parking Beige",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "20\"x20\" (50x50 cm)",
     finish: "Textured",
@@ -510,7 +510,7 @@ export const products: Product[] = [
   {
     id: "p20",
     name: "Driveway Charcoal",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Parking Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Anti-Slip",
@@ -539,7 +539,7 @@ export const products: Product[] = [
   {
     id: "p21",
     name: "3D Wave Elevation White",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Elevation Tiles",
     size: "12\"x18\" (30x45 cm)",
     finish: "High Relief 3D",
@@ -564,7 +564,7 @@ export const products: Product[] = [
   {
     id: "p22",
     name: "Stone Cladding Elevation",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Elevation Tiles",
     size: "12\"x24\" (30x60 cm)",
     finish: "Natural Texture",
@@ -593,7 +593,7 @@ export const products: Product[] = [
   {
     id: "p23",
     name: "Oak Natural Wood Plank",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wood-look Tiles",
     size: "8\"x40\" (20x100 cm)",
     finish: "Wood Texture",
@@ -618,7 +618,7 @@ export const products: Product[] = [
   {
     id: "p24",
     name: "Walnut Dark Wood Plank",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wood-look Tiles",
     size: "8\"x48\" (20x120 cm)",
     finish: "Wood Texture",
@@ -647,7 +647,7 @@ export const products: Product[] = [
   {
     id: "p25",
     name: "Terrazzo Modern Mix",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Polished",
@@ -672,7 +672,7 @@ export const products: Product[] = [
   {
     id: "p26",
     name: "Hexagon Mosaic Gray",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wall & Floor Tiles",
     size: "12\"x12\" (30x30 cm)",
     finish: "Matte",
@@ -697,7 +697,7 @@ export const products: Product[] = [
   {
     id: "p27",
     name: "Onyx Black Luxury",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "32\"x64\" (80x160 cm)",
     finish: "High Gloss",
@@ -723,7 +723,7 @@ export const products: Product[] = [
   {
     id: "p28",
     name: "Travertine Classic Beige",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Tumbled",
@@ -748,7 +748,7 @@ export const products: Product[] = [
   {
     id: "p29",
     name: "Metro Subway Glossy White",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Wall Tiles",
     size: "3\"x6\" (7.5x15 cm)",
     finish: "Glossy",
@@ -773,7 +773,7 @@ export const products: Product[] = [
   {
     id: "p30",
     name: "Granite Speckled Full Body",
-    brand: "Origin Tiles",
+    brand: "Trending in 2025",
     category: "Floor Tiles",
     size: "24\"x24\" (60x60 cm)",
     finish: "Polished",
