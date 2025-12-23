@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Upload, RotateCcw, Eye, ArrowRight, Sparkles, Image as ImageIcon, Layers, Download, Share2, Save, Printer, CheckCircle2, Lightbulb, Box, Glasses } from "lucide-react";
+import { Upload, RotateCcw, Eye, HelpCircle,Target,ArrowRight, Sparkles,Package, Image as ImageIcon, Layers, Download, Share2, Save, Printer, CheckCircle2, Box, Glasses } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
@@ -71,22 +71,22 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
   const selectedRoomData = rooms.find(r => r.id === selectedRoom);
 
   const features = [
-    { icon: Eye, title: "Real-Time Preview", description: "Instant visualization" },
-    { icon: Box, title: "3D View", description: "Interactive 3D room" },
-    { icon: Glasses, title: "VR Ready", description: "Virtual reality mode" },
-    { icon: Layers, title: "Opacity Control", description: "Adjust tile overlay" }
+    { icon: Eye, title: "Instant Preview ", description: "See tile changes immediately" },
+    { icon: Box, title: "Optional VR Mode", description: "Step inside your room virtually" },
+    { icon: Glasses, title: "Interactive 3D View ", description: "Explore the room from every angle " },
+    { icon: Layers, title: "Opacity Control", description: "Adjust tile visibility for better clarity" }
   ];
 
   return (
     <div className="min-h-screen bg-[#F5F3F0]">
       {/* Page Banner */}
       <PageBanner
-        title="Visualize Your Dream Space"
-        subtitle="2D & 3D Room Visualization Tool"
-        description="Experience tiles in both 2D and immersive 3D before you buy. Interactive 3D room viewer with VR support lets you walk through your space virtually with real-time preview and adjustable opacity."
+        title="Visualize Your Space in 2D & 3D"
+        subtitle="See Your Space Before You Decide"
+        description="See how our tiles look in your real spaces & rooms before you buy - using our 2D and interactive 3D visualizer. Test designs, finishes, and layouts in real time help you make confident design decisions."
        
         variant="gradient"
-        badge="Interactive 3D • VR Ready • Real-time Preview • Free to Use"
+        badge="Live Preview | Free 3D Experience | Easy to Use | VR Ready"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Tools", onClick: () => onNavigate("Tools") },
@@ -129,6 +129,24 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
 
       {/* Visualization Tool Section */}
       <section className="py-20 bg-white">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+                  <motion.div
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+                      <Package className="w-3 h-3 mr-1" />
+                         Tile Visualizer Tool
+                    </Badge>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                       Plan with Clarity, Choose with Confidence
+                    </h2>
+                   
+                  </motion.div>
+                  </div>
+        
         <div className="container max-w-7xl">
           <div className="grid lg:grid-cols-12 gap-8">
             {/* Controls Sidebar */}
@@ -143,7 +161,7 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                   <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
                   
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-[#223B57] mb-4">Select Tile Design</h3>
+                    <h3 className="font-semibold text-[#223B57] mb-4">Choose Tile Design</h3>
                     <Select value={selectedTile} onValueChange={setSelectedTile}>
                       <SelectTrigger className="rounded-xl border-neutral-200">
                         <SelectValue />
@@ -443,36 +461,43 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
             className="text-center mb-12"
           >
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
-              Simple 3-Step Process
+              Simple 4-Step Process
             </Badge>
             <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              How It Works
+             Why Use the Origin Tiles Visualizer?
             </h2>
             <p className="text-neutral-600 text-lg">
-              Visualize your space in three simple steps
+                The Origin Tiles Visualizer helps you see how tiles will look in real spaces before making a decision. It allows you to explore designs, finishes, and layouts virtually, so you can choose with clarity and confidence.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
             {[
               {
-                step: "01",
+               
                 icon: ImageIcon,
-                title: "Select Your Room",
-                description: "Choose from our sample rooms or upload your own photo for a personalized visualization experience."
+                title: "See How Tiles Look in Real Spaces Before Buying ",
+                
               },
               {
-                step: "02",
+                
                 icon: Layers,
-                title: "Pick Your Tile",
-                description: "Browse through our premium tile collections and select the design that matches your vision."
+                title: "Compare designs without visiting multiple showrooms ",
+                
               },
               {
-                step: "03",
+                
                 icon: Box,
-                title: "View in 2D or 3D",
-                description: "Toggle between 2D preview or immersive 3D room with interactive controls. VR mode available for compatible devices."
-              }
+                title: "Reduce Wrong Selection and Reduce Material Wastage ",
+                
+              },
+              {
+               
+                icon: Layers,
+                title: "Make faster, & More Confident Design Decisions. ",
+                
+              },
             ].map((step, index) => (
               <motion.div
                 key={index}
@@ -486,9 +511,7 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <CardContent className="p-8 text-center">
-                    <div className="text-6xl font-bold text-[#223B57]/10 mb-4">
-                      {step.step}
-                    </div>
+                    
                     <div className="relative inline-block mb-6">
                       <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
                       <div className="relative w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-neutral-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
@@ -498,9 +521,7 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                     <h3 className="text-xl font-bold text-[#223B57] mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed">
-                      {step.description}
-                    </p>
+                   
                   </CardContent>
                 </Card>
               </motion.div>
@@ -509,40 +530,131 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
         </div>
       </section>
 
-      {/* Tips Section */}
-      <section className="py-20 bg-white">
-        <div className="container max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Visualization Tips
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Get the most accurate preview with these helpful tips
-            </p>
-          </motion.div>
+       {/* How It Works Section */}
+            <section className="py-20 bg-white">
+              <div className="container max-w-6xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-center mb-12"
+                >
+                  
+                  <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+                    How It Works
+                  </h2>
+                  <p className="text-neutral-600 text-lg">
+                    Visualise your space in 3 simple steps.
+                  </p>
+                </motion.div>
+      
+                <div className="grid md:grid-cols-3 gap-8">
 
+      
+                  {[
+                    {
+                      step: "01",
+                      icon: HelpCircle,
+                      title: "Choose Your Room",
+                      description: " Choose a sample room or prepare to upload your own space."
+                    },
+                    {
+                      step: "02",
+                      icon: Target,
+                      title: "Pick Your Tile",
+                      description: " Select tiles from our collections based on style, finish, and application."
+                    },
+                    {
+                      step: "03",
+                      icon: CheckCircle2,
+                      title: "Preview in 2D or 3D",
+                      description: "View tiles instantly in 2D or explore them in an interactive 3D environment."
+                    },
+                     {
+                      step: "04",
+                      icon: CheckCircle2,
+                      title: "Compare & Save Designs ",
+                      description: "Save different tile options and compare them side by side before finalising."
+                    },
+                    {
+                      step: "05",
+                      icon: CheckCircle2,
+                      title: "Save, Download & Share ",
+                      description: "Download your design or share it easily with family, architects, or installers."
+                    }
+                  ].map((step, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md rounded-3xl group h-full">
+                        <div className="absolute inset-0 border border-white/20 rounded-3xl pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <CardContent className="p-8 text-center">
+                          <div className="text-6xl font-bold text-[#223B57]/10 mb-4">
+                            {step.step}
+                          </div>
+                          <div className="relative inline-block mb-6">
+                            <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                            <div className="relative w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-neutral-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                              <step.icon className="w-8 h-8 text-[#223B57]" strokeWidth={1.5} />
+                            </div>
+                          </div>
+                          <h3 className="text-xl font-bold text-[#223B57] mb-3">
+                            {step.title}
+                          </h3>
+                          <p className="text-neutral-600 leading-relaxed">
+                            {step.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+      
+
+      {/* Tips Section */}
+      <section className="py-20 bg-[#F5F3F0]">
+             <div className="container max-w-6xl">
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="text-center mb-12"
+               >
+                 <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+                   Get a More Accurate Preview
+                 </Badge>
+                 <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+                 Expert Visualization Tips
+                 </h2>
+                 <p className="text-neutral-600 text-lg">
+                   Use these tips to see your selected tiles more clearly and make better design decisions.
+                 </p>
+               </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Try 3D Interactive View",
-                description: "Switch to 3D mode to walk around the room and see tiles from any angle. Use VR mode for the most immersive experience with compatible headsets."
+                title: "	Use the 3D View",
+                description: "Switch to 3D mode to understand depth and layout the room from different angles. VR mode gives a more immersive experience on supported devices."
               },
               {
-                title: "Best Lighting",
-                description: "Take photos in natural daylight for most accurate visualization results and true color representation in both 2D and 3D modes."
+                title: "Check Lighting Conditions",
+                description: " Images taken in natural daylight provide the most accurate colour and finish appearance."
               },
               {
-                title: "Multiple Angles in 3D",
-                description: "In 3D mode, rotate the camera 360° to see how light affects tiles from different angles and room perspectives."
+                title: "View from Multiple Angles",
+                description: " Rotate the room in 3D to understand how light and shadows affect the tile surface."
               },
               {
-                title: "Compare Options",
-                description: "Save screenshots of different tile options in both 2D and 3D views to compare side by side before making your final decision."
+                title: "Compare Before Finalising",
+                description: " Save and compare different tile options side by side in both 2D and 3D views."
               }
             ].map((tip, index) => (
               <motion.div
@@ -570,82 +682,185 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#223B57]/10 mb-6">
-              <Lightbulb className="w-8 h-8 text-[#223B57]" />
-            </div>
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Common questions about our room visualizer
-            </p>
-          </motion.div>
+       {/* How It Works Section */}
+            <section className="py-20 bg-white">
+             <div className="container max-w-6xl">
+               <motion.div
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 className="text-center mb-12"
+               >
+                 <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+                   From Visualization To Selection
+                 </Badge>
+                 <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+                     Turn Your Design into Reality
+                 </h2>
+                 <p className="text-neutral-600 text-lg">
+                   Once you finalise your look:
+                 </p>
+               </motion.div>
+      
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 
-          <div className="grid gap-6">
-            {[
-              {
-                question: "What's the difference between 2D and 3D view?",
-                answer: "2D view shows a flat overlay of tiles on room photos, while 3D view provides an interactive room where you can walk around, rotate the camera, and see tiles from any angle. 3D mode also supports VR headsets for immersive experiences."
-              },
-              {
-                question: "How do I use the 3D interactive view?",
-                answer: "Switch to the 3D tab, then use your mouse to rotate (left click + drag), pan (right click + drag), and zoom (scroll wheel). On touchscreens, use pinch gestures to zoom and swipe to rotate. Click the VR button for headset support."
-              },
-              {
-                question: "Can I upload my own room photo?",
-                answer: "Photo upload feature is coming soon! Currently, you can use our sample rooms (living room, kitchen, bathroom) to preview tiles in both 2D and 3D modes."
-              },
-              {
-                question: "How do I save my visualizations?",
-                answer: "Click the 'Save This Design' button to save your visualization. You can also download or share your design using the quick action buttons available in both 2D and 3D modes."
-              },
-              {
-                question: "Do I need special equipment for VR mode?",
-                answer: "VR mode works with WebXR-compatible browsers and VR headsets like Oculus Quest, HTC Vive, or similar devices. You can still enjoy the 3D interactive view on any device without VR equipment."
-              }
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-                  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-lg bg-[#223B57]/10 flex items-center justify-center">
-                          <CheckCircle2 className="w-5 h-5 text-[#223B57]" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[#223B57] mb-2">
-                          {faq.question}
-                        </h4>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
+
+      
+                  {[
+                    {
+                     
+                      icon: HelpCircle,
+                      title: "View Tiles used in Your Design",
+                      
+                    },
+                    {
+                     
+                      icon: Target,
+                      title: "Request Free Samples",
+                      
+                    },
+                    {
+                     
+                      icon: CheckCircle2,
+                      title: "Get Quantity Estimation",
+                     
+                    },
+                     {
+                     
+                      icon: CheckCircle2,
+                      title: "Move Directly from Visualisation to Purchase.",
+                      
+                    },
+                    
+                  ].map((step, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md rounded-3xl group h-full">
+                        <div className="absolute inset-0 border border-white/20 rounded-3xl pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <CardContent className="p-8 text-center">
+                         
+                          <div className="relative inline-block mb-6">
+                            <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                            <div className="relative w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-neutral-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                              <step.icon className="w-8 h-8 text-[#223B57]" strokeWidth={1.5} />
+                            </div>
+                          </div>
+                          <h3 className="text-xl font-bold text-[#223B57] mb-3">
+                            {step.title}
+                          </h3>
+                          
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+     {/* === FAQ QUICK SECTION - Top Questions === */}
+                <section className="section-padding bg-[#F5F3F0]">
+                  <div className="container">
+                    <motion.div
+                      className="text-center mb-12"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                        Frequently Asked Questions
+                      </h2>
+                      <p className="text-lg text-neutral-600">
+                        Answers to Common Questions about the Tile Visualizer
+                      </p>
+                    </motion.div>
+          
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                      {[
+                        {
+                          icon: CheckCircle2,
+                          question: "What is the difference between 2D and 3D view?",
+                          answer: "2D view shows tiles placed on a flat image, while 3D view lets you explore the room interactively by rotating and viewing tiles from different angles. VR mode adds a more immersive experience on supported devices."
+                        },
+                        {
+                          icon:  CheckCircle2,
+                          question: "How do I use the 3D view?",
+                          answer: "Select the 3D option and use simple controls to move around the room. You can rotate, zoom, and pan using your mouse or touch gestures. VR mode can be activated if your device supports it."
+                        },
+                        {
+                          icon: CheckCircle2,
+                          question: "Can I upload a photo of my own room?",
+                          answer: "This feature will be available soon. For now, you can preview tiles using our ready-made room layouts for living rooms, kitchens, and bathrooms."
+                        },
+                        {
+                          icon: CheckCircle2,
+                          question: "How can I save or share my design?",
+                          answer: "You can save your selected design and download or share it using the available action buttons."
+                        },
+                       
+                         
+                      ].map((faq, index) => (
+                        <motion.div
+                          key={index}
+                          className="group"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          {/* Glassmorphism FAQ Card */}
+                          <div className="relative h-full">
+                            {/* Glow Effect */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                            
+                            <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                              {/* Glassmorphism Border */}
+                              <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                              
+                              <CardContent className="relative p-6">
+                                <div className="flex items-start gap-4">
+                                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                                    <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                                  </div>
+                                  <div>
+                                    <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                                    <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                                  </div>
+                                </div>
+                              </CardContent>
+                              
+                              {/* Shine Effect */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                            </Card>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+          
+                    <motion.div
+                      className="text-center"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Button
+                        onClick={() => onNavigate("FAQ")}
+                        variant="outline"
+                        size="lg"
+                        className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+                      >
+                        View All FAQs
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+                      </Button>
+                    </motion.div>
+                  </div>
+                </section>
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container">
@@ -663,13 +878,13 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
               
               <div className="relative">
                 <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 px-4 py-2">
-                  Love What You See?
+                  Like What You See?
                 </Badge>
                 <h2 className="text-white text-4xl font-bold mb-4">
-                  Ready to Make It Real?
+                   Ready to Take the Next Step?
                 </h2>
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Request free samples, get a custom quote, or explore more design tools to perfect your tile selection.
+                   Order free samples, request a quote, or explore more tools to finalise your tile choice.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
