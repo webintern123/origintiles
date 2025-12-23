@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send,Sparkles ,MessageSquare, Building2, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, CheckCircle2, MessageCircleMore,HelpCircle} from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, LifeBuoy,Handshake, Send,Sparkles,SlidersHorizontal,IndianRupee,BadgeCheck,MessageSquare, Building2, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Palette,Workflow,Layers,CheckCircle2, MessageCircleMore,HelpCircle} from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -23,16 +23,50 @@ interface ContactPageProps {
   onNavigate: (page: string) => void;
 }
 
+type CheckboxField = 'enquiryType' | 'productInterest';
+
+
 
 
 export function ContactPage({ onNavigate }: ContactPageProps) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
+ const [formData, setFormData] = useState<{
+  name: string;
+  email: string;
+  phone: string;
+  city: string;
+  company: string;
+  enquiryType: string[];
+  productInterest: string[];
+  projectType: string;
+  quantity: string;
+  timeline: string;
+  urgency: string;
+  message: string;
+  contactMethod: string;
+  contactTime: string;
+  heardFrom: string;
+  files: File[];
+}>({
+  name: '',
+  email: '',
+  phone: '',
+  city: '',
+  company: '',
+  enquiryType: [],
+  productInterest: [],
+  projectType: '',
+  quantity: '',
+  timeline: '',
+  urgency: '',
+  message: '',
+  contactMethod: '',
+  contactTime: '',
+  heardFrom: '',
+  files: []
+});
+
+
+
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
@@ -42,7 +76,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     if (!formData.name.trim()) errors.name = 'Name is required';
     if (!formData.email.trim()) errors.email = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) errors.email = 'Invalid email format';
-    if (!formData.subject) errors.subject = 'Please select a subject';
+
     if (!formData.message.trim()) errors.message = 'Message is required';
     if (!agreedToTerms) errors.terms = 'You must agree to the terms';
     
@@ -57,34 +91,62 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       toast.success('Message sent successfully!', {
         description: 'Our team will contact you within 24 hours.'
       });
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setFormData({
+  name: '',
+  email: '',
+  phone: '',
+  city: '',
+  company: '',
+  enquiryType: [],
+  productInterest: [],
+  projectType: '',
+  quantity: '',
+  timeline: '',
+  urgency: '',
+  message: '',
+  contactMethod: '',
+  contactTime: '',
+  heardFrom: '',
+  files: []
+});
+
       setAgreedToTerms(false);
       setFormErrors({});
     } else {
       toast.error('Please fix the errors in the form');
     }
   };
+  const toggleCheckbox = (field: CheckboxField, value: string) => {
+  setFormData(prev => ({
+    ...prev,
+    [field]: prev[field].includes(value)
+      ? prev[field].filter(v => v !== value)
+      : [...prev[field], value]
+  }));
+};
+
+
 
   const contactMethods = [
     {
       icon: Phone,
-      title: "Phone Support",
+      title: "Call Us",
       info: CONTACT_INFO.general.phone,
       description: "Mon-Sat: 9:00 AM - 6:00 PM IST",
       action: `tel:${CONTACT_INFO.general.phone}`
     },
     {
       icon: MessageCircleMore,
-      title: "WhatsApp",
+      title: "WhatsApp Us",
       info: CONTACT_INFO.general.phone,
-      description: "Quick responses via WhatsApp",
+      description: "Quick replies for easy support",
       action: `https://wa.me/919093833833`
     },
     {
       icon: Mail,
       title: "Email Us",
       info: CONTACT_INFO.general.email,
-      description: "We'll respond within 24 hours",
+      description: "We respond within 24 hours",
       action: `mailto:${CONTACT_INFO.general.email}`
     },
     {
@@ -106,12 +168,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     <div className="min-h-screen bg-[#F5F3F0]">
       {/* === PAGE BANNER === */}
       <PageBanner
-        title="Get in Touch"
+        title="We’re here to Help – Connect with Us"
         subtitle="Contact Us"
-        description="Have questions about our tiles? We're here to help. Reach out to our team for product inquiries, design consultations, or dealer information."
+        description="Have a question or need help choosing the right tiles? Our team is here to assist with product details, design guidance, and dealer enquiries."
        
         variant="gradient"
-        badge="24/7 Customer Support • Expert Consultation • Fast Response"
+        badge="Round the Clock Support | Expert Guidance | Quick Response"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Contact" }
@@ -145,7 +207,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                         <method.icon className="w-7 h-7 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={1.5} />
                       </div>
                       <div className="flex-1 flex flex-col justify-center">
-                        <h3 className="font-bold text-[#223B57] mb-2">{method.title}</h3>
+                        <h4 className="font-bold text-[#223B57] mb-2">{method.title}</h4>
                         <p className="text-sm font-semibold text-neutral-700 mb-1">{method.info}</p>
                         <p className="text-xs text-neutral-500">{method.description}</p>
                       </div>
@@ -178,10 +240,10 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   <CardContent className="p-10 md:p-12">
                     <div className="mb-8">
                       <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-                        Send us a message
+                        Get In Touch
                       </Badge>
-                      <h2 className="text-[#223B57] mb-3">How Can We Help?</h2>
-                      <p className="text-neutral-600">Fill out the form below and our team will get back to you within 24 hours.</p>
+                      <h2 className="text-[#223B57] mb-3">Expert Help For Choosing The Right Tiles</h2>
+                      <p className="text-neutral-600">Request samples, product details, or expert guidance by filling out the form below. Our team will get in touch within 24 hours.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-7">
@@ -218,93 +280,312 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                           {formErrors.email && <p className="text-xs text-red-500 mt-2">{formErrors.email}</p>}
                         </div>
 
-                        <div className="col-span-12 md:col-span-6">
-                          <Label htmlFor="phone" className="text-[#223B57] mb-3 block">Phone Number</Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="+91 9093833833"
-                            className="{buttonLikeInput} h-14 border-neutral-200 focus:border-[#223B57] rounded-xl"
-                          />
-                        </div>
+                        {/* Phone + City (same row) */}
+<div className="col-span-12 md:col-span-6">
+  <Label htmlFor="phone" className="text-[#223B57] mb-3 block">
+    Phone Number
+  </Label>
+  <Input
+    id="phone"
+    type="tel"
+    value={formData.phone}
+    onChange={(e) =>
+      setFormData({ ...formData, phone: e.target.value })
+    }
+    placeholder="+91 90938 33833"
+    className={buttonLikeInput}
+  />
+</div>
 
-                        <div className="col-span-12 md:col-span-6">
-                          <Label htmlFor="subject" className="text-[#223B57] mb-3 block">Subject *</Label>
-                          <Select value={formData.subject} onValueChange={(value) => {
-                            setFormData({ ...formData, subject: value });
-                            if (formErrors.subject) setFormErrors({ ...formErrors, subject: '' });
-                          }}>
-                            <SelectTrigger className={`h-14 border-neutral-200 focus:border-[#223B57] rounded-xl ${buttonLikeInput}  ${formErrors.subject ? 'border-red-500' : ''}`}>
-                              <SelectValue placeholder="Select a subject" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="general">General Inquiry</SelectItem>
-                              <SelectItem value="product">Product Question</SelectItem>
-                              <SelectItem value="dealer">Become a Dealer</SelectItem>
-                              <SelectItem value="sample">Request Samples</SelectItem>
-                              <SelectItem value="support">Technical Support</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          {formErrors.subject && <p className="text-xs text-red-500 mt-2">{formErrors.subject}</p>}
-                        </div>
+<div className="col-span-12 md:col-span-6">
+  <Label htmlFor="city" className="text-[#223B57] mb-3 block">
+    City / Location *
+  </Label>
+  <Input
+    id="city"
+    type="text"
+    value={formData.city}
+    onChange={(e) =>
+      setFormData({ ...formData, city: e.target.value })
+    }
+    placeholder="Hyderabad"
+    className={buttonLikeInput}
+  />
+</div>
+
+{/* Company (full width below) */}
+<div className="col-span-12">
+  <Label htmlFor="company" className="text-[#223B57] mb-3 block">
+    Company / Firm Name (Optional)
+  </Label>
+  <Input
+    id="company"
+    type="text"
+    value={formData.company}
+    onChange={(e) =>
+      setFormData({ ...formData, company: e.target.value })
+    }
+    placeholder="ABC Constructions"
+    className={buttonLikeInput}
+  />
+</div>
 
                         <div className="col-span-12">
-                          <Label htmlFor="message" className="text-[#223B57] mb-3 block">Message *</Label>
-                          <Textarea
-                            id="message"
-                            rows={6}
-                            value={formData.message}
-                            onChange={(e) => {
-                              setFormData({ ...formData, message: e.target.value });
-                              if (formErrors.message) setFormErrors({ ...formErrors, message: '' });
-                            }}
-                            placeholder="Tell us about your project or inquiry..."
-                             className={`rounded-xl border-2 border-neutral-300 bg-[#F5F3F0] px-4 py-3 focus-visible:outline-none focus-visible:ring-0 focus:border-[#223B57] resize-none ${
-    formErrors.message ? "border-red-500 focus:border-red-500" : ""
-  }`}
-                          />
-                          {formErrors.message && <p className="text-xs text-red-500 mt-2">{formErrors.message}</p>}
-                        </div>
+  <Label className="mb-3 block text-[#223B57]">Enquiry Type *</Label>
+  <div className="grid md:grid-cols-2 gap-3">
+    {[
+      "General Enquiry",
+      "Product Information",
+      "Sample Request",
+      "Bulk Order / Project Supply",
+      "Dealer Enquiry",
+      "Architect / Designer Support",
+      "Price Quote Request",
+      "Order Status",
+      "Collaboration / Partnership"
+    ].map(item => (
+      <div key={item} className="flex items-center gap-3">
+        <Checkbox
+          checked={formData.enquiryType.includes(item)}
+          onCheckedChange={() => toggleCheckbox('enquiryType', item)}
+        />
+        <span className="text-sm">{item}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div className="col-span-12">
+  <Label className="mb-3 block text-[#223B57]">
+    Collection / Product Interest
+  </Label>
+  <div className="grid md:grid-cols-2 gap-3">
+    {[
+      "Luxury Collection",
+      "Modern Bathroom Series",
+      "Kitchen Floor Collection",
+      "Marble Pattern Series",
+      "Wood Look Collection",
+      "Designer Wall Series",
+      "Not Sure / Need Guidance"
+    ].map(item => (
+      <div key={item} className="flex items-center gap-3">
+        <Checkbox
+          checked={formData.productInterest.includes(item)}
+          onCheckedChange={() =>
+            toggleCheckbox("productInterest", item)
+          }
+        />
+        <span className="text-sm">{item}</span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<div className="col-span-12 md:col-span-6">
+  <Label className="mb-3 block text-[#223B57]">Project Type</Label>
+  <Select onValueChange={(v) => setFormData({ ...formData, projectType: v })}>
+    <SelectTrigger className={buttonLikeInput}>
+      <SelectValue placeholder="Select Project Type" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="Residential">Residential</SelectItem>
+      <SelectItem value="Commercial">Commercial</SelectItem>
+      <SelectItem value="Hospitality">Hospitality</SelectItem>
+      <SelectItem value="Retail">Retail</SelectItem>
+      <SelectItem value="Institutional">Institutional</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
+<div className="col-span-12 md:col-span-6">
+  <Label className="mb-3 block text-[#223B57]">Approximate Quantity</Label>
+  <Select onValueChange={(v) => setFormData({ ...formData, quantity: v })}>
+    <SelectTrigger className={buttonLikeInput}>
+      <SelectValue placeholder="Select Area Size" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="Small">Small Area</SelectItem>
+      <SelectItem value="Medium">Medium Area</SelectItem>
+      <SelectItem value="Large">Large Project</SelectItem>
+      <SelectItem value="Not Sure">Not Sure Yet</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
+<div className="col-span-12 md:col-span-6">
+  <Label className="mb-3 block text-[#223B57]">Purchase Timeline</Label>
+  <Select onValueChange={(v) => setFormData({ ...formData, timeline: v })}>
+    <SelectTrigger className={buttonLikeInput}>
+      <SelectValue placeholder="Select Timeline" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="Immediate">Immediate</SelectItem>
+      <SelectItem value="1-2 Weeks">Within 1–2 Weeks</SelectItem>
+      <SelectItem value="1 Month">Within 1 Month</SelectItem>
+      <SelectItem value="Exploring">Just Exploring</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
+<div className="col-span-12 md:col-span-6">
+  <Label className="mb-3 block text-[#223B57]">Urgency Level</Label>
+  <Select onValueChange={(v) => setFormData({ ...formData, urgency: v })}>
+    <SelectTrigger className={buttonLikeInput}>
+      <SelectValue placeholder="Select Urgency" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="Low">Low</SelectItem>
+      <SelectItem value="Medium">Medium</SelectItem>
+      <SelectItem value="High">High</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
+
+<div className="col-span-12">
+  <Label className="mb-3 block text-[#223B57]">
+    Additional Details
+  </Label>
+  <Label className="mb-2 block text-sm text-neutral-600">
+    Message / Requirements *
+  </Label>
+  <Textarea
+    rows={6}
+    value={formData.message}
+    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+    placeholder="Please describe your requirement briefly"
+    className={`rounded-xl border-2 border-neutral-300 bg-[#F5F3F0] px-4 py-3 ${
+      formErrors.message ? "border-red-500" : ""
+    }`}
+  />
+  {formErrors.message && (
+    <p className="text-xs text-red-500 mt-2">{formErrors.message}</p>
+  )}
+</div>
+
+
+<div className="col-span-12">
+  <Label className="mb-3 block text-[#223B57]">Upload Files (Optional)</Label>
+  <Input
+    type="file"
+    multiple
+    className={buttonLikeInput}
+    onChange={(e) =>
+      setFormData({ ...formData, files: Array.from(e.target.files || []) })
+    }
+  />
+  <p className="text-xs text-neutral-500 mt-2">
+    Upload drawings, images, BOQs (PDF, JPG, PNG)
+  </p>
+</div>
+
+
+
+
+
+
+                       
+                       
                       </div>
+                      {/* === CONTACT PREFERENCES === */}
+<div className="col-span-12">
+  <Label className="mb-4 block text-[#223B57]">
+    Contact Preferences
+  </Label>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    
+    {/* Preferred Contact Method */}
+    <div>
+      <Label className="mb-3 block text-sm">
+        Preferred Contact Method
+      </Label>
+      <Select
+        onValueChange={(v) =>
+          setFormData({ ...formData, contactMethod: v })
+        }
+      >
+        <SelectTrigger className={buttonLikeInput}>
+          <SelectValue placeholder="Select Method" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="Phone">Phone Call</SelectItem>
+          <SelectItem value="Email">Email</SelectItem>
+          <SelectItem value="WhatsApp">WhatsApp</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+
+    {/* Preferred Contact Time */}
+    <div>
+      <Label className="mb-3 block text-sm">
+        Preferred Contact Time
+      </Label>
+      <Select
+        onValueChange={(v) =>
+          setFormData({ ...formData, contactTime: v })
+        }
+      >
+        <SelectTrigger className={buttonLikeInput}>
+          <SelectValue placeholder="Select Time" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="Morning">Morning</SelectItem>
+          <SelectItem value="Afternoon">Afternoon</SelectItem>
+          <SelectItem value="Evening">Evening</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+
+  </div>
+</div>
+
+<div className="col-span-12">
+  <Label className="mb-3 block text-[#223B57]">
+    How Did You Hear About Us?
+  </Label>
+  <Select onValueChange={(v) => setFormData({ ...formData, heardFrom: v })}>
+    <SelectTrigger className={buttonLikeInput}>
+      <SelectValue placeholder="Select Source" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="Google">Google Search</SelectItem>
+      <SelectItem value="Social">Social Media</SelectItem>
+      <SelectItem value="Dealer">Dealer / Showroom</SelectItem>
+      <SelectItem value="Referral">Referral</SelectItem>
+      <SelectItem value="Customer">Existing Customer</SelectItem>
+      <SelectItem value="Exhibition">Exhibition / Trade Show</SelectItem>
+      <SelectItem value="Other">Other</SelectItem>
+    </SelectContent>
+  </Select>
+</div>
+
 
                       {/* Privacy Policy Checkbox */}
-                      <div className="flex items-start gap-4 p-5 rounded-xl bg-[#F5F3F0]/50 border border-neutral-200">
-                        <Checkbox 
-                          id="terms" 
-                          checked={agreedToTerms}
-                          onCheckedChange={(checked) => {
-                            setAgreedToTerms(checked as boolean);
-                            if (formErrors.terms) setFormErrors({ ...formErrors, terms: '' });
-                          }}
-                          className={`mt-1 ${formErrors.terms ? 'border-red-500' : ''}`}
-                        />
-                        <div className="flex-1">
-                          <Label 
-                            htmlFor="terms" 
-                            className="text-sm text-neutral-700 cursor-pointer leading-relaxed"
-                          >
-                            I agree to the{' '}
-                            <button
-                              type="button"
-                              onClick={() => onNavigate('Privacy Policy')}
-                              className="text-[#223B57] underline hover:text-[#1a2d43] transition-colors"
-                            >
-                              Privacy Policy
-                            </button>
-                            {' '}and{' '}
-                            <button
-                              type="button"
-                              onClick={() => onNavigate('Terms & Conditions')}
-                              className="text-[#223B57] underline hover:text-[#1a2d43] transition-colors"
-                            >
-                              Terms & Conditions
-                            </button>
-                          </Label>
-                          {formErrors.terms && <p className="text-xs text-red-500 mt-2">{formErrors.terms}</p>}
-                        </div>
-                      </div>
+                      {/* Consent Section */}
+<div className="col-span-12">
+  <h3 className="text-[#223B57] font-semibold mb-3 text-lg">Consent</h3>
+  
+  <div className="flex items-start gap-4 p-5 rounded-xl bg-[#F5F3F0]/50 border border-neutral-200">
+    <Checkbox 
+      id="consent" 
+      checked={agreedToTerms}
+      onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+      className="mt-1"
+    />
+    <div className="flex-1">
+      <Label 
+        htmlFor="consent" 
+        className="text-sm text-neutral-700 cursor-pointer leading-relaxed"
+      >
+        I agree to be contacted by the Origin Tiles team regarding my enquiry.
+      </Label>
+    </div>
+  </div>
+
+  
+</div>
 
                       <Button 
                         type="submit" 
@@ -313,7 +594,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                         disabled={!agreedToTerms}
                       >
                         <Send className="w-4 h-4 mr-2" />
-                        Send Message
+                          Submit Enquiry
                       </Button>
                     </form>
                   </CardContent>
@@ -341,6 +622,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                         <Building2 className="w-6 h-6 text-[#223B57]" strokeWidth={1.5} />
                       </div>
                       <h3 className="font-bold text-[#223B57] mb-3">Head Office</h3>
+                      <h3 className="font-bold text-[#223B57] mb-3">Origin Tiles – Corporate Office</h3>
                       <p className="text-sm text-neutral-600 leading-relaxed mb-2">{CONTACT_INFO.headOffice.address}</p>
                     
                      
@@ -424,9 +706,9 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
               Why Choose Us
             </Badge>
-            <h2 className="text-[#223B57] mb-4">Expert Support Every Step</h2>
+            <h2 className="mb-4 text-4xl font-bold text-[#223B57]">Support You Can Rely On</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Our dedicated team is here to assist you with product selection, technical support, and design consultations
+              When you reach out to Origin Tiles, our team focuses on understanding your needs and offering practical, reliable support.
             </p>
           </motion.div>
 
@@ -434,19 +716,60 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
             {[
               {
                 icon: CheckCircle2,
-                title: "Fast Response Time",
-                description: "Get answers within 24 hours from our expert team"
+                title: "Quick Response",
+                description: "Get clear answers from our experts within 24 hours."
               },
               {
                 icon: MessageSquare,
-                title: "Expert Consultation",
-                description: "Free design and technical consultation for your project"
+                title: "Professional Guidance",
+                description: "Receive free design and technical support for your project."
               },
               {
                 icon: Phone,
-                title: "Direct Contact",
-                description: "Speak directly with product specialists and designers"
-              }
+                title: "Direct Access",
+                description: "Connect directly with our product specialists and design team."
+              },
+               {
+    icon: SlidersHorizontal,
+    title: "Personalised Tile Consultation",
+    description: "Guidance based on your space, usage, and design preferences.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Expert Support",
+    description: "Help with product selection, finishes, and technical details.",
+  },
+  {
+    icon: Palette,
+    title: "Design-Focused Collections",
+    description: "Tiles designed to suit different spaces and project needs.",
+  },
+  {
+    icon: IndianRupee,
+    title: "Fair & Transparent Pricing",
+    description: "Clear pricing guidance without confusion.",
+  },
+  {
+    icon: Workflow,
+    title: "End-to-End Assistance",
+    description: "Support from selection to delivery and beyond.",
+  },
+  {
+    icon: Layers,
+    title: "Free Samples & Catalogues",
+    description: "See and compare tiles before making a decision.",
+  },
+  {
+    icon: LifeBuoy,
+    title: "Quick Assistance & After-Sales Support",
+    description: "Responsive help even after purchase.",
+  },
+  {
+    icon: Handshake,
+    title: "Dealer & Partnership Opportunities",
+    description: "Support for dealers, architects, and long-term partners.",
+  },
+
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -477,9 +800,10 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
       <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
         Visit Our Showroom
       </Badge>
-      <h2 className="text-[#223B57] mb-4">Find Us on the Map</h2>
+      <h2 className="mb-4 text-4xl font-bold text-[#223B57]">See Our Collections in Person</h2>
+
       <p className="text-neutral-600 max-w-2xl mx-auto">
-        Visit our showroom in {SITE_CONFIG.city} to see our complete collection and get expert consultation
+        Visit our {SITE_CONFIG.city} showroom to explore our full range of tiles and get expert guidance.
       </p>
     </div>
 
@@ -515,11 +839,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
           >
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
               <HelpCircle className="w-3 h-3 mr-1" />
-              Before You Contact
+              Before You Reach Out
             </Badge>
-            <h2 className="text-[#223B57] mb-4">Quick Answers</h2>
+            <h2 className="mb-4 text-4xl font-bold text-[#223B57]">Quick Help & Common Answers</h2>
+
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Find instant answers to common questions. Save time and get help faster.
+              Find helpful information instantly and get answers to common questions without waiting.
             </p>
           </motion.div>
 
@@ -533,12 +858,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-4">
                   {[
-                    { title: 'Shipping & Delivery', icon: '📦', count: '12 articles' },
-                    { title: 'Product Warranties', icon: '🛡️', count: '8 articles' },
-                    { title: 'Installation Guide', icon: '🔧', count: '15 articles' },
-                    { title: 'Payment Methods', icon: '💳', count: '6 articles' },
-                    { title: 'Tile Calculator Help', icon: '📐', count: '10 articles' },
-                    { title: 'Sample Requests', icon: '📋', count: '7 articles' }
+                    { title: '	Delivery & Shipping', icon: '📦', count: '12 helpful guides' },
+                    { title: '	Product Warranty', icon: '🛡️', count: ' 8 helpful guides' },
+                    { title: 'Installation Support', icon: '🔧', count: '15 helpful guides' },
+                    { title: '	Payment Options', icon: '💳', count: ' 6 helpful guides' },
+                    { title: 'Tile Calculator Help', icon: '📐', count: ' 10 helpful guides' },
+                    { title: 'Sample Requests', icon: '📋', count: '7 helpful guides' }
                   ].map((item, index) => (
                     <button
                       key={index}
@@ -603,10 +928,12 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                   Quick Actions
                 </Badge>
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                  Explore More Options
+                  Get in touch with Origin Tiles Today
                 </h2>
                 <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-                  Browse Our Complete Collection, Calculate tiles needed, or request samples for project.
+                  We are just a phone call away. Reach out to our customer support team or visit us in person.
+Need any assistance? Call our customer support team or drop us a message — we’ll respond within 24 hours.
+
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

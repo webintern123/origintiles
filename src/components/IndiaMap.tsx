@@ -24,7 +24,7 @@ export function IndiaMap() {
         transition={{ delay: 0.5 }}
       >
         <div className="bg-white/90 backdrop-blur-md rounded-xl px-5 py-3 shadow-lg border border-white/60">
-          <h3 className="text-lg font-bold text-[#223B57]">Hyderabad Location</h3>
+          <h3 className="text-lg font-bold text-[#223B57]">Hyderabad Showroom</h3>
           <p className="text-xs text-neutral-600 mt-0.5">Plot 3-538, Sri Krishna Heights, 100 feet road, Ayyappa society, Madhapur</p>
         </div>
       </motion.div>

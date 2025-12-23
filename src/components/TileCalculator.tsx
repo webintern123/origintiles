@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calculator, Info, Ruler, Zap, ArrowRight, CheckCircle2, Layers, Grid3x3, Lightbulb, TrendingUp, Package } from "lucide-react";
+import { Calculator, Info, Ruler, Zap,LayoutGrid,Filter,Star,Users,Factory, ArrowRight, CheckCircle2, Layers, Grid3x3, Lightbulb, TrendingUp, Package } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -34,10 +34,10 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
   ];
 
   const features = [
-    { icon: Calculator, title: "Instant Results", description: "Get accurate calculations instantly" },
-    { icon: Layers, title: "10% Wastage", description: "Includes allowance for cuts" },
-    { icon: Grid3x3, title: "All Tile Sizes", description: "Supports all standard sizes" },
-    { icon: CheckCircle2, title: "Professional", description: "Industry-standard formulas" }
+    { icon: Calculator, title: "Instant Results", description: "Accurate Calculations in Seconds" },
+    { icon: Layers, title: "	Wastage Included", description: " 10% Allowance for Cutting and Breakage" },
+    { icon: Grid3x3, title: "Supports All Tile Sizes", description: "Works with all standard Tile Formats" },
+    { icon: CheckCircle2, title: "Professional Accuracy", description: "Based on Industry-Standard Calculation Methods." }
   ];
 
   const calculateTiles = () => {
@@ -89,13 +89,13 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
   return (
     <div className="min-h-screen bg-[#F5F3F0]">
       <PageBanner
-        title="Calculate Your Tile Needs"
+        title="Calculate Your Tile Requirements"
         subtitle="Tile Calculator"
-        description="Professional estimation tool for accurate tile quantity calculation. Includes 10% wastage allowance for cuts and breakage. Get instant results for your project."
+        description="A simple and reliable tile calculator to estimate the number of tiles you need for your project. Results include a standard 10% wastage allowance for cutting and handling."
         
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1589530006797-d67347f18caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
-        badge="Free Professional Tool • Instant Results"
+        badge="Free Planning Tool | Quick Results"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Tools", onClick: () => onNavigate("Tools") },
@@ -140,6 +140,18 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
       {/* Calculator Section */}
       <section className="py-20 bg-white">
         <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+  <h2 className="text-3xl font-bold text-[#223B57] mb-4">
+    Plan Your Tile Needs with Confidence
+  </h2>
+  <p className="text-neutral-600 text-lg mb-4">
+    Use this calculator to estimate tile quantity for floors or walls based on room size, tile size, and layout type. It helps reduce guesswork and avoids shortages during installation.
+  </p>
+  <h2 className="text-3xl font-bold text-[#223B57] mb-4">
+    Enter Your Room Details
+  </h2>
+</div>
+
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Input Form */}
             <motion.div
@@ -157,7 +169,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-[#223B57] flex items-center gap-2">
                       <Ruler className="w-5 h-5" />
-                      Enter Your Room Dimensions
+                      Choose Measurement Unit
                     </CardTitle>
                     <div className="flex items-center gap-2 bg-neutral-100 p-1 rounded-lg">
                       <button
@@ -306,11 +318,12 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                         </Badge>
                       </div>
                       <div className="bg-gradient-to-br from-neutral-50 to-white p-6 rounded-xl mt-6 border border-neutral-100">
-                        <h4 className="font-semibold text-[#223B57] mb-3">Calculation Details:</h4>
+                        <h4 className="font-semibold text-[#223B57] mb-3">Instant Calculation Results</h4>
+                         <h5 className="font- text-[#223B57] mb-3">Once you calculate, you’ll get:</h5>
                         <ul className="text-sm text-neutral-600 space-y-2">
                           <li className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#223B57]"></div>
-                            Room Area: {length && width ? (parseFloat(length) * parseFloat(width)).toFixed(2) : '0'} sq {unit === "feet" ? "ft" : "m"}
+                            	Total area covered {length && width ? (parseFloat(length) * parseFloat(width)).toFixed(2) : '0'} sq {unit === "feet" ? "ft" : "m"}
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#223B57]"></div>
@@ -326,7 +339,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                           </li>
                           <li className="flex items-center gap-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#223B57]"></div>
-                            Wastage: {patternType === "standard" ? "10%" : patternType === "diagonal" ? "15%" : "20%"}
+                            Wastage included {patternType === "standard" ? "10%" : patternType === "diagonal" ? "15%" : "20%"}
                           </li>
                         </ul>
                       </div>
@@ -393,6 +406,38 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                   </Card>
                 </motion.div>
               )}
+              <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.3 }}
+>
+  <Card className="bg-gradient-to-br from-red-50 to-white border-red-100 rounded-2xl shadow-lg">
+    <CardContent className="p-6">
+      <div className="flex gap-3">
+        <Info className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+        <div>
+          <h4 className="text-red-600 font-semibold mb-3">Important Information</h4>
+          <ul className="text-sm text-red-600 space-y-2">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+              Calculations are estimates only
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+              Installation method may affect wastage
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
+              Our expert site professional should confirm final quantity
+            </li>
+          </ul>
+        </div>
+      </div>
+    </CardContent>
+  </Card>
+</motion.div>
+
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -405,23 +450,27 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                     <div className="flex gap-3">
                       <Info className="w-5 h-5 text-[#223B57] flex-shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="text-[#223B57] font-semibold mb-3">Tips for Accurate Calculation</h4>
+                        <h4 className="text-[#223B57] font-semibold mb-3">Tips to Get Accurate Results</h4>
                         <ul className="text-sm text-neutral-600 space-y-2">
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-[#223B57] flex-shrink-0 mt-0.5" />
-                            Measure your room carefully
+                            Measure the room accurately
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-[#223B57] flex-shrink-0 mt-0.5" />
-                            Round up measurements to the nearest {unit}
+                            	Recheck all dimensions 
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-[#223B57] flex-shrink-0 mt-0.5" />
-                            Consider ordering extra tiles for future repairs
+                            	Round up measurements
                           </li>
                           <li className="flex items-start gap-2">
                             <CheckCircle2 className="w-4 h-4 text-[#223B57] flex-shrink-0 mt-0.5" />
-                            Select correct pattern type for accurate wastage
+                            	Order extra tiles for backup
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <CheckCircle2 className="w-4 h-4 text-[#223B57] flex-shrink-0 mt-0.5" />
+                            	Account for layout and wastage.
                           </li>
                         </ul>
                       </div>
@@ -438,9 +487,9 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
               >
                 <Card className="rounded-2xl shadow-lg border-0">
                   <CardContent className="p-6">
-                    <h4 className="font-semibold text-[#223B57] mb-4">Need Expert Assistance?</h4>
+                    <h4 className="font-semibold text-[#223B57] mb-4">Need Expert Help?</h4>
                     <p className="text-sm text-neutral-600 mb-4">
-                      Our team of experts can help you with tile selection and installation planning.
+                      Our team can assist you with tile selection, layout planning, and quantity guidance.
                     </p>
                     <div className="space-y-3">
                       <Button 
@@ -479,10 +528,10 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
               Measurement Guide
             </Badge>
             <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              How to Measure Your Room
+              How to Measure Your Space Correctly
             </h2>
             <p className="text-neutral-600 text-lg">
-              Follow these simple steps for accurate measurements
+              Follow these simple steps for accurate results:
             </p>
           </motion.div>
 
@@ -544,24 +593,24 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 {
                   step: 1,
                   title: "Measure Wall to Wall",
-                  description: "Measure the longest wall for length. Include the full distance from wall to wall."
+                  description: " Measure the full length of the longest wall."
                 },
                 {
                   step: 2,
-                  title: "Measure Perpendicular Wall",
-                  description: "Measure the width at a right angle to your length measurement."
+                  title: "Measure the Width",
+                  description: "Measure at a right angle to the length."
                 },
                 {
                   step: 3,
-                  title: "Account for Obstacles",
-                  description: "For large fixed items (built-in cabinets), measure around them separately."
+                  title: "Irregular Rooms",
+                  description: "Break the room into rectangles, calculate each section, and add them together (Add simple diagram illustrations here)."
                 },
                 {
                   step: 4,
-                  title: "Record in {unit}",
-                  description: unit === "feet" 
-                    ? "Write measurements in feet with decimals (e.g., 12.5 ft)."
-                    : "Write measurements in meters with decimals (e.g., 3.8 m)."
+                  title: "Record Measurements Clearly",
+                  description: 
+                    " Write your measurements in feet or metres, including decimals (for example, 12.5 ft)."
+                     
                 }
               ].map((instruction, index) => (
                 <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-all duration-300 rounded-xl bg-gradient-to-br from-white to-neutral-50">
@@ -602,32 +651,36 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
               Understanding the Calculator
             </Badge>
             <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              How It Works
+              How Tile Calculator Work?
             </h2>
             <p className="text-neutral-600 text-lg max-w-2xl mx-auto">
-              Our professional tile calculator uses industry-standard formulas to ensure accuracy
+              Our tile calculator uses a standard industry method:<br></br>
+<strong>Room Area ÷ Tile Area + Wastage</strong><br></br>
+This ensures practical accuracy for real-site conditions.
+
             </p>
+            
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                step: "01",
+                
                 icon: Ruler,
-                title: "Measure Your Space",
-                description: "Enter the length and width of your room in feet. For irregular shapes, break them into rectangles and calculate separately."
+                title: "Enter Room Size",
+                description: "Add the length and width of your room. For irregular spaces, divide them into smaller sections and calculate each one separately."
               },
               {
-                step: "02",
+              
                 icon: Grid3x3,
-                title: "Select Tile Size",
-                description: "Choose your desired tile size from our comprehensive list. Popular sizes are marked for quick selection."
+                title: "Choose Tile Size",
+                description: "Select the tile size you plan to use. Common sizes are highlighted for quick selection."
               },
               {
-                step: "03",
+              
                 icon: TrendingUp,
-                title: "Get Results + 10%",
-                description: "Receive instant results including 10% wastage allowance for cuts, breakage, and future repairs."
+                title: "View Results with Wastage",
+                description: "Get instant results that include a standard 10% allowance for cutting, breakage, and future use."
               }
             ].map((step, index) => (
               <motion.div
@@ -642,9 +695,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <CardContent className="p-8 text-center">
-                    <div className="text-6xl font-bold text-[#223B57]/10 mb-4">
-                      {step.step}
-                    </div>
+                    
                     <div className="relative inline-block mb-6">
                       <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
                       <div className="relative w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center border border-neutral-100 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
@@ -666,79 +717,310 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
       </section>
 
       {/* Why 10% Wastage Section */}
-      <section className="py-20 bg-white">
-        <div className="container max-w-4xl">
+<section className="py-20 bg-white">
+  <div className="container max-w-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#223B57]/10 mb-6">
+        <Lightbulb className="w-8 h-8 text-[#223B57]" />
+      </div>
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        Understanding Wastage & Coverage
+      </h2>
+      <p className="text-neutral-600 text-lg">
+        Wastage is included to ensure you have enough tiles during installation and for future needs. It helps avoid delays, shade mismatch, and incomplete layouts.
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      {/* Main reasons grid takes 2/3 of width */}
+      <div className="md:col-span-2 grid md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: Package,
+            title: "Tile Cutting",
+            description: "Edge and corner tiles need to be cut, which creates unused pieces."
+          },
+          {
+            icon: CheckCircle2,
+            title: "Size Variations",
+            description: "Minor size variations or small defects may require extra tiles."
+          },
+          {
+            icon: Layers,
+            title: "Pattern & Layout Matching",
+            description: "Certain layouts need specific tile alignment, increasing material use."
+          },
+          {
+            icon: Zap,
+            title: "Future Repairs",
+            description: "Extra tiles from the same batch help maintain colour and finish consistency later."
+          }
+        ].map((reason, index) => (
           <motion.div
+            key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            transition={{ delay: index * 0.1 }}
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#223B57]/10 mb-6">
-              <Lightbulb className="w-8 h-8 text-[#223B57]" />
-            </div>
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Why 10% Wastage?
+            <Card className="border-0 shadow-lg bg-gradient-to-br from-neutral-50 to-white rounded-2xl h-full group hover:shadow-xl transition-all duration-300">
+              <CardContent className="p-6">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center group-hover:bg-[#223B57] group-hover:scale-110 transition-all duration-300">
+                      <reason.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#223B57] mb-2">
+                      {reason.title}
+                    </h3>
+                    <p className="text-sm text-neutral-600 leading-relaxed">
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Small side card for Recommended Wastage */}
+      <div className="md:col-span-1">
+        <Card className="border border-red-400 bg-red-50 p-4 rounded-xl shadow-sm">
+          <h4 className="text-red-600 font-semibold text-sm mb-2">Recommended Wastage</h4>
+          <ul className="text-red-600 text-xs list-disc list-inside space-y-1">
+            <li>Straight Pattern: 10%</li>
+            <li>Diagonal Pattern: 15%</li>
+            <li>Complex Layouts: 20%</li>
+          </ul>
+          <p className="text-red-600 text-[10px] mt-1">
+            Including wastage ensures smoother installation and better long-term results.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Multiple Rooms Planning Section */}
+<section className="py-20 bg-[#F5F3F0]">
+  <div className="container max-w-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+        Planning Tip
+      </Badge>
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        Plan Tiles for Multiple Rooms
+      </h2>
+      <p className="text-neutral-600 text-lg">
+        For homes with muitiple rooms.
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      {[
+        {
+          icon: Grid3x3,
+          title: "Calculate Each Room Separately",
+                  },
+        {
+          icon: TrendingUp,
+          title: "Add Totals Together",
+          
+        },
+        {
+          icon: CheckCircle2,
+          title: "Better Control & Accuracy",
+          
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="border-0 shadow-lg rounded-2xl h-full hover:shadow-xl transition-all duration-300">
+            <CardContent className="p-6 text-center">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-[#223B57]/10 flex items-center justify-center">
+                <item.icon className="w-7 h-7 text-[#223B57]" />
+              </div>
+              <h3 className="font-bold text-[#223B57] mb-2">
+                {item.title}
+              </h3>
+              
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<section className="py-20 bg-white">
+  <div className="container max-w-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+    
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        Choose The Right Tiles After Calculation
+      </h2>
+      <p className="text-neutral-600 text-lg">
+        Once your quantity is calculated, explore tiles that suit your space.
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      {[
+        {
+          icon:  Filter,
+          title: "	Filter tiles by area & application",
+                  },
+        {
+          icon: LayoutGrid,
+          title: "View tiles recommended for your room",
+          
+        },
+        {
+          icon: Layers,
+          title: "Match calculation with the right collection.",
+          
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="border-0 shadow-lg rounded-2xl h-full hover:shadow-xl transition-all duration-300">
+            <CardContent className="p-6 text-center">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-[#223B57]/10 flex items-center justify-center">
+                <item.icon className="w-7 h-7 text-[#223B57]" />
+              </div>
+              <h3 className="font-bold text-[#223B57] mb-2">
+                {item.title}
+              </h3>
+              
+            </CardContent>
+          </Card>
+        </motion.div>
+        
+      ))}
+      {/* CTA Button */}
+
+  
+
+    </div>
+    <br></br>
+    {/* CTA Button - Centered */}
+<div className="flex justify-center">
+  <Button
+    onClick={() => onNavigate("Products")}
+    className="bg-[#223B57] hover:bg-[#1a2d43] text-white px-8 py-3 rounded-xl shadow-lg"
+  >
+    View Recommended Tiles
+    <ArrowRight className="w-4 h-4 ml-2" />
+  </Button>
+</div>
+  </div>
+</section>
+
+{/* === WHY CHOOSE US === */}
+      <section className="py-20 bg-[#F5F3F0]">
+        <div className="container">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+              <Star className="w-3 h-3 mr-1" />
+              Built for Accuracy and Ease
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+              Why Use Origin Tiles Calculator
             </h2>
-            <p className="text-neutral-600 text-lg">
-              Professional insight into our calculation methodology
-            </p>
+            
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
+                icon: Factory,
+                title: "Uses Industry-Standard Calculation Methods",
+               
+              },
+              {
+                icon: Users,
+                title: "Trusted By Architects and Builders",
+               
+              },
+              {
                 icon: Package,
-                title: "Cutting Requirements",
-                description: "Edge tiles need to be cut to fit perfectly, resulting in unusable pieces that must be accounted for."
+                title: "	Supports All Tile Sizes and Formats",
+                
               },
-              {
-                icon: CheckCircle2,
-                title: "Manufacturing Variance",
-                description: "Small variations in tile size and occasional defects mean you need extra tiles to ensure quality."
-              },
-              {
-                icon: Layers,
-                title: "Pattern Matching",
-                description: "Certain patterns and layouts require specific tile orientations, increasing material needs."
-              },
-              {
-                icon: Zap,
-                title: "Future Repairs",
-                description: "Having extra tiles from the same batch ensures perfect color matching for future repairs."
-              }
-            ].map((reason, index) => (
+             
+              
+            ].map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="group"
               >
-                <Card className="border-0 shadow-lg bg-gradient-to-br from-neutral-50 to-white rounded-2xl h-full group hover:shadow-xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center group-hover:bg-[#223B57] group-hover:scale-110 transition-all duration-300">
-                          <reason.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-[#223B57] mb-2">
-                          {reason.title}
-                        </h3>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
-                          {reason.description}
-                        </p>
+                <Card className="relative h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
+                  {/* Glassmorphism Border */}
+                  <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+                  
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="relative p-8 text-center">
+                    <div className="relative inline-block mb-6">
+                      {/* Icon Background with Glass Effect */}
+                      <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center border border-[#223B57]/20 group-hover:scale-110 group-hover:rotate-3 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] group-hover:border-[#223B57] transition-all duration-500">
+                        <feature.icon className="w-10 h-10 text-[#223B57] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                       </div>
                     </div>
+                    <h3 className="font-bold text-xl mb-3 text-[#223B57]">{feature.title}</h3>
+                  
                   </CardContent>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#223B57]/20 to-transparent"></div>
                 </Card>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+
+
 
       {/* Popular Room Sizes Quick Reference */}
       <section className="py-20 bg-[#F5F3F0]">
@@ -756,7 +1038,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
               Popular Room Sizes
             </h2>
             <p className="text-neutral-600 text-lg">
-              Common room dimensions for quick calculations
+              Quick References with Common Room Sizes
             </p>
           </motion.div>
 
@@ -808,70 +1090,123 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Everything you need to know about tile calculations
-            </p>
-          </motion.div>
-
-          <div className="space-y-4">
-            {[
-              {
-                q: "Should I round up or down when measuring?",
-                a: "Always round up to the nearest foot. It's better to have slightly more tiles than to run short during installation."
-              },
-              {
-                q: "Is 10% wastage always enough?",
-                a: "For standard installations, 10% is sufficient. However, for diagonal patterns, herringbone, or complex layouts, consider 15-20% wastage."
-              },
-              {
-                q: "Can I calculate for multiple rooms at once?",
-                a: "Calculate each room separately, then add the total tiles needed. This gives you more accurate results for each space."
-              },
-              {
-                q: "What if my room has irregular shapes?",
-                a: "Break irregular rooms into rectangles, calculate each section separately, and add the results together."
-              },
-              {
-                q: "Do I need to account for obstacles like cabinets?",
-                a: "For large fixed obstacles (cabinets, islands), subtract their area. For small fixtures, the 10% wastage will cover it."
-              }
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="border-0 shadow-md hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-white to-neutral-50">
-                  <CardContent className="p-6">
-                    <h4 className="font-bold text-[#223B57] mb-2 flex items-start gap-2">
-                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                      {faq.q}
-                    </h4>
-                    <p className="text-neutral-600 text-sm leading-relaxed pl-7">
-                      {faq.a}
-                    </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+     {/* === FAQ QUICK SECTION - Top Questions === */}
+           <section className="section-padding bg-white">
+             <div className="container">
+               <motion.div
+                 className="text-center mb-12"
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+               >
+                 <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                   Frequently Asked Questions
+                 </h2>
+                 <p className="text-lg text-neutral-600">
+                   Common questions about tile calculations
+                 </p>
+               </motion.div>
+     
+               <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                 {[
+                   {
+                     icon: CheckCircle2,
+                     question: "Should I round measurements up or down?",
+                     answer: "Always round up to the nearest foot. Having a few extra tiles is better than falling short during installation."
+                   },
+                   {
+                     icon:  CheckCircle2,
+                     question: "Is 10% wastage enough for all layouts?",
+                     answer: " For straight layouts, 10% is usually enough. For diagonal, or complex patterns, it’s safer to allow 15–20% wastage."
+                   },
+                   {
+                     icon: CheckCircle2,
+                     question: "Can I calculate tiles for multiple rooms?",
+                     answer: "Yes, Calculate each room separately and then add the totals together for better accuracy."
+                   },
+                   {
+                     icon: CheckCircle2,
+                     question: "How do I calculate for irregular-shaped rooms?",
+                     answer: "Divide the space into smaller rectangular sections, calculate each one, and add them together."
+                   },
+                   {
+                     icon: CheckCircle2,
+                     question: "Do I need to consider cabinets or fixed obstacles?",
+                     answer: "For large fixed items like cabinets or islands, subtract their area. Small fixtures are usually covered by the wastage allowance."
+                   },
+                    {
+                     icon: CheckCircle2,
+                     question: "Should walls and floors be calculated separately?",
+                     answer: " Yes, Wall and floor areas should always be calculated separately."
+                   },
+                   {
+                     icon: CheckCircle2,
+                     question: "Does tile thickness affect the quantity needed?",
+                     answer: "No, Tile thickness affects installation, not the number of tiles required."
+                   },
+                   {
+                     icon: CheckCircle2,
+                     question: "Can I save or share my calculation?",
+                     answer: "Yes, You can save your result by taking a screenshot or sharing it with your dealer or installer."
+                   },
+                  
+                 ].map((faq, index) => (
+                   <motion.div
+                     key={index}
+                     className="group"
+                     initial={{ opacity: 0, y: 20 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true }}
+                     transition={{ delay: index * 0.1 }}
+                   >
+                     {/* Glassmorphism FAQ Card */}
+                     <div className="relative h-full">
+                       {/* Glow Effect */}
+                       <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                       
+                       <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                         {/* Glassmorphism Border */}
+                         <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                         
+                         <CardContent className="relative p-6">
+                           <div className="flex items-start gap-4">
+                             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                               <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                             </div>
+                             <div>
+                               <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                               <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                             </div>
+                           </div>
+                         </CardContent>
+                         
+                         {/* Shine Effect */}
+                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                       </Card>
+                     </div>
+                   </motion.div>
+                 ))}
+               </div>
+     
+               <motion.div
+                 className="text-center"
+                 initial={{ opacity: 0 }}
+                 whileInView={{ opacity: 1 }}
+                 viewport={{ once: true }}
+               >
+                 <Button
+                   onClick={() => onNavigate("FAQ")}
+                   variant="outline"
+                   size="lg"
+                   className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+                 >
+                   View All FAQs
+                   <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+                 </Button>
+               </motion.div>
+             </div>
+           </section>
+     
       {/* CTA Section */}
       <section className="py-20 bg-[#F5F3F0]">
         <div className="container">
@@ -895,7 +1230,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                   Explore More Design Tools
                 </h2>
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Visualize tiles in your room, build custom patterns, and get expert recommendations for your project.
+                  Plan your space better with our easy-to-use tools. Visualise tiles in your room, try different layouts, and get expert suggestions for your project.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 

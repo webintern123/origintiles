@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Package, Star, Award,  Globe, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2, Factory, Home,Coffee,Briefcase,Trees,Users,Shield} from "lucide-react";
+import { ArrowRight, Sparkles, Package, Star,HardHat, DraftingCompass,HelpCircle, Award,Layers,Box,TrendingUp, Shield,Globe, ChevronLeft, ChevronRight, Phone, Send, CheckCircle2, Factory, Home,Coffee,Briefcase,Trees,Users} from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
@@ -835,6 +835,425 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         </div>
       </section>
 
+     <section className="py-24 bg-white relative overflow-hidden">
+  {/* Soft Background Accent */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 via-transparent to-transparent pointer-events-none"></div>
+
+  <div className="container relative z-10">
+    {/* Heading */}
+    <motion.div
+      className="text-center mb-20"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-5 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20 px-5 py-2 mb-4">
+        Collection Design Philosophy
+      </Badge>
+
+      <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-4">
+        Designed with Purpose, Not Just Looks
+      </h2>
+
+      <p className="text-lg text-neutral-600 max-w-2xl mx-auto mb-4">
+        Every Origin Tiles collection is developed with a clear understanding of space,
+        lifestyle, and daily usage. We don’t design tiles only to look good in a catalogue —
+        we design them to perform well in real spaces, over time.
+      </p>
+    </motion.div>
+
+    {/* Philosophy Focus Areas */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
+      {[
+        {
+          title: "Space-Specific Design",
+          desc: "Collections created for bathrooms, kitchens, living spaces, and more.",
+          icon: Box,
+        },
+        {
+          title: "Lifestyle-Focused",
+          desc: "Designs that suit daily movement and real-world use.",
+          icon: TrendingUp,
+        },
+        {
+          title: "Built for Performance",
+          desc: "Finishes and surfaces chosen for long-term durability.",
+          icon: Sparkles,
+        },
+        {
+          title: "Consistency Assured",
+          desc: "Planned shade control and reliable product availability.",
+          icon: CheckCircle2,
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.12 }}
+          className="group"
+        >
+          <Card className="relative h-full border border-neutral-200 rounded-3xl bg-white/90 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+            
+            {/* Hover Glow */}
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#223B57]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8 text-center">
+              {/* Icon */}
+              <div className="mx-auto mb-6 w-14 h-14 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center border border-[#223B57]/20 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-500">
+                <item.icon
+                  className="w-7 h-7 text-[#223B57] group-hover:text-white transition-colors duration-500"
+                  strokeWidth={1.5}
+                />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-[#223B57] mb-2">
+                {item.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Closing Line */}
+    <motion.p
+      className="text-center text-neutral-600 mt-14 max-w-3xl mx-auto mb-4"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      This helps customers choose the right collection with confidence and clarity.
+    </motion.p>
+  </div>
+</section>
+
+ {/* === FINISH & SURFACE GUIDE - PREMIUM CARDS WITH BULLETS === */}
+<section className="py-20 bg-[#F5F3F0]">
+  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+    {/* Header */}
+    <motion.div
+      className="text-center mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+        Finish & Surface Guide
+      </Badge>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-4">
+        Understand Which Finish Works Best for Your Space
+      </h2>
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        Choosing the right tile finish is as important as choosing the design.
+        Different finishes perform differently based on usage, safety, and maintenance needs.
+      </p>
+    </motion.div>
+
+    {/* Cards Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          icon: Sparkles,
+          title: "Glossy Finish",
+          subtitle: "Bright and Smooth",
+          bullets: [
+            " wall applications",
+            "Low-traffic areas",
+            "Decorative and feature spaces",
+            
+          ],
+        },
+        {
+          icon: Layers,
+          title: "Matte Finish",
+          subtitle: "Practical and Easy to Maintain",
+          bullets: [
+            "Floor areas",
+            "Kitchens and living spaces",
+            "Medium to high-use areas",
+            
+          ],
+        },
+        {
+          icon: Shield,
+          title: "Anti-Slip / Textured Finish",
+          subtitle: "Designed for Safety",
+          bullets: [
+            "Bathrooms and wet areas",
+            "Balconies and outdoor spaces",
+            "Areas where safety is important",
+            
+          ],
+        },
+      ].map((value, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
+            {/* Glass Border */}
+            <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8 text-center">
+              {/* Icon */}
+              <div className="relative inline-block mb-6">
+                <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center border border-[#223B57]/20 group-hover:scale-110 group-hover:rotate-3 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] group-hover:border-[#223B57] transition-all duration-500">
+                  <value.icon
+                    className="w-10 h-10 text-[#223B57] group-hover:text-white transition-colors duration-500"
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </div>
+
+              {/* Title + Bold Subtitle */}
+              <h3 className="text-xl text-[#223B57] mb-1">
+                <span className="font-bold">{value.title}</span>
+              </h3>
+              <p className="text-[#223B57] font-semibold mb-4">
+                {value.subtitle}
+              </p>
+
+              {/* Bullets */}
+              <div className="text-left">
+                <h4 className="font-semibold text-[#223B57] mb-2">
+                  Best suited For
+                </h4>
+                <ul className="list-disc list-inside text-neutral-600 space-y-1">
+                  {value.bullets.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+
+            {/* Bottom Accent */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#223B57]/20 to-transparent"></div>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    {/* Footer Note */}
+    <p className="text-center text-neutral-600 mt-14 max-w-3xl mx-auto mb-4">
+      Finish availability may vary by collection. Our team can help you choose the right finish
+      based on your space and usage.
+    </p>
+  </div>
+</section>
+
+{/* === TECHNICAL EXCELLENCE SECTION === */}
+<section className="relative py-24 bg-white ">
+  {/* Subtle Background Pattern */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#F5F3F0] to-white"></div>
+
+  <div className="container relative z-10">
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-20"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        Ready to Upgrade Your Space
+      </Badge>
+
+      <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+        Not Sure Which Collection to Choose?
+      </h2>
+
+      <p className="text-lg text-neutral-600 mb-4">
+       Our experts are here to guide you through our tile collections and help you choose what works best for your project.
+      </p>
+    </motion.div>
+
+    {/* Technical Points Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          icon: Home,
+          title: "For Homeowners ",
+          description:
+            "Style & Usage Guidance",
+        },
+        {
+          icon: DraftingCompass,
+          title: "For Architects & Designers",
+          description:
+            "Technical Details & Samples",
+        },
+        {
+          icon: HardHat,
+          title: "For Builders & Contractors ",
+          description:
+            "Bulk Supply & Consistency Support",
+        },
+        
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            {/* Glass Border */}
+            <div className="absolute inset-0 border border-white/30 rounded-2xl pointer-events-none"></div>
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8">
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-500">
+                  <item.icon
+                    className="w-8 h-8 text-[#223B57] group-hover:text-white transition-colors"
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-[#223B57] mb-3 text-center">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-center leading-relaxed">
+                {item.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    {/* Tagline */}
+    <motion.div
+      className="text-center mt-20"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
+      <p className="text-1xl font-semibold text-[#223B57] italic">
+        “Contact Our Experts | Try Tile Calculator”
+      </p>
+    </motion.div>
+  </div>
+</section> 
+{/* === FAQ QUICK SECTION - Top Questions === */}
+      <section className="section-padding bg-[#F5F3F0]">
+        <div className="container">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+              Collection FAQs
+            </h2>
+            <p className="text-lg text-neutral-600">
+              Common Questions About Our Tile Collections
+            </p>
+          </motion.div>
+
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              {
+                icon: HelpCircle,
+                question: "Which collection is best for bathrooms?",
+                answer: "The Modern Bathroom Series is best suited for bathrooms, as it offers finishes designed for wet areas and daily use."
+              },
+              {
+                icon:  HelpCircle,
+                question: "Which tiles are suitable for high-traffic areas?",
+                answer: "For high-traffic spaces like kitchens and commercial areas, the Kitchen Floor Collection and selected tiles from the Marble Pattern Series are recommended."
+              },
+              {
+                icon: Shield,
+                question: "Can I mix tiles from different collections?",
+                answer: " Yes, tiles from different collections can be mixed, as long as the size, finish, and application are suitable for the space."
+              },
+              {
+                icon: Phone,
+                question: "Are all collections available in the same finish?",
+                answer: "Not all collections offer the same finishes. Finish availability depends on the collection and tile design."
+              },
+             
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                className="group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {/* Glassmorphism FAQ Card */}
+                <div className="relative h-full">
+                  {/* Glow Effect */}
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                  
+                  <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                    {/* Glassmorphism Border */}
+                    <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                    
+                    <CardContent className="relative p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                          <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                          <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                    
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                  </Card>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Button
+              onClick={() => onNavigate("FAQ")}
+              variant="outline"
+              size="lg"
+              className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+            >
+              View All FAQs
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+            </Button>
+          </motion.div>
+        </div>
+      </section>
       {/* === CTA SECTION === */}
       <section className="py-20 bg-[#F5F3F0]">
         <div className="container">

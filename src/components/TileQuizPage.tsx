@@ -159,10 +159,10 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
   };
 
   const features = [
-    { icon: Target, title: "Smart Matching", description: "AI-powered recommendations" },
-    { icon: Zap, title: "2 Minutes", description: "Quick & easy quiz" },
-    { icon: CheckCircle2, title: "Expert Curated", description: "Professional selections" },
-    { icon: Sparkles, title: "Personalized", description: "Tailored to your needs" }
+    { icon: Target, title: "Smart Recommendations", description: " Suggestions matched to your needs" },
+    { icon: Zap, title: "Quick to Complete", description: "Takes just 2 minutes " },
+    { icon: CheckCircle2, title: "Expert-Led Logic", description: "Selections based on professional criteria" },
+    { icon: Sparkles, title: "Personalised Results", description: "Tiles chosen for your preferences" }
   ];
 
   if (showResults) {
@@ -386,12 +386,12 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
     <div className="min-h-screen bg-[#F5F3F0]">
       {/* Page Banner */}
       <PageBanner
-        title="Find Your Perfect Tiles"
+        title="Find Tiles That Suit Your Space"
         subtitle="Tile Selection Quiz"
-        description="Answer 5 simple questions and get personalized tile recommendations tailored to your space, style, and needs. Our expert algorithm matches you with the perfect tiles."
+        description="Answer a few quick questions to get tile suggestions based on your space, style, and usage. This quiz helps you narrow down the right options without spending hours browsing through options."
        
         variant="gradient"
-        badge="5 Questions • 2 Minutes • Personalized Results"
+        badge="5 Simple Questions | Takes 2 Minutes | Customized Results"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Tools", onClick: () => onNavigate("Tools") },
@@ -528,9 +528,85 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
           </div>
         </div>
       </section>
+       {/* WHY TILE QUIZ IS REQUIRED - CARDS */}
+<section className="py-20 bg-[#F5F3F0]">
+  <div className="container max-w-6xl">
+    {/* Section Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+        Why Tile Quiz Is Required
+      </Badge>
+
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        A Smarter Way to Choose Tiles
+      </h2>
+
+      <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+        The Origin Tiles Quiz is a simple tool that helps you find suitable tiles based on how and where you plan to use them. Choosing tiles can be confusing. This quiz simplifies the process by guiding you toward tiles that fit your needs.
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        {
+          icon: Target,
+          title: "Personalised tile recommendations",
+         
+        },
+        {
+          icon: Zap,
+          title: "Match scores for each suggestion",
+          
+        },
+        {
+          icon: CheckCircle2,
+          title: "Key features and usage suitability",
+         
+        },
+        {
+          icon: Sparkles,
+          title: "Direct links to explore the tiles.",
+          
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/70 backdrop-blur-md rounded-3xl h-full group">
+            <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
+
+            <CardContent className="p-8 text-center">
+              <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#223B57]/10 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <item.icon className="w-7 h-7 text-[#223B57]" />
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#223B57] mb-3">
+                {item.title}
+              </h3>
+
+             
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* How It Works Section */}
-      <section className="py-20 bg-[#F5F3F0]">
+      <section className="py-20 bg-white">
         <div className="container max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -539,35 +615,42 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
             className="text-center mb-12"
           >
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
-              Simple Process
+              Quick & Personalised Tile Quiz 
             </Badge>
             <h2 className="text-4xl font-bold text-[#223B57] mb-4">
               How It Works
             </h2>
             <p className="text-neutral-600 text-lg">
-              Get personalized tile recommendations in three easy steps
+              Find the Right Tiles in Just 4 Simple Steps
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
             {[
               {
                 step: "01",
                 icon: HelpCircle,
-                title: "Answer Questions",
-                description: "Share your preferences about space type, style, finish, and usage to help us understand your needs."
+                title: "Answer Questions About Your Space",
+                description: "Tell us where the tiles will be used — bathroom, kitchen, living area, or other spaces."
               },
               {
                 step: "02",
                 icon: Target,
-                title: "AI Analyzes",
-                description: "Our smart algorithm processes your answers to match you with the most suitable tiles from our collection."
+                title: "Share Style, Finish & Usage Preferences",
+                description: "Choose your preferred look, finish, and how much daily use the space will have."
               },
               {
                 step: "03",
                 icon: CheckCircle2,
-                title: "Get Recommendations",
-                description: "Receive 3 personalized tile suggestions with match scores, features, and direct links to product details."
+                title: "	Smart Matching & AI Analysis",
+                description: "Your answers are matched with tiles based on practical selection rules used by professionals."
+              },
+               {
+                step: "04",
+                icon: CheckCircle2,
+                title: "Get Personalised Recommendations",
+                description: "Receive tile suggestions that best suit your space and preferences."
               }
             ].map((step, index) => (
               <motion.div
@@ -606,7 +689,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F3F0]">
         <div className="container max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -621,7 +704,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
               Why Take the Quiz?
             </h2>
             <p className="text-neutral-600 text-lg">
-              Smart benefits of our personalized tile matching system
+              A quicker and smarter way to choose tiles
             </p>
           </motion.div>
 
@@ -629,23 +712,23 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
             {[
               {
                 icon: Target,
-                title: "Tailored Recommendations",
-                description: "Get tiles perfectly matched to your specific space, style preferences, and functional requirements."
+                title: "Personalised Suggestions",
+                description: "Get tile options matched to your space, style, and everyday use."
               },
               {
                 icon: Zap,
-                title: "Save Time & Effort",
-                description: "Skip browsing hundreds of options. Our quiz narrows down the best choices for you in just 2 minutes."
+                title: "Saves Time & Effort",
+                description: "Avoid browsing endless designs. Find the right options in just a few minutes."
               },
               {
                 icon: CheckCircle2,
-                title: "Expert-Level Selection",
-                description: "Benefit from professional tile selection criteria built into our algorithm by industry experts."
+                title: "Practical Selection Logic",
+                description: " Recommendations are based on real usage, performance, and design suitability."
               },
               {
                 icon: Lightbulb,
-                title: "Discover New Options",
-                description: "Find tiles you might not have considered that are perfect matches for your unique requirements."
+                title: "Discover Better Fits",
+                description: "See tile options you may not have considered but work perfectly for your needs."
               }
             ].map((benefit, index) => (
               <motion.div
@@ -681,83 +764,331 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
           </div>
         </div>
       </section>
+{/* WHY TILE QUIZ IS REQUIRED - CARDS */}
+<section className="py-20 bg-white">
+  <div className="container max-w-6xl">
+    
+    {/* Section Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-10"
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+        Match Score & Feature Highlights
+      </Badge>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="container max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#223B57]/10 mb-6">
-              <Lightbulb className="w-8 h-8 text-[#223B57]" />
-            </div>
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Common questions about our tile quiz
-            </p>
-          </motion.div>
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        How Your Tile Matches Are Shown
+      </h2>
+    </motion.div>
 
-          <div className="grid gap-6">
-            {[
-              {
-                question: "How accurate are the quiz recommendations?",
-                answer: "Our algorithm is developed with input from tile industry experts and considers multiple factors including space type, traffic, style, and finish preferences to provide highly accurate matches."
-              },
-              {
-                question: "Can I retake the quiz with different answers?",
-                answer: "Yes! You can retake the quiz as many times as you like. Each time you'll get fresh recommendations based on your new answers."
-              },
-              {
-                question: "Do I need to create an account to take the quiz?",
-                answer: "No account required! The quiz is completely free and accessible to everyone. Your results are shown immediately after completion."
-              },
-              {
-                question: "What if I'm not satisfied with the recommendations?",
-                answer: "You can retake the quiz with different preferences, browse our full catalog, or contact our experts for personalized guidance and additional suggestions."
-              },
-              {
-                question: "Can I save or share my quiz results?",
-                answer: "You can bookmark the results page, take screenshots, or contact our team to save your recommendations for future reference."
-              }
-            ].map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden bg-white/60 backdrop-blur-md">
-                  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-                  <CardContent className="p-6">
-                    <div className="flex gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-8 h-8 rounded-lg bg-[#223B57]/10 flex items-center justify-center">
-                          <CheckCircle2 className="w-5 h-5 text-[#223B57]" />
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-[#223B57] mb-2">
-                          {faq.question}
-                        </h4>
-                        <p className="text-sm text-neutral-600 leading-relaxed">
-                          {faq.answer}
-                        </p>
-                      </div>
+    {/* LEFT-ALIGNED SUBHEADING */}
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      className="mb-6"
+    >
+      <p className="text-[#223B57] font-semibold text-lg">
+        Each recommended tile includes:
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      {[
+        {
+          icon: Target,
+          title: "Match Percentage",
+        },
+        {
+          icon: Zap,
+          title: "Best-use application (Wall / Floor)",
+        },
+        {
+          icon: CheckCircle2,
+          title: "Finish Type",
+        },
+        {
+          icon: Sparkles,
+          title: "Why it suits your space",
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/70 backdrop-blur-md rounded-3xl h-full group">
+            <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
+
+            <CardContent className="p-8 text-center">
+              <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#223B57]/10 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <item.icon className="w-7 h-7 text-[#223B57]" />
+              </div>
+
+              <h3 className="text-base font-semibold text-[#223B57]">
+                {item.title}
+              </h3>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    <motion.p
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  className="mt-10 text-neutral-600 text-base text-center italic"
+>
+  “This makes comparison easy and transparent.”
+</motion.p>
+
+  </div>
+</section>
+
+{/* RETAKE QUIZ OR EXPLORE MORE */}
+<section className="py-16 bg-[#F5F3F0]">
+  <div className="container max-w-4xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center"
+    >
+      <h3 className="text-2xl font-bold text-[#223B57] mb-3">
+        Retake Quiz or Explore More Options
+      </h3>
+
+      <p className="text-neutral-600 mb-8">
+        You can retake the quiz anytime with different answers or browse the full
+        tile collection if you want to explore further.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button
+           onClick={() => onNavigate("Tile Quiz")}
+          variant="outline"
+          className="border-[#223B57] text-[#223B57] hover:bg-[#223B57]/5 rounded-xl h-12 px-8"
+        >
+          Retake Quiz
+          <ArrowRight className="w-4 h-4 ml-2" />
+        </Button>
+
+        {/* Divider */}
+        <span className="hidden sm:block text-neutral-400 font-medium">|</span>
+
+        <Button
+          onClick={() => onNavigate("Products")}
+          className="bg-[#223B57] hover:bg-[#1a2d43] text-white rounded-xl h-12 px-8 shadow-lg"
+        >
+          Browse All Tiles
+          <ArrowRight className="w-4 h-4 ml-2" />
+        </Button>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+{/* FROM QUIZ RESULTS TO TILE SELECTION */}
+<section className="py-20 bg-white">
+  <div className="container max-w-6xl">
+
+    {/* Section Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+        From Quiz Results to Tile Selection
+      </Badge>
+
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        Quiz → Tools → Final Choice
+      </h2>
+
+      <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+       Once you get your results, you can:
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+      {[
+        {
+          icon: CheckCircle2,
+          title: "View Matched Tile Details from Tile Selection Quiz",
+          
+        },
+        {
+          icon: Sparkles,
+          title: "Try tiles in the Tile Visualizer",
+         
+        },
+        {
+          icon: Target,
+          title: "Calculate Quantity using the Tile Calculator",
+          
+        },
+        {
+          icon: Zap,
+          title: "Request Free Samples",
+          
+        },
+        {
+          icon: Phone,
+          title: "Contact Experts for Guidance.",
+          
+        }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white/70 backdrop-blur-md rounded-3xl h-full group">
+            <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
+
+            <CardContent className="p-8 text-center">
+              <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#223B57]/10 mb-6 group-hover:scale-110 transition-transform duration-500">
+                <item.icon className="w-7 h-7 text-[#223B57]" />
+              </div>
+
+              <h3 className="text-lg font-semibold text-[#223B57] mb-2">
+                {item.title}
+              </h3>
+
+             
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Closing Line */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="text-center text-neutral-600 text-base italic"
+    >
+      “This makes your journey smooth from selection to purchase.”
+    </motion.p>
+
+  </div>
+</section>
+
+
+     
+      {/* === FAQ QUICK SECTION - Top Questions === */}
+                <section className="section-padding bg-[#F5F3F0]">
+                  <div className="container">
+                    <motion.div
+                      className="text-center mb-12"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                        Frequently Asked Questions
+                      </h2>
+                      <p className="text-lg text-neutral-600">
+                        Common questions about tile calculations
+                      </p>
+                    </motion.div>
+          
+                    <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                      {[
+                        {
+                          icon: CheckCircle2,
+                          question: "How accurate are the quiz results?",
+                          answer: " The quiz uses practical tile selection criteria based on space, usage, and finish suitability."
+                        },
+                        {
+                          icon:  CheckCircle2,
+                          question: "Can I retake the quiz?",
+                          answer: "Yes, you can take the quiz as many times as you like with different preferences."
+                        },
+                        {
+                          icon: CheckCircle2,
+                          question: "Do I need to sign up to use the quiz?",
+                          answer: " No. The quiz is free and does not require an account."
+                        },
+                        {
+                          icon: CheckCircle2,
+                          question: "What if I need more help after the quiz?",
+                          answer: " You can explore tools, request samples, or contact our experts for personal assistance."
+                        },
+                        
+                         
+                       
+                      ].map((faq, index) => (
+                        <motion.div
+                          key={index}
+                          className="group"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.1 }}
+                        >
+                          {/* Glassmorphism FAQ Card */}
+                          <div className="relative h-full">
+                            {/* Glow Effect */}
+                            <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                            
+                            <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                              {/* Glassmorphism Border */}
+                              <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                              
+                              <CardContent className="relative p-6">
+                                <div className="flex items-start gap-4">
+                                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                                    <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                                  </div>
+                                  <div>
+                                    <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                                    <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                                  </div>
+                                </div>
+                              </CardContent>
+                              
+                              {/* Shine Effect */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                            </Card>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+          
+                    <motion.div
+                      className="text-center"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Button
+                        onClick={() => onNavigate("FAQ")}
+                        variant="outline"
+                        size="lg"
+                        className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+                      >
+                        Ready to Begin? Start with Confidence
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+                      </Button>
+                    </motion.div>
+                  </div>
+                </section>
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="container">
@@ -778,17 +1109,17 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
                   Ready to Get Started?
                 </Badge>
                 <h2 className="text-white text-4xl font-bold mb-4">
-                  Start Your Tile Journey Today
+                  Find Tiles That Fit Your Space Now
                 </h2>
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Take the quiz now and discover tiles that perfectly match your vision and requirements.
+                 Start the quiz and get tile suggestions made for your needs that suit your space, style, and usage.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     className="bg-white !text-[#223B57] hover:bg-white/90 h-12 px-8 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
                   >
-                    Start Quiz Now
+                    Start the Quiz 
                     <ArrowRight className="w-4 h-4 ml-2 text-[#223B57]" />
                   </Button>
                   <Button 

@@ -1231,12 +1231,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 answer: "We offer a wide range of tile sizes, starting from 7.5×15 cm up to 120×240 cm. Popular options like 60×60 cm and 30×30 cm are also available."
               },
               {
-                icon: Truck,
+                icon:  Shield,
                 question: "Which Tile Finish Is Best For Bathrooms?",
                 answer: "Matt or anti-slip finishes are best for bathrooms, as they provide better grip and safety in wet areas."
               },
               {
-                icon: Shield,
+                icon: Truck,
                 question: "Do You Provide Delivery?",
                 answer: "Yes, we offer free delivery on bulk orders. Delivery charges for regular orders depend on location and order quantity."
               },
