@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Download, FileText, Award, Box, BookOpen, Shield, Wrench, Layers, FileCheck, Search, Star, Clock, TrendingUp, Users, X } from 'lucide-react';
+import { Download, FileText, Award, Box,CheckCircle2,ArrowRight, BookOpen,Target,ShieldCheck,RefreshCcw, Shield, Wrench, Layers, FileCheck, Search, Star, Clock, TrendingUp, Users, X } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
@@ -57,10 +57,10 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
   });
 
   const stats = [
-    { icon: FileText, title: "50+ Resources", description: "Comprehensive library" },
-    { icon: TrendingUp, title: "125K+ Downloads", description: "Trusted worldwide" },
-    { icon: Users, title: "15K+ Professionals", description: "Active community" },
-    { icon: Shield, title: "Always Updated", description: "Latest versions" }
+    { icon: FileText, title: "50+ All Resources", description: "A wide range of useful documents" },
+    { icon: TrendingUp, title: "125K+ Total Downloads", description: "Trusted by users across projects" },
+    { icon: Users, title: "15K+ Professionals", description: "Used by architects, builders, and designers" },
+    { icon: Shield, title: "Up-to-Date Regularly Updates", description: "Access the latest versions anytime" }
   ];
 
   const getCategoryIcon = (category: DownloadCategory) => {
@@ -94,11 +94,11 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
       {/* Page Banner */}
       <PageBanner
         title="Download Center"
-        subtitle="Resources & Documentation"
-        description="Access our complete library of product catalogs, technical specifications, installation guides, CAD/BIM files, and certificates. Everything you need for your project."
+        subtitle="Resources & Documentation Library"
+        description="Explore our complete collection of product catalogues, technical details, installation guides, certificates, and reference files - all in one place to support your project needs."
        
         variant="gradient"
-        badge="50+ Resources • Free Downloads • Always Updated"
+        badge="50+ Resources | Free to Download | Regularly Updated"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Download Center" }
@@ -138,6 +138,270 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
         </div>
       </section>
 
+      {/* === WHY CHOOSE US === */}
+          <section className="py-20 bg-white">
+                  <div className="container">
+                    <motion.div
+                      className="text-center mb-16"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+                        <Target className="w-3 h-3 mr-1" />
+                            Everything You Need at Your Fingertips
+                      </Badge>
+                      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                        Why Download? 
+                      </h2>
+                      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+                        Access essential product information, technical details, and support documents anytime to plan your project with confidence.
+                      </p>
+                    </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+            {[
+  {
+    icon: Download, // Instant access
+    title: "Instant Access",
+    description: "Download catalogues, technical sheets, and guides anytime — no waiting required."
+  },
+  {
+    icon: ShieldCheck, // Official & verified
+    title: "Official & Verified Documents",
+    description: "Authentic certifications and accurate technical information you can trust."
+  },
+  {
+    icon: RefreshCcw, // Latest versions
+    title: "Latest Versions Available",
+    description: "Always access the most current specifications and updates."
+  },
+  {
+    icon: FileText, // Professional-grade files
+    title: "Professional-Grade Files",
+    description: "Clear, high-quality PDFs suitable for sharing, presentations, and proposals."
+  }
+]
+.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group"
+              >
+                <Card className="relative h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
+                  {/* Glassmorphism Border */}
+                  <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+      
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+                  <CardContent className="relative p-8 text-center">
+                    <div className="relative inline-block mb-6">
+                      {/* Icon Background with Glass Effect */}
+                      <div className="absolute inset-0 bg-[#223B57]/10 blur-xl rounded-full"></div>
+                      <div className="relative w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center border border-[#223B57]/20 group-hover:scale-110 group-hover:rotate-3 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] group-hover:border-[#223B57] transition-all duration-500">
+                        <item.icon className="w-10 h-10 text-[#223B57] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                      </div>
+                    </div>
+                    <h3 className="font-bold text-xl mb-3 text-[#223B57]">{item.title}</h3>
+                    <p className="text-neutral-600 leading-relaxed">{item.description}</p>
+                  </CardContent>
+      
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#223B57]/20 to-transparent"></div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* === ALL IN ONE PLACE – RESOURCE OVERVIEW === */}
+<section className="py-20 bg-[#F5F3F0]">
+  <div className="container max-w-6xl">
+
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+        All in One Place
+      </Badge>
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Access Resources & Documentation
+      </h2>
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        Find all Origin Tiles resources neatly organised to help you quickly access
+        the information you need for planning, specification, and execution.
+      </p>
+    </motion.div>
+
+    {/* Browse by Resource Type */}
+    <div className="mb-20">
+      <h3 className="text-2xl font-bold text-[#223B57] mb-8 text-center">
+        Browse by Resource Type
+      </h3>
+       <p className="text-lg text-neutral-600 max-w-3xl mx-auto mb-4">
+       Explore documents by category for faster access:
+      </p>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: "Product Catalogues",
+            desc: "Complete tile collections with sizes, finishes, and application details.",
+            count: "2 Resources"
+          },
+          {
+            title: "Product Brochures",
+            desc: "Quick overviews highlighting key designs, collections, and features.",
+            count: "2 Resources"
+          },
+          {
+            title: "Technical Specifications & Datasheets",
+            desc: "Detailed product information, performance standards, and usage guidelines.",
+            count: "2 Resources"
+          },
+          {
+            title: "Certifications & Compliance Documents",
+            desc: "Official quality certifications and compliance-related documents.",
+            count: "2 Resources"
+          },
+          {
+            title: "Installation Guides",
+            desc: "Step-by-step instructions and best practices for proper installation.",
+            count: "3 Resources"
+          },
+          {
+            title: "CAD, BIM & 3D Model Files",
+            desc: "Technical drawings and models for architectural planning.",
+            count: "3 Resources"
+          },
+          {
+            title: "Video Resources",
+            desc: "Helpful videos covering installation tips and product usage.",
+            count: "2 Resources"
+          },
+          {
+            title: "Maintenance Guides",
+            desc: "Easy-to-follow care and cleaning guides to help maintain tile appearance and performance over time.",
+            count: "2 Resources"
+          },
+          {
+            title: "Warranty Documents",
+            desc: "Official warranty coverage, terms, and product assurance details.",
+            count: "2 Resources"
+          },
+          
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.05 }}
+          >
+            <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all bg-white/80 backdrop-blur-sm">
+              <CardContent className="p-6">
+                <h4 className="font-semibold text-[#223B57] mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-neutral-600 mb-4">
+                  {item.desc}
+                </p>
+                <Badge className="bg-[#223B57]/10 text-[#223B57] border-0 text-xs">
+                  {item.count}
+                </Badge>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+
+    {/* === SEARCH, POPULAR & FEATURED CARDS === */}
+    
+<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  {/* Search & Filter Downloads */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+  ><br></br>
+    <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all bg-white/80 backdrop-blur-sm">
+      <CardContent className="p-6">
+        <h4 className="font-semibold text-[#223B57] mb-3">
+          Search & Filter Downloads
+        </h4>
+        <p className="text-sm text-neutral-600 mb-4">
+          Use search and filters to quickly find documents by: Resource type,	Collection,Application
+
+        </p>
+        
+      </CardContent>
+    </Card>
+  </motion.div>
+
+  {/* Most Popular Downloads */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.05 }}
+  >
+    <br></br>
+    <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all bg-white/80 backdrop-blur-sm">
+      <CardContent className="p-6">
+        <h4 className="font-semibold text-[#223B57] mb-3">
+          Most Popular Downloads
+        </h4>
+        <p className="text-sm text-neutral-600 mb-4">
+          Quick access to frequently downloaded catalogues and technical documents.
+        </p>
+        <Badge className="bg-[#223B57]/10 text-[#223B57] border-0 text-xs">
+          8 Resources
+        </Badge>
+      </CardContent>
+    </Card>
+  </motion.div>
+
+  {/* Featured Catalogues & Brochures */}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.1 }}
+  >
+    <br></br>
+    <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all bg-white/80 backdrop-blur-sm">
+      <CardContent className="p-6">
+        <h4 className="font-semibold text-[#223B57] mb-3">
+          Featured Catalogues & Brochures
+        </h4>
+        <p className="text-sm text-neutral-600 mb-4">
+          Highlighted resources to help you explore our latest collections and updates.
+        </p>
+        <Badge className="bg-[#223B57]/10 text-[#223B57] border-0 text-xs">
+          8 Resources
+        </Badge>
+      </CardContent>
+    </Card>
+  </motion.div>
+
+</div>
+
+
+  </div>
+</section>
+
+
       {/* Search & Filter Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-6xl">
@@ -146,7 +410,26 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
+            
           >
+            {/* Search Section Heading */}
+<div className="text-center mb-8">
+
+  <Badge className="mb-3 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+    Find What You Need
+  </Badge>
+
+  <h2 className="text-3xl md:text-3xl font-bold text-[#223B57] mb-2">
+    Search & Filter Downloads
+  </h2>
+
+  <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+    Easily locate the right documents using quick search and simple filters
+  </p>
+
+</div>
+
+            
             {/* Search Bar */}
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
@@ -250,11 +533,11 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             >
               <Badge className="mb-4 bg-amber-400 text-[#223B57] border-0">
                 <Star className="w-3 h-3 mr-1 fill-current" />
-                Most Popular
+                Popular Downloads
               </Badge>
-              <h2 className="text-white mb-4">Featured Downloads</h2>
+              <h2 className="text-white mb-4">Featured Resources</h2>
               <p className="text-white/80 max-w-2xl mx-auto">
-                Our most downloaded resources trusted by architects, designers, and industry professionals worldwide.
+                Explore our most downloaded documents, widely used by architects, designers, and industry professionals for planning and execution.
               </p>
             </motion.div>
 
@@ -355,6 +638,23 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             viewport={{ once: true }}
             className="mb-12"
           >
+            {/* Search Section Heading */}
+<div className="text-center mb-8">
+
+  <Badge className="mb-3 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+    All Downloads
+  </Badge>
+
+  <h2 className="text-3xl md:text-3xl font-bold text-[#223B57] mb-2">
+    Complete Resource Library (17 Resources)
+  </h2>
+
+  <p className="text-base text-neutral-600 max-w-2xl mx-auto">
+    Browse the full collection of Origin Tiles documents, guides, and technical files to support planning, specification, installation, and maintenance.
+  </p>
+
+</div>
+
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-[#223B57]">
                 {searchQuery || selectedCategory !== 'all' ? 'Search Results' : 'All Downloads'}
@@ -366,7 +666,7 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             <p className="text-neutral-600">
               {searchQuery || selectedCategory !== 'all' 
                 ? 'Showing filtered results based on your criteria'
-                : 'Browse our complete library of resources and documentation'}
+                : 'Product Catalogues & Lookbooks'}
             </p>
           </motion.div>
 
@@ -454,9 +754,9 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                                       {download.pages} pages
                                     </Badge>
                                   )}
-                                  {download.version && (
+                                  {download.lastUpdated && (
                                     <Badge variant="outline" className="text-xs">
-                                      v{download.version}
+                                      Updated {download.lastUpdated}
                                     </Badge>
                                   )}
                                 </div>
@@ -469,7 +769,7 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
 
                             {download.collections && download.collections.length > 0 && (
                               <div className="mb-4">
-                                <p className="text-xs text-neutral-500 mb-2">Includes collections:</p>
+                                <p className="text-xs text-neutral-500 mb-2">Includes:</p>
                                 <div className="flex flex-wrap gap-2">
                                   {download.collections.slice(0, 3).map((collection) => (
                                     <Badge key={collection} variant="outline" className="text-xs">
@@ -538,9 +838,9 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-6 border border-white/20">
               <Download className="w-8 h-8 text-white" />
             </div>
-            <h2 className="text-white mb-4">Need Custom Documentation?</h2>
+            <h2 className="text-white mb-4">Looking for Something Specific?</h2>
             <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-              Can't find what you're looking for? Our team can create custom technical specifications, project proposals, or specialized documentation for your specific requirements.
+              If you’re unable to find the document you need, our team is here to help. We can provide customised technical details, project-specific documentation, or any additional information required for your work.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button
@@ -549,14 +849,14 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                 onClick={handleRequestQuote}
                 className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm [&_svg]:text-white"
               >
-                Request Custom Documentation
+                Request Custom Documents
               </Button>
               <Button
                 size="lg"
                 onClick={() => onNavigate('Contact')}
                 className="bg-white text-[#223B57] hover:bg-white/90 [&_svg]:text-[#223B57]"
               >
-                Contact Support
+                Get Support
               </Button>
             </div>
           </motion.div>
@@ -572,9 +872,9 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-[#223B57] mb-4">Download Help & FAQs</h2>
+            <h2 className="text-[#223B57] mb-4">Download Support & FAQs</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Common questions about downloading and using our resources
+              Helpful answers for using our resources
             </p>
           </motion.div>
 
@@ -590,12 +890,12 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                   <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center mb-4">
                     <FileText className="w-6 h-6 text-[#223B57]" />
                   </div>
-                  <h3 className="text-[#223B57] mb-3">File Formats Explained</h3>
+                  <h3 className="text-[#223B57] mb-3">File Types & Formats</h3>
                   <p className="text-sm text-neutral-600 mb-4">
-                    PDF for catalogs and guides, DWG/RVT for CAD/BIM files, and specialized formats for 3D modeling software.
+                    Our catalogues and guides are provided as PDFs. Technical drawings are available in DWG and RVT formats, while 3D files are shared in standard modelling formats.
                   </p>
                   <Button variant="outline" size="sm" onClick={() => onNavigate('FAQ')}>
-                    Learn More
+                    Know More 
                   </Button>
                 </CardContent>
               </Card>
@@ -612,12 +912,12 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                   <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center mb-4">
                     <Shield className="w-6 h-6 text-[#223B57]" />
                   </div>
-                  <h3 className="text-[#223B57] mb-3">License & Usage Rights</h3>
+                  <h3 className="text-[#223B57] mb-3">Usage & Permissions</h3>
                   <p className="text-sm text-neutral-600 mb-4">
-                    All resources are free to download for personal and commercial projects. Attribution is appreciated but not required.
+                    All documents are free to download and can be used for both personal and professional projects. Mentioning Origin Tiles is appreciated, but not required.
                   </p>
                   <Button variant="outline" size="sm" onClick={() => onNavigate('Terms & Conditions')}>
-                    View Terms
+                    View Details 
                   </Button>
                 </CardContent>
               </Card>
@@ -634,12 +934,12 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                   <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center mb-4">
                     <Clock className="w-6 h-6 text-[#223B57]" />
                   </div>
-                  <h3 className="text-[#223B57] mb-3">Update Schedule</h3>
+                  <h3 className="text-[#223B57] mb-3">Update Information</h3>
                   <p className="text-sm text-neutral-600 mb-4">
-                    Resources are updated quarterly with new products, specifications, and improvements. Check back regularly for the latest versions.
+                    Documents are reviewed and updated every quarter to reflect new products and revised specifications. Check back often to stay up to date.
                   </p>
                   <Button variant="outline" size="sm" onClick={() => onNavigate('Contact')}>
-                    Get Notifications
+                    Get Update Notifications 
                   </Button>
                 </CardContent>
               </Card>
@@ -647,6 +947,210 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
           </div>
         </div>
       </section>
+
+       {/* === FAQ QUICK SECTION - Top Questions === */}
+                 <section className="section-padding bg-[#F5F3F0]">
+                   <div className="container">
+                     <motion.div
+                       className="text-center mb-12"
+                       initial={{ opacity: 0, y: 20 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                       viewport={{ once: true }}
+                     >
+                       <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                         Download Center FAQs
+                       </h2>
+                       <p className="text-lg text-neutral-600">
+                         Quick answers to help you access and use our resource library with ease.
+                       </p>
+                     </motion.div>
+           
+                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                       {[
+                         {
+                           icon: CheckCircle2,
+                           question: "Are all downloads free to access?",
+                           answer: "Yes, All documents in our Download Center are available at no cost for both personal and professional use."
+                         },
+                         {
+                           icon:  CheckCircle2,
+                           question: "How frequently are resources updated?",
+                           answer: "Resources are reviewed and updated regularly to reflect new products, technical updates, and improvements."
+                         },
+                         {
+                           icon: CheckCircle2,
+                           question: "What file formats can I download?",
+                           answer: "Most catalogues and guides are provided as PDFs. Technical drawings are available in DWG and RVT formats, and 3D files are offered in standard modelling formats."
+                         },
+                         {
+                           icon: CheckCircle2,
+                           question: "Can I share downloaded files with others?",
+                           answer: "Yes, You may share the resources within your project team or with clients. Commercial resale is not permitted."
+                         },
+                         {
+                           icon: CheckCircle2,
+                           question: "Can I request custom documents?",
+                           answer: "Yes, If you need project-specific or customised documentation, our team can assist you."
+                         },
+                          {
+                           icon: CheckCircle2,
+                           question: "Need help finding the right resource?",
+                           answer: "Our support team is happy to help you locate the documents you need."
+                         },
+                         
+                        
+                       ].map((faq, index) => (
+                         <motion.div
+                           key={index}
+                           className="group"
+                           initial={{ opacity: 0, y: 20 }}
+                           whileInView={{ opacity: 1, y: 0 }}
+                           viewport={{ once: true }}
+                           transition={{ delay: index * 0.1 }}
+                         >
+                           {/* Glassmorphism FAQ Card */}
+                           <div className="relative h-full">
+                             {/* Glow Effect */}
+                             <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                             
+                             <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                               {/* Glassmorphism Border */}
+                               <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                               
+                               <CardContent className="relative p-6">
+                                 <div className="flex items-start gap-4">
+                                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                                     <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                                   </div>
+                                   <div>
+                                     <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                                     <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                                   </div>
+                                 </div>
+                               </CardContent>
+                               
+                               {/* Shine Effect */}
+                               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                             </Card>
+                           </div>
+                         </motion.div>
+                       ))}
+                     </div>
+           
+                     <motion.div
+                       className="text-center"
+                       initial={{ opacity: 0 }}
+                       whileInView={{ opacity: 1 }}
+                       viewport={{ once: true }}
+                     >
+                       <Button
+                         onClick={() => onNavigate("Contact")}
+                         variant="outline"
+                         size="lg"
+                         className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+                       >
+                        Contact Support Team 
+                         <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+                       </Button>
+                     </motion.div>
+                   </div>
+                 </section>
+
+            {/* === STAY UPDATED CTA SECTION === */}
+<section className="py-20 bg-[#F5F3F0]">
+  <div className="container">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="relative group"
+    >
+      {/* Glow */}
+      <div className="absolute -inset-1 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-2xl transition-opacity duration-500"></div>
+
+      {/* Card */}
+      <div className="relative bg-gradient-to-br from-[#223B57] to-[#2d4a6a] rounded-3xl p-12 md:p-16 text-center overflow-hidden">
+        
+        {/* Decorative Circles */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="relative">
+          {/* Badge */}
+          <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 px-4 py-2">
+            Stay Updated
+          </Badge>
+
+          {/* Heading */}
+          <h2 className="text-white text-4xl font-bold mb-4">
+            Get Notified About New Resources
+          </h2>
+
+          {/* Description */}
+          <p className="text-white/90 text-lg mb-10 max-w-2xl mx-auto">
+            Receive updates whenever new catalogues, technical sheets,
+            certifications, or installation guides are added to our library.
+          </p>
+
+        
+          {/* Email Input */}
+<div className="flex flex-col sm:flex-row gap-4 justify-center max-w-xl mx-auto mb-6">
+  
+  <Input
+    type="email"
+    placeholder="Enter your email address"
+    className="
+      h-14
+      px-6
+      rounded-xl
+      border-0
+      bg-white/95
+      text-[#223B57]
+      text-base
+      placeholder:text-neutral-400
+      placeholder:text-sm
+      focus-visible:ring-2
+      focus-visible:ring-white
+      flex-1
+    "
+  />
+
+  <Button
+    variant="outline"
+    className="
+      h-12
+      sm:h-14
+      px-8
+      rounded-xl
+      bg-white/10
+      backdrop-blur-md
+      text-white
+      border-white/30
+      hover:bg-white/20
+      font-semibold
+      transition-all
+      duration-300
+      whitespace-nowrap
+    "
+  >
+    Notify Me →
+  </Button>
+
+</div>
+
+
+          {/* Trust Line */}
+          <p className="text-sm text-white/80">
+            Join <span className="font-semibold text-white">5,000+</span> professionals
+            &nbsp;|&nbsp; Quick updates &nbsp;|&nbsp; Unsubscribe anytime
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+      
     </div>
   );
 }

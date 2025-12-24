@@ -275,17 +275,18 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                     </div>
                     
                     {/* Card Content */}
-                    <CardContent className="p-8">
-                      <p className="text-neutral-600 mb-6 leading-relaxed">
-                        {collection.description}
-                      </p>
+                    <CardContent className="p-4">
+                     <p className="text-neutral-600 mb-2 leading-relaxed">
+  {collection.description}
+</p>
+
                       
                       <Button 
                         onClick={(e) => {
                           e.stopPropagation();
                           onNavigate("Products");
                         }}
-                        className="w-full bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] text-white rounded-xl h-12 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
+                        className="w-full bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] text-white rounded-xl h-10 shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300"
                       >
                        
                         Explore {collection.name}
@@ -601,7 +602,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                     
                     <Card className="relative overflow-hidden bg-white rounded-3xl border border-neutral-100 shadow-sm hover:shadow-2xl transition-all duration-500 h-full">
                       {/* Product Image */}
-                      <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100">
+                      <div className="relative h-64 overflow-hidden bg-gradient-to-br from-neutral-50 to-neutral-100">
                         <ImageWithFallback
                           src={product.image}
                           alt={product.name}
@@ -620,7 +621,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                       </div>
 
                       {/* Product Info */}
-                      <CardContent className="p-6 space-y-3">
+                      <CardContent className="p-4 space-y-2">
                         {/* Brand & Name */}
                         <div>
                           <p className="text-xs uppercase tracking-wider text-neutral-500 mb-1.5">{product.brand}</p>
@@ -661,7 +662,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="w-full border-[#223B57]/30 text-[#223B57] hover:bg-[#223B57]/5 hover:border-[#223B57] transition-all duration-300 rounded-xl h-10"
+                            className="w-full border-[#223B57]/30 text-[#223B57] hover:bg-[#223B57]/5 hover:border-[#223B57] transition-all duration-300 rounded-xl h-9"
                             onClick={(e) => {
                               e.stopPropagation();
                               onNavigate("Contact");
