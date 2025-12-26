@@ -607,6 +607,11 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 },
                 {
                   step: 4,
+                  title: "Consider Fixed Obstacles",
+                  description: "For large fixed items like built-in cabinets, measure the open area separately."
+                },
+                {
+                  step: 5,
                   title: "Record Measurements Clearly",
                   description: 
                     " Write your measurements in feet or metres, including decimals (for example, 12.5 ft)."

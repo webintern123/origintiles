@@ -14,96 +14,96 @@ export interface FAQData {
 export const faqData: FAQData = {
   general: [
     {
-      question: 'What types of ceramic tiles do you offer?',
-      answer: 'We offer a comprehensive range of ceramic tiles including floor tiles, wall tiles, vitrified tiles, porcelain tiles, and designer tiles. Our collections feature products from BHL Ceramic, Kenyh Ceramic, Vinci Ceramic, and Babele San Vitale.'
+      question: 'What types of tiles do you offer?',
+      answer: 'We offer a wide range of ceramic tiles for walls and floors, including designs for bathrooms, kitchens, living spaces, outdoor areas, and commercial use.'
     },
     {
-      question: 'How do I choose the right tile for my space?',
-      answer: 'Consider factors like room usage, foot traffic, moisture levels, and design aesthetic. Our Tile Quiz tool can help recommend suitable options, or you can consult with our design experts for personalized advice.'
+      question: 'How can I choose the right tile for my space?',
+      answer: 'Start by considering where the tile will be used, how much foot traffic the area gets, and the look you prefer. You can also use our Tile Quiz or Visualizer to make selection easier.'
     },
     {
-      question: 'Do you offer design consultation services?',
-      answer: 'Yes! We provide free design consultations to help you select the perfect tiles for your project. Contact us through our Contact page or call +91 9093833833 to schedule an appointment.'
+      question: 'Do you provide design consultation?',
+      answer: 'Yes, our team can guide you on tile selection, finishes, and layout ideas based on your space and needs.'
     },
     {
-      question: 'Can I order tile samples before purchasing?',
-      answer: 'Absolutely! We encourage customers to order physical samples to see the quality, color, and texture before making a final decision. Visit our Sample Request page to order samples.'
+      question: 'Can I request tile samples before buying?',
+      answer: 'Yes, you can request samples to check the colour, finish, and quality before placing an order.'
     }
   ],
   installation: [
     {
-      question: 'Do you provide installation services?',
-      answer: 'We work with a network of certified installers across India. Contact us for installer recommendations in your area, or visit our Resources page for DIY installation guides.'
+      question: 'Do you provide tile installation services?',
+      answer: 'We do not install tiles directly, but we can guide you and help you connect with experienced installers.'
     },
     {
-      question: 'How do I calculate how many tiles I need?',
-      answer: 'Use our Tile Calculator tool which automatically calculates the required quantity based on your room dimensions, including wastage allowance. We recommend ordering 10% extra for cuts and future repairs.'
+      question: 'How do I calculate the number of tiles needed?',
+      answer: 'You can use our Tile Calculator to estimate the required quantity. It includes wastage for cutting and fitting.'
     },
     {
-      question: 'What is the typical installation time?',
-      answer: 'Installation time varies based on area size and complexity. On average, a professional can install 30-50 sq ft per day. A standard bathroom (100 sq ft) typically takes 2-3 days including prep work and grouting.'
+      question: 'How long does tile installation usually take?',
+      answer: 'Installation time depends on room size, layout, and tile type. Most residential areas take a few days from preparation to completion.'
     },
     {
       question: 'Can tiles be installed over existing flooring?',
-      answer: 'In some cases, yes, but it depends on the existing surface condition. The substrate must be flat, clean, and structurally sound. Consult with a professional installer for best results.'
+      answer: 'In many cases, the surface is level and properly prepared. Your installer can confirm this on site.'
     }
   ],
   maintenance: [
     {
-      question: 'How do I clean and maintain ceramic tiles?',
-      answer: 'Regular sweeping and mopping with a pH-neutral cleaner is sufficient for most ceramic tiles. Avoid harsh chemicals or abrasive scrubbers. For detailed care instructions, visit our Resources page.'
+      question: 'How should ceramic tiles be cleaned?',
+      answer: 'Regular cleaning with water and a mild cleaner is enough. Avoid harsh chemicals to maintain the tile finish.'
     },
     {
       question: 'Are your tiles stain-resistant?',
-      answer: 'Our vitrified and porcelain tiles are highly stain-resistant due to their low porosity. Glazed ceramic tiles also offer excellent stain resistance. Always clean spills promptly for best results.'
+      answer: 'Yes, Our tiles are designed to resist common stains when cleaned regularly.'
     },
     {
       question: 'How long do ceramic tiles last?',
-      answer: 'With proper installation and maintenance, high-quality ceramic tiles can last 50+ years. Our tiles come with manufacturer warranties covering defects. Check individual product specifications for details.'
+      answer: 'With proper installation and care, ceramic tiles can last for many years without losing their appearance.'
     },
     {
-      question: 'Can I use the same tiles for walls and floors?',
-      answer: 'Wall tiles are typically not suitable for floors due to lower durability ratings. However, floor tiles can be used on walls. Check the product specifications for recommended applications.'
+      question: 'Can the same tiles be used on walls and floors?',
+      answer: 'Some tiles are suitable for both walls and floors. Always check the product recommendation before selecting.'
     }
   ],
   ordering: [
     {
-      question: 'What is your minimum order quantity?',
-      answer: 'Minimum order quantities vary by product and collection. Contact our sales team for specific MOQ information. We accommodate both small residential projects and large commercial orders.'
+      question: 'Is there a minimum order quantity?',
+      answer: 'Minimum order quantity depends on the product. Our team can help you with details based on your requirement.'
     },
     {
       question: 'How long does delivery take?',
-      answer: 'Delivery time depends on your location and product availability. Typically, in-stock items are delivered within 5-10 business days. Custom orders may take 3-4 weeks. We provide tracking information for all orders.'
+      answer: ' Delivery timelines depend on location and order size. Our team will share an estimated delivery time when you place the order.'
     },
     {
-      question: 'Do you offer bulk discounts for large projects?',
-      answer: 'Yes! We offer competitive pricing for bulk orders and trade customers. Contact our sales team at +91 9093833833 for volume pricing and special trade rates.'
+      question: 'Do you offer discounts for bulk orders?',
+      answer: ' Yes, Special pricing is available for large projects and bulk requirements.'
     },
     {
-      question: 'What is your return and exchange policy?',
-      answer: 'Unused tiles in original packaging can be returned within 30 days of delivery. Defective products are replaced free of charge. Custom orders are non-returnable unless defective. Contact customer service for return authorization.'
+      question: 'What is your return or exchange policy?',
+      answer: 'Returns and exchanges are subject to product condition and order type. Please contact our support team for assistance.'
     },
     {
-      question: 'Do you ship internationally?',
-      answer: 'Currently, we serve customers across India. For international shipping inquiries, please contact our export team at info@origintiles.com.'
+      question: 'Do you deliver outside India?',
+      answer: 'Yes, We support export orders. Our team can guide you through availability and shipping details.'
     }
   ],
   technical: [
     {
-      question: 'What is the difference between ceramic and porcelain tiles?',
-      answer: 'Porcelain tiles are denser, less porous, and more durable than ceramic tiles. Porcelain is fired at higher temperatures making it ideal for high-traffic areas and outdoor use. Ceramic tiles are more affordable and suitable for walls and low-traffic areas.'
+      question: 'What’s the difference between ceramic and porcelain tiles?',
+      answer: 'Porcelain tiles are denser and more water-resistant, making them suitable for heavy-use areas. Ceramic tiles are ideal for most indoor applications.'
     },
     {
       question: 'What does PEI rating mean?',
-      answer: 'PEI (Porcelain Enamel Institute) rating measures tile durability from 1-5. PEI 1-2: walls only; PEI 3: light traffic; PEI 4: medium to heavy traffic; PEI 5: heavy commercial traffic. Check product specifications for ratings.'
+      answer: ' PEI rating indicates how well a tile can handle wear and foot traffic.'
     },
     {
       question: 'Are your tiles slip-resistant?',
-      answer: 'We offer tiles with various slip-resistance ratings. Look for R-rating or COF (Coefficient of Friction) values in product specifications. For wet areas, we recommend R10+ or COF >0.6.'
+      answer: ' Yes, We offer tiles with slip-resistant finishes for bathrooms, outdoor areas, and high-safety zones.'
     },
     {
       question: 'What tile size should I choose?',
-      answer: 'Larger tiles (24"x24" or bigger) make small spaces appear larger and have fewer grout lines. Smaller tiles are better for areas requiring slopes (showers) and curved surfaces. Consider your space size and design aesthetic.'
+      answer: ' Tile size depends on room size, layout, and design preference. Larger tiles suit open spaces, while smaller tiles work well in compact areas.'
     }
   ]
 };
