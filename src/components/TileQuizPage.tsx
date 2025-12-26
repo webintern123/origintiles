@@ -805,7 +805,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
         },
         {
           icon: Zap,
-          title: "Best-use application (Wall / Floor)",
+          title: "Best-use application (Wall/Floor)",
         },
         {
           icon: CheckCircle2,

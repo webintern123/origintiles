@@ -275,10 +275,13 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                     </div>
                     
                     {/* Card Content */}
-                    <CardContent className="p-4">
-                     <p className="text-neutral-600 mb-2 leading-relaxed">
+                  <CardContent className="px-4 pb-4 pt-2">
+
+                   <p className="text-neutral-600 mb-2 -mt-1 leading-relaxed">
   {collection.description}
 </p>
+
+
 
                       
                       <Button 
@@ -862,7 +865,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         we design them to perform well in real spaces, over time.
       </p>
     </motion.div>
-
+<br></br>
     {/* Philosophy Focus Areas */}
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-4">
       {[
@@ -923,7 +926,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         </motion.div>
       ))}
     </div>
-
+<br></br>
     {/* Closing Line */}
     <motion.p
       className="text-center text-neutral-600 mt-14 max-w-3xl mx-auto mb-4"

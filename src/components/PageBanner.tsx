@@ -324,39 +324,7 @@ export function PageBanner({
         </div>
       </div>
 
-      {/* === ENHANCED BOTTOM WAVE DECORATION === */}
-      <div className="absolute bottom-0 left-0 right-0">
-        {/* Dual-Layer Wave for Depth */}
-        <div className="relative">
-          {/* Background Wave - Slightly Transparent */}
-          <svg
-            className="absolute bottom-0 w-full h-20 md:h-24 opacity-50"
-            preserveAspectRatio="none"
-            viewBox="0 0 1440 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 100h1440V20S1140 100 720 100 0 20 0 20v80z"
-              fill="#F5F3F0"
-            />
-          </svg>
-          
-          {/* Foreground Wave - Solid */}
-          <svg
-            className="relative w-full h-20 md:h-24"
-            preserveAspectRatio="none"
-            viewBox="0 0 1440 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 100h1440V30S1140 100 720 100 0 30 0 30v70z"
-              fill="#F5F3F0"
-            />
-          </svg>
-        </div>
-      </div>
+     
     </section>
   );
 }

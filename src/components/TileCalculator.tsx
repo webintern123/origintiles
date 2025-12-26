@@ -10,6 +10,7 @@ import { PageBanner } from "./PageBanner";
 import { motion } from "motion/react";
 import { toast } from "sonner";
 
+
 interface TileCalculatorProps {
   onNavigate: (page: string) => void;
 }
@@ -117,7 +118,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 className="group"
               >
                 <Card className="relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/60 backdrop-blur-md">
-                  <div className="absolute inset-0 border border-white/20 rounded-lg pointer-events-none"></div>
+                  
                   <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   <CardContent className="p-6 text-center">
@@ -511,6 +512,73 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 </Card>
               </motion.div>
             </div>
+          </div>
+        </div>
+      </section>
+{/* Popular Room Sizes Quick Reference */}
+      <section className="py-20 bg-[#F5F3F0]">
+        <div className="container max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+              Quick Reference
+            </Badge>
+            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+              Popular Room Sizes
+            </h2>
+            <p className="text-neutral-600 text-lg">
+              Quick References with Common Room Sizes
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: "Small Bathroom", size: "5ft × 8ft", area: "40 sq ft" },
+              { name: "Standard Bathroom", size: "8ft × 10ft", area: "80 sq ft" },
+              { name: "Master Bathroom", size: "10ft × 12ft", area: "120 sq ft" },
+              { name: "Small Kitchen", size: "10ft × 10ft", area: "100 sq ft" },
+              { name: "Standard Kitchen", size: "12ft × 15ft", area: "180 sq ft" },
+              { name: "Large Kitchen", size: "15ft × 20ft", area: "300 sq ft" }
+            ].map((room, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05 }}
+              >
+                <Card className="border-0 shadow-lg bg-white/60 backdrop-blur-md rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group overflow-hidden"
+                  onClick={() => {
+                    const [l, w] = room.size.replace(/ft/g, '').split('×').map(s => s.trim());
+                    setLength(l);
+                    setWidth(w);
+                    toast.success(`${room.name} dimensions loaded`);
+                    window.scrollTo({ top: 400, behavior: 'smooth' });
+                  }}
+                >
+                  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/0 to-[#223B57]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardContent className="p-6 text-center relative">
+                    <div className="font-bold text-[#223B57] mb-2 group-hover:scale-105 transition-transform">
+                      {room.name}
+                    </div>
+                    <div className="text-2xl font-bold text-[#223B57] mb-1">
+                      {room.size}
+                    </div>
+                    <div className="text-sm text-neutral-600">
+                      {room.area}
+                    </div>
+                    <div className="mt-3 text-xs text-[#223B57] font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                      Click to use <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -1027,74 +1095,7 @@ This ensures practical accuracy for real-site conditions.
 
 
 
-      {/* Popular Room Sizes Quick Reference */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="container max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
-              Quick Reference
-            </Badge>
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Popular Room Sizes
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Quick References with Common Room Sizes
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { name: "Small Bathroom", size: "5ft × 8ft", area: "40 sq ft" },
-              { name: "Standard Bathroom", size: "8ft × 10ft", area: "80 sq ft" },
-              { name: "Master Bathroom", size: "10ft × 12ft", area: "120 sq ft" },
-              { name: "Small Kitchen", size: "10ft × 10ft", area: "100 sq ft" },
-              { name: "Standard Kitchen", size: "12ft × 15ft", area: "180 sq ft" },
-              { name: "Large Kitchen", size: "15ft × 20ft", area: "300 sq ft" }
-            ].map((room, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <Card className="border-0 shadow-lg bg-white/60 backdrop-blur-md rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer group overflow-hidden"
-                  onClick={() => {
-                    const [l, w] = room.size.replace(/ft/g, '').split('×').map(s => s.trim());
-                    setLength(l);
-                    setWidth(w);
-                    toast.success(`${room.name} dimensions loaded`);
-                    window.scrollTo({ top: 400, behavior: 'smooth' });
-                  }}
-                >
-                  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/0 to-[#223B57]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <CardContent className="p-6 text-center relative">
-                    <div className="font-bold text-[#223B57] mb-2 group-hover:scale-105 transition-transform">
-                      {room.name}
-                    </div>
-                    <div className="text-2xl font-bold text-[#223B57] mb-1">
-                      {room.size}
-                    </div>
-                    <div className="text-sm text-neutral-600">
-                      {room.area}
-                    </div>
-                    <div className="mt-3 text-xs text-[#223B57] font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
-                      Click to use <ArrowRight className="w-3 h-3" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
      {/* === FAQ QUICK SECTION - Top Questions === */}
            <section className="section-padding bg-white">
              <div className="container">

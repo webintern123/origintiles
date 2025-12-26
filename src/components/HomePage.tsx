@@ -395,9 +395,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     </div>
                     
                     {/* Stats Value */}
-                    <div className="mb-2">
-                      <AnimatedCounter end={parseInt(stat.value.replace(/\D/g, '') || '0')} suffix={stat.value.replace(/[0-9]/g, '')} />
-                    </div>
+                    <div className="mb-2 text-3xl font-bold text-[#223B57]">
+  {/\d/.test(stat.value) ? (
+    <AnimatedCounter
+      end={parseInt(stat.value.replace(/\D/g, ''))}
+      suffix={stat.value.replace(/[0-9]/g, '')}
+    />
+  ) : (
+    <span>{stat.value}</span>
+  )}
+</div>
+
                     
                     {/* Stats Label */}
                     <p className="text-sm text-neutral-600 group-hover:text-[#223B57] transition-colors duration-300">
@@ -749,7 +757,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <span className="block">Tested for Trust</span>
       </h2>
 
-      <p className="text-lg text-neutral-600">
+      <p className="text-lg text-neutral-600 mb-4">
         Our tiles are designed to meet high technical standards, making them
         suitable for both residential and commercial use.
       </p>
@@ -862,7 +870,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
         What Makes Our Tiles Last Longer?
       </h2>
-      <p className="text-lg text-neutral-600">
+      <p className="text-lg text-neutral-600 mb-4">
         It’s not just design — it’s how the tile is made.
       </p>
     </motion.div>
@@ -920,106 +928,78 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
 {/* === TRUSTED BY PROFESSIONALS SECTION === */}
 <section className="relative py-24 bg-white overflow-hidden">
-  <div className="container relative z-10">
+  <div className="container relative z-10 max-w-6xl">
 
     {/* Header */}
     <motion.div
-      className="text-center max-w-3xl mx-auto mb-16"
+      className="text-center max-w-3xl mx-auto mb-14"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+      <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-3">
         Trusted by Architects, Designers & Builders
       </h2>
-      <p className="text-lg text-neutral-600">
+      <p className="text-lg text-neutral-600 mb-4">
         Professionals across India and global markets rely on Origin Tiles for:
       </p>
     </motion.div>
 
-    {/* Trust Points */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-20">
-      {[
-        "Reliable Supply",
-        "Consistent Quality",
-        "Detailed Technical Specifications & Data Sheet",
-        "Long-Term Performance on Site",
-      ].map((point, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: index * 0.1 }}
-          className="flex items-start gap-4"
-        >
-          <CheckCircle2 className="w-6 h-6 text-[#223B57] mt-1" />
-          <p className="text-lg text-neutral-700">{point}</p>
-        </motion.div>
-      ))}
-    </div>
-<br></br>
-    {/* Professional Zones */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+   
       
+    </div>
+
+    {/* Professional Zones */}
+    <div className="relative flex flex-col md:flex-row justify-center gap-12 md:gap-24 max-w-6xl mx-auto">
+
       {/* Architect & Designer Zone */}
-     {/* Builder & Dealer Support */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        className="w-full md:w-[45%]"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="group"
       >
-        <Card className="relative h-full border-0 rounded-3xl bg-white shadow-xl overflow-hidden">
-          <CardContent className="p-10">
-            <Building2 className="w-10 h-10 mb-6 text-[#223B57]" />
+        <Card className="h-full rounded-3xl border-0 shadow-lg bg-white">
+          <CardContent className="p-10 flex flex-col justify-center h-full">
+            <Palette className="w-10 h-10 mb-5 text-[#223B57]" />
             <h3 className="text-2xl font-bold text-[#223B57] mb-4">
-              Builder & Dealer Support
+              Architect & Designer Zone
             </h3>
-            <p className="text-neutral-600 leading-relaxed mb-8">
-              Bulk supply, logistics coordination, and dependable after-sales
-              service for smooth project execution.
+            <p className="text-neutral-600 leading-relaxed">
+              Access technical data, samples, and dedicated project support to
+              confidently translate design concepts into reality.
             </p>
-
-            
           </CardContent>
-
-          {/* Glass Border */}
-          <div className="absolute inset-0 border border-[#223B57]/10 rounded-3xl pointer-events-none"></div>
         </Card>
       </motion.div>
 
       {/* Builder & Dealer Support */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        className="w-full md:w-[45%]"
+        initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="group"
+        transition={{ delay: 0.08 }}
       >
-        <Card className="relative h-full border-0 rounded-3xl bg-white shadow-xl overflow-hidden">
-          <CardContent className="p-10">
-            <Building2 className="w-10 h-10 mb-6 text-[#223B57]" />
-            <h3 className="text-2xl font-bold text-[#223B57] mb-4">
+        <Card className="h-full rounded-3xl border-0 shadow-lg bg-white relative">
+          <CardContent className="p-10 flex flex-col justify-center h-full">
+            <Building2 className="w-10 h-10 mb-5 text-[#223B57]" />
+            <h3 className="text-2xl font-bold text-[#223B57] mb-3">
               Builder & Dealer Support
             </h3>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed">
               Bulk supply, logistics coordination, and dependable after-sales
-              service for smooth project execution.
+              service for smooth and timely project execution.
             </p>
-
-          
           </CardContent>
-
-          {/* Glass Border */}
-          <div className="absolute inset-0 border border-[#223B57]/10 rounded-3xl pointer-events-none"></div>
         </Card>
       </motion.div>
 
     </div>
-  </div>
+
 </section>
+
+
 {/* === COLLECTION SHOWCASE === */}
       <section className="py-20 bg-[#F5F3F0]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
@@ -1115,9 +1095,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
                 {/* Arrow Indicator - Minimal */}
                 {index < 2 && (
-                  <div className="hidden md:flex absolute top-8 -right-3 z-10 items-center justify-center w-6 h-6 rounded-full bg-white shadow-sm">
-                    <ArrowRight className="w-4 h-4 text-[#223B57]/40" />
-                  </div>
+                 <div className="hidden md:flex absolute top-1/2 -right-3 -translate-y-1/2 z-10 items-center justify-center w-6 h-6 rounded-full bg-white shadow-sm">
+  <ArrowRight className="w-4 h-4 text-[#223B57]/40" />
+</div>
+
                 )}
               </motion.div>
             ))}

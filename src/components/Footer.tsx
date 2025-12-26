@@ -85,17 +85,19 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Company Info - Premium Design */}
           <div className="lg:col-span-4">
-            {/* Logo Section */}
-  <div className="flex items-center gap-4 mb-3">
-  <div className="relative w-32 h-28 flex items-center justify-center">
+          {/* Logo Section */}
+<div className="flex items-start mb-3 relative -translate-y-6">
+  <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
     <img
       src={OriginLogo}
       alt="Origin Tiles Logo"
-      className="w-28 h-28 object-contain"
+      className="w-full h-full object-contain"
       style={{ filter: 'brightness(0) saturate(100%) invert(1)' }}
     />
   </div>
 </div>
+
+
 
 <p className="text-sm text-white/80 leading-relaxed mb-6">
               Leading manufacturer of premium ceramic tiles, delivering exceptional quality, innovative designs, and timeless elegance to transform your spaces.

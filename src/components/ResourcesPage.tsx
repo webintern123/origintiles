@@ -716,16 +716,22 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           transition={{ delay: index * 0.1 }}
         >
           <Card className="relative border-0 shadow-lg bg-white/60 backdrop-blur-md rounded-2xl overflow-hidden h-full border-l-4 border-l-[#223B57]">
-            <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-            <CardContent className="p-6 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-[#223B57]/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle2 className="w-5 h-5 text-[#223B57]" />
-              </div>
-              <p className="text-neutral-700 text-sm leading-relaxed">
-                {point}
-              </p>
-            </CardContent>
-          </Card>
+  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
+  <CardContent className="p-6 flex items-center gap-4">
+    {/* Tick Circle */}
+    <div className="flex-shrink-0">
+      <div className="w-10 h-10 rounded-full bg-[#223B57]/10 flex items-center justify-center">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57]" />
+      </div>
+    </div>
+
+    {/* Text */}
+    <p className="text-neutral-700 text-sm leading-relaxed">
+      {point}
+    </p>
+  </CardContent>
+</Card>
+
         </motion.div>
       ))}
     </div>
@@ -868,16 +874,20 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           transition={{ delay: index * 0.1 }}
         >
           <Card className="relative border-0 shadow-lg bg-white/60 backdrop-blur-md rounded-2xl overflow-hidden h-full border-l-4 border-l-[#223B57]">
-            <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
-            <CardContent className="p-6 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-[#223B57]/10 flex items-center justify-center flex-shrink-0">
-                <Users className="w-5 h-5 text-[#223B57]" />
-              </div>
-              <p className="text-neutral-700 text-sm leading-relaxed">
-                {item}
-              </p>
-            </CardContent>
-          </Card>
+  <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
+  <CardContent className="p-6 flex items-center gap-4">
+    {/* Icon Circle */}
+    <div className="w-10 h-10 rounded-full bg-[#223B57]/10 flex items-center justify-center flex-shrink-0">
+      <Users className="w-5 h-5 text-[#223B57]" />
+    </div>
+
+    {/* Text */}
+    <p className="text-neutral-700 text-sm leading-relaxed">
+      {item}
+    </p>
+  </CardContent>
+</Card>
+
         </motion.div>
       ))}
     </div>

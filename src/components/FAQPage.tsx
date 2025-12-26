@@ -120,9 +120,12 @@ export function FAQPage() {
         >
           <Card className="group h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all">
-                <item.icon className="w-8 h-8 text-[#223B57]" strokeWidth={1.5} />
-              </div>
+             <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center 
+  group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all"
+>
+  <item.icon className="w-8 h-8 text-[#223B57] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+</div>
+
               <h3 className="text-xl font-bold text-[#223B57] mb-3">
                 {item.title}
               </h3>

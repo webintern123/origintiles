@@ -17,7 +17,7 @@ export interface Download {
   title: string;
   description: string;
   category: DownloadCategory;
-  format: FileFormat;
+  format: FileFormat; 
   fileSize: string;
   pages?: number;
   version?: string;

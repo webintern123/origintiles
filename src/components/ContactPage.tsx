@@ -283,7 +283,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                         {/* Phone + City (same row) */}
 <div className="col-span-12 md:col-span-6">
   <Label htmlFor="phone" className="text-[#223B57] mb-3 block">
-    Phone Number
+    Phone Number *
   </Label>
   <Input
     id="phone"
@@ -945,13 +945,14 @@ Need any assistance? Call our customer support team or drop us a message â€” weâ
                     View Products
                   </Button>
                   <Button
-                    onClick={() => onNavigate("Sample Request")}
-                    variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 [&_svg]:text-white"
-                  >
-                    Request samples
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+  onClick={() => onNavigate("Sample Request")}
+  variant="outline"
+  className="group bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 transition-all duration-300 hover:text-white"
+>
+  Request samples
+  <ArrowRight className="w-4 h-4 ml-2 group-hover:text-white transition-colors duration-300" />
+</Button>
+
                 </div>
               </div>
             </div>
