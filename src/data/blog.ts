@@ -18,8 +18,8 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: '10 Modern Tile Design Trends for 2025',
-    excerpt: 'Discover the latest ceramic tile trends that are transforming homes and commercial spaces this year.',
+    title: '10 Tile Design Trends to Watch in 2025',
+    excerpt: 'Explore the ceramic tile styles and design ideas shaping modern homes and commercial spaces this year.',
     content: `The world of ceramic tile design is evolving rapidly, bringing fresh perspectives and innovative solutions to both residential and commercial spaces. As we move through 2025, several key trends are emerging that are reshaping how we think about tile design.
 
 ## 1. Large Format Tiles

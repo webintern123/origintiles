@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, User, Calendar, Clock, Search, Tag, Rss, TrendingUp, FileText } from 'lucide-react';
+import { ArrowRight, User, Calendar, Clock, Search,Lightbulb,BadgeCheck, Tag, Rss,Award,TrendingUp, FileText,CheckCircle2 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { PageBanner } from './PageBanner';
 import { Button } from './ui/button';
@@ -29,26 +29,27 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
   });
 
   const featuredPost = blogPosts.find((p) => p.featured);
-  const totalPosts = blogPosts.length;
-  const totalReads = blogPosts.reduce((acc, post) => acc + (post.views || 0), 0);
+  
 
   const stats = [
-    { icon: FileText, title: `${totalPosts}+ Articles`, description: "Expert insights" },
-    { icon: TrendingUp, title: `${Math.floor(totalReads / 1000)}K+ Reads`, description: "Trusted content" },
-    { icon: User, title: "Expert Authors", description: "Industry professionals" },
-    { icon: Rss, title: "Weekly Updates", description: "Fresh content" }
+    { icon: FileText, title: "60+ Articles ", description: "Helpful tips and insights" },
+    { icon: TrendingUp, title: "37K+ Readers", description: "Trusted by tile users and professionals" },
+    { icon: User, title: "Written by Experts", description: "Industry knowledge you can rely on " },
+    { icon: Rss, title: "Updated Weekly", description: "Fresh ideas and new content regularly" }
   ];
+
+  
 
   return (
     <div className="min-h-screen bg-[#F5F3F0]">
       {/* Page Banner */}
       <PageBanner
-        title="Tile Inspiration & Expertise"
-        subtitle="Design Insights & Expert Tips"
-        description="Discover the latest trends, expert installation advice, and design inspiration for your next tile project. Your complete resource for ceramic tile excellence."
+        title="Tile Inspiration and Practical Guidance"
+        subtitle="Design Insights & Tile Tips"
+        description="Explore the latest tile trends, helpful installation advice, and design ideas for your next project. Everything you need to make confident tile choices, all in one place."
        
         variant="gradient"
-        badge="Weekly Updates • Expert Articles • Design Trends"
+        badge="Weekly Updates | Expert Tips | Design Ideas"
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Blog" }
@@ -87,7 +88,104 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
           </div>
         </div>
       </section>
+<section className="relative py-24 bg-white ">
+  {/* Subtle Background Pattern */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#F5F3F0] to-white"></div>
 
+  <div className="container relative z-10">
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-20"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        Helpful Knowledge Made Easy
+      </Badge>
+
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+       Why Read Our Blog
+        
+      </h2>
+
+      <p className="text-lg text-neutral-600 mb-4">
+        Our blog shares useful insights, practical advice, and real-world experience to help you make better choices.
+      </p>
+    </motion.div>
+
+    {/* Technical Points Grid */}
+   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      {[
+        {
+          icon: Lightbulb,
+          title: "Expert Advice",
+          description:
+            " Learn from professionals with years of hands-on industry experience.",
+        },
+        {
+          icon: TrendingUp,
+          title: "Latest Trends",
+          description:
+            "Stay updated on new designs, innovations, and market changes.",
+        },
+        {
+          icon:  BadgeCheck,
+          title: "	Practical Guidance",
+          description:
+            "Get easy tips on product selection, installation, and maintenance.",
+        },
+        {
+          icon: Award,
+          title: "Trusted Content",
+          description:
+            "Articles written with care, based on technical know-how and real use cases.",
+        },
+       
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            {/* Glass Border */}
+            <div className="absolute inset-0 border border-white/30 rounded-2xl pointer-events-none"></div>
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8">
+              {/* Icon */}
+              <div className="mb-6 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 flex items-center justify-center group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-500">
+                  <item.icon
+                    className="w-8 h-8 text-[#223B57] group-hover:text-white transition-colors"
+                    strokeWidth={1.5}
+                  />
+                </div>
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-[#223B57] mb-3 text-center">
+                {item.title}
+              </h3>
+              <p className="text-neutral-600 text-center leading-relaxed">
+                {item.description}
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+<br></br>
+    
+  </div>
+</section> 
       {/* Featured Post */}
       {featuredPost && (
         <section className="py-20 bg-white">
@@ -99,13 +197,13 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               className="text-center mb-12"
             >
               <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2 border-0">
-                Featured Article
+                Featured Read
               </Badge>
               <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-                Editor's Pick
+                Editor’s Choice
               </h2>
               <p className="text-neutral-600 text-lg">
-                Our most popular article this month
+                This Month’s Most Read Article
               </p>
             </motion.div>
 
@@ -129,7 +227,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                   
                   <CardContent className="p-8 md:p-12 flex flex-col justify-center">
                     <Badge className="w-fit mb-4 bg-[#223B57] text-white border-0">
-                      Featured
+                      Featured Article
                     </Badge>
                     <h3 className="text-3xl font-bold text-[#223B57] mb-4 leading-tight">
                       {featuredPost.title}
@@ -158,7 +256,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                       className="w-fit bg-[#223B57] hover:bg-[#1a2d43] text-white rounded-xl"
                       onClick={() => onNavigate(`BlogArticle-${featuredPost.id}`)}
                     >
-                      Read Full Article
+                      Read the Full Article 
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </CardContent>
@@ -178,6 +276,18 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
             viewport={{ once: true }}
             className="mb-8"
           >
+            {/* Section Heading */}
+<div className="text-center mb-10">
+  <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-3">
+    Browse Articles by Topic
+  </h2>
+  <p className="text-neutral-600 text-lg max-w-2xl mx-auto">
+    A mix of popular reads across design, installation, and tile care.
+    Filter according to your need.
+  </p>
+</div>
+
+            
             {/* Search Bar */}
             <div className="relative mb-6">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 w-5 h-5 z-10" />
@@ -298,6 +408,106 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
         </div>
       </section>
 
+      {/* === FAQ QUICK SECTION - Top Questions === */}
+                       <section className="section-padding bg-white">
+                         <div className="container">
+                           <motion.div
+                             className="text-center mb-12"
+                             initial={{ opacity: 0, y: 20 }}
+                             whileInView={{ opacity: 1, y: 0 }}
+                             viewport={{ once: true }}
+                           >
+                             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+                               Blog FAQs
+                             </h2>
+                             <p className="text-lg text-neutral-600">
+                               Quick answers about our articles, updates, and content.
+                             </p>
+                           </motion.div>
+                 
+                           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                             {[
+                               {
+                                 icon: CheckCircle2,
+                                 question: "How often do you publish new blog posts?",
+                                 answer: "We add new articles regularly, focusing on tile trends, selection tips, installation guidance, and maintenance advice."
+                               },
+                               {
+                                 icon:  CheckCircle2,
+                                 question: "Can I suggest a topic for the blog?",
+                                 answer: "Yes, absolutely. If there’s a tile-related topic you would like us to write on it for more info, feel free to share it with our team."
+                               },
+                               {
+                                 icon: CheckCircle2,
+                                 question: "Who writes the blog content?",
+                                 answer: "Our articles are written by our Subject Matter Expert Content team and industry professionals with practical experience in tiles and interiors."
+                               },
+                               {
+                                 icon: CheckCircle2,
+                                 question: "What will I receive if I subscribe to the newsletter?",
+                                 answer: "You will get updates on new blog posts, design trends, helpful guides, and product insights from Origin Tiles."
+                               },
+                               
+                               
+                               
+                              
+                             ].map((faq, index) => (
+                               <motion.div
+                                 key={index}
+                                 className="group"
+                                 initial={{ opacity: 0, y: 20 }}
+                                 whileInView={{ opacity: 1, y: 0 }}
+                                 viewport={{ once: true }}
+                                 transition={{ delay: index * 0.1 }}
+                               >
+                                 {/* Glassmorphism FAQ Card */}
+                                 <div className="relative h-full">
+                                   {/* Glow Effect */}
+                                   <div className="absolute -inset-0.5 bg-gradient-to-br from-[#223B57]/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                                   
+                                   <Card className="relative border-0 shadow-md hover:shadow-xl transition-all duration-300 bg-white/80 backdrop-blur-sm rounded-3xl overflow-hidden h-full">
+                                     {/* Glassmorphism Border */}
+                                     <div className="absolute inset-0 border border-white/40 rounded-3xl pointer-events-none"></div>
+                                     
+                                     <CardContent className="relative p-6">
+                                       <div className="flex items-start gap-4">
+                                         <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#223B57]/10 to-[#223B57]/5 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:from-[#223B57] group-hover:to-[#2d4a6a] transition-all duration-300 border border-[#223B57]/10 shadow-lg group-hover:shadow-2xl group-hover:-translate-y-1">
+                                           <faq.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors duration-300 group-hover:scale-110" />
+                                         </div>
+                                         <div>
+                                           <h3 className="font-bold text-[#223B57] mb-2 group-hover:text-[#2d4a6a] transition-colors">{faq.question}</h3>
+                                           <p className="text-neutral-600 text-sm leading-relaxed">{faq.answer}</p>
+                                         </div>
+                                       </div>
+                                     </CardContent>
+                                     
+                                     {/* Shine Effect */}
+                                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"></div>
+                                   </Card>
+                                 </div>
+                               </motion.div>
+                             ))}
+                           </div>
+                 
+                           <motion.div
+                             className="text-center"
+                             initial={{ opacity: 0 }}
+                             whileInView={{ opacity: 1 }}
+                             viewport={{ once: true }}
+                           >
+                             <Button
+                               onClick={() => onNavigate("Contact")}
+                               variant="outline"
+                               size="lg"
+                               className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white"
+                             >
+                              Contact Support Team 
+                               <ArrowRight className="ml-2 w-5 h-5 group-hover:text-white" />
+                             </Button>
+                           </motion.div>
+                         </div>
+                       </section>
+
       {/* Newsletter CTA */}
       <section className="py-20 bg-white">
         <div className="container">
@@ -315,13 +525,13 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
               
               <div className="relative">
                 <Badge className="mb-6 bg-white/20 backdrop-blur-md text-white border-white/30 px-4 py-2">
-                  Stay Informed
+                  Stay Updated
                 </Badge>
                 <h2 className="text-white text-4xl font-bold mb-4">
-                  Never Miss an Update
+                  Get the Latest from Origin Tiles
                 </h2>
                 <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                  Subscribe to our newsletter for the latest tile trends, design tips, and exclusive offers delivered to your inbox.
+                  Subscribe to receive tile trends, design ideas, helpful tips, and special updates straight to your inbox.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -340,7 +550,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                 </div>
                 
                 <p className="text-white/60 text-sm mt-4">
-                  Join 10,000+ subscribers. Unsubscribe anytime.
+                  Join 10,000+ readers | Unsubscribe anytime
                 </p>
               </div>
             </div>
