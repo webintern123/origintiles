@@ -97,6 +97,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1589530006797-d67347f18caa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="Free Planning Tool | Quick Results"
+        showWave={false}
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Tools", onClick: () => onNavigate("Tools") },
@@ -525,13 +526,13 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
             className="text-center mb-12"
           >
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
-              Quick Reference
+              Popular Room Sizes
             </Badge>
             <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Popular Room Sizes
+              Quick References with Common Room Sizes
             </h2>
             <p className="text-neutral-600 text-lg">
-              Quick References with Common Room Sizes
+             Common room dimensions to speed up your calculation
             </p>
           </motion.div>
 

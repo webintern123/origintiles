@@ -103,10 +103,13 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="Design. Detail. Durability. Delivered."
+        showWave={false}
       />
 
       {/* === QUICK STATS CARDS - Floating Above === */}
-      <section className="relative -mt-20 z-10">
+      {/* === QUICK STATS CARDS === */}
+<section className="relative py-20 z-10 bg-[#F5F3F0]">
+
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -327,44 +330,11 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
               <p className="text-base text-neutral-600 mb-10 leading-relaxed">
                 With experienced professionals behind every product, each tile is made for durability and long-term use. Unlike brands that focus only on design or pricing, we give equal importance to consistent manufacturing, technical performance, and reliable service. This helps avoid common issues like shade variation and uneven quality.
               </p>
+               <p className="text-base text-neutral-600 mb-10 leading-relaxed">
+                Our collections - Luxury, Modern Bathroom, Kitchen Floor, Marble Pattern, Wood Look, and Designer Wall - are designed for a wide range of spaces, from homes to commercial projects.
+              </p>
 
-              {/* Quick Stats Cards - Horizontal Layout */}
-              <div className="grid grid-cols-2 gap-4 mb-10">
-                {[
-                  { label: "Happy Customers", value: "10,000+", icon: Users },
-                  { label: "Projects Completed", value: "15,000+", icon: CheckCircle2 }
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                    className="group"
-                  >
-                    <div className="relative p-6 rounded-2xl bg-white border border-neutral-200 hover:border-[#223B57]/20 hover:shadow-lg transition-all duration-300 group">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-10 h-10 rounded-full bg-[#223B57]/10 flex items-center justify-center group-hover:bg-[#223B57] transition-all duration-300">
-                          <item.icon className="w-5 h-5 text-[#223B57] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-                        </div>
-                      </div>
-                      <div className="text-3xl font-bold text-[#223B57] mb-1">{item.value}</div>
-                      <div className="text-sm text-neutral-600">{item.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <Button 
-  onClick={() => onNavigate("Contact")}
-  size="lg"
-  className="mt-auto bg-[#223B57] hover:bg-[#1a2d43] active:bg-[#223B57] active:scale-95 text-white h-14 px-8 shadow-lg hover:shadow-xl transition-all group"
->
-
-                Get in Touch
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </motion.div>
+                         </motion.div>
 
             {/* Right: Premium Image with Floating Card */}
             <motion.div
@@ -708,7 +678,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
        {/* === CORE VALUES - PREMIUM CARDS WITH BULLETS === */}
 <section className="py-20 bg-white">
-  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+  <div className="container">
     {/* Header */}
     <motion.div
       className="text-center mb-16"
@@ -847,7 +817,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
 {/* === CORE VALUES - PREMIUM CARDS WITH BULLETS === */}
 <section className="py-20 bg-[#F5F3F0]">
-  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+  <div className="container">
     {/* Header */}
     <motion.div
       className="text-center mb-16"
@@ -1019,7 +989,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* === COLLECTION SHOWCASE === */}
       <section className="py-20 bg-[#F5F3F0]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+        <div className="container">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -1083,12 +1053,9 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-              <Star className="w-3 h-3 mr-1" />
-              Why Origin Tiles
-            </Badge>
+            
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Why Choose Us
+             Why Origin Tiles
             </h2>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
               What Makes Us a Trusted Tile Brand
@@ -1297,7 +1264,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         </div>
       </section> {/* === AWARDS & RECOGNITION === */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+       <div className="container">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -1517,7 +1484,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       </section>
 {/* === CERTIFICATIONS - PREMIUM BADGES === */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+       <div className="container">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -1589,7 +1556,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* === LEADERSHIP TEAM - PREMIUM CARDS === */}
       <section className="py-20 bg-[#F5F3F0]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+        <div className="container">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
@@ -1710,7 +1677,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
 
       {/* === CTA SECTION === */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1753,14 +1720,22 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                     <Palette className="w-4 h-4 mr-2 text-[#223B57]" />
                     Explore Collections – For buyers 
                   </Button>
-                  <Button
-                    onClick={() => onNavigate("Contact")}
-                    variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 [&_svg]:text-white"
-                  >
-                    Become a Dealer – Grow with us 
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
+                 <Button
+  onClick={() => onNavigate("Contact")}
+  variant="outline"
+  className="
+    bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
+>
+  Become a Dealer – Grow with us
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Button>
+
                 </div>
               </div>
             </div>

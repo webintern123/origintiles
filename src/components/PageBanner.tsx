@@ -15,6 +15,7 @@ interface PageBannerProps {
   actionLabel?: string;
   onAction?: () => void;
   breadcrumbs?: Array<{ label: string; onClick?: () => void }>;
+  showWave?: boolean;
 }
 
 export function PageBanner({
@@ -28,7 +29,8 @@ export function PageBanner({
   badge,
   actionLabel,
   onAction,
-  breadcrumbs
+  breadcrumbs,
+  showWave = true,
 }: PageBannerProps) {
   return (
     <section
@@ -243,14 +245,14 @@ export function PageBanner({
             {/* Subtitle */}
             {subtitle && (
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.25 }}
-                className="text-sm uppercase tracking-[0.3em] mb-6 text-white/95 font-semibold flex items-center gap-3"
-              >
-                <span className="w-12 h-px bg-white/40"></span>
-                {subtitle}
-              </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.25 }}
+  className="text-sm uppercase tracking-[0.3em] mb-6 text-white/95 font-semibold"
+>
+  {subtitle}
+</motion.p>
+
             )}
 
             {/* Icon + Title with Better Layout */}
@@ -275,17 +277,17 @@ export function PageBanner({
                 </motion.div>
               )}
 
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.45 }}
-                className="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight"
+                className="text-white text-3xl md:text-4xl lg:text-6xl font-bold leading-tight tracking-tight"
                 style={{
                   textShadow: '0 2px 20px rgba(0,0,0,0.3)'
                 }}
               >
                 {title}
-              </motion.h1>
+              </motion.h2>
             </div>
 
             {/* Description with Better Spacing */}
@@ -324,7 +326,39 @@ export function PageBanner({
         </div>
       </div>
 
-     
+      {/* === ENHANCED BOTTOM WAVE DECORATION === */}
+     {/* === ENHANCED BOTTOM WAVE DECORATION === */}
+{showWave && (
+  <div className="absolute bottom-0 left-0 right-0">
+    {/* Dual-Layer Wave for Depth */}
+    <div className="relative">
+      <svg
+        className="absolute bottom-0 w-full h-20 md:h-24 opacity-50"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 100"
+        fill="none"
+      >
+        <path
+          d="M0 100h1440V20S1140 100 720 100 0 20 0 20v80z"
+          fill="#F5F3F0"
+        />
+      </svg>
+
+      <svg
+        className="relative w-full h-20 md:h-24"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 100"
+        fill="none"
+      >
+        <path
+          d="M0 100h1440V30S1140 100 720 100 0 30 0 30v70z"
+          fill="#F5F3F0"
+        />
+      </svg>
+    </div>
+  </div>
+)}
+
     </section>
   );
 }

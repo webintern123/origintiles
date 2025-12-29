@@ -446,8 +446,7 @@ export function FAQPage() {
 
       {/* Contact CTA */}
       <section className="py-20 bg-[#F5F3F0]">
-        <div className="max-w-4xl mx-auto px-4">
-
+        <div className="container">
           <ScrollReveal delay={0.3}>
             <Card className="relative bg-gradient-to-br from-[#223B57] to-[#1a2d43] text-white border-0 shadow-2xl rounded-3xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>

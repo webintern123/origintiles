@@ -99,6 +99,7 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
        
         variant="gradient"
         badge="50+ Resources | Free to Download | Regularly Updated"
+        showWave={false}
         breadcrumbs={[
           { label: "Home", onClick: () => onNavigate("Home") },
           { label: "Download Center" }

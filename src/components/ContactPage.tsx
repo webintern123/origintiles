@@ -899,7 +899,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     
      {/* === CTA SECTION === */}
       <section className="py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+        <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

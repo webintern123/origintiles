@@ -65,6 +65,7 @@ export function WarrantyPage() {
   variant="image"
   backgroundImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1080"
   badge="10-Year Standard Coverage"
+  showWave={false}
   breadcrumbs={[{ label: 'Warranty Registration' }]} 
 />
 

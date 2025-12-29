@@ -130,6 +130,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="6 Designer Collections | 650+ Products"
+        showWave={false}
       />
 
       {/* === FLOATING STATS CARDS === */}
@@ -941,7 +942,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
 
  {/* === FINISH & SURFACE GUIDE - PREMIUM CARDS WITH BULLETS === */}
 <section className="py-20 bg-[#F5F3F0]">
-  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+  <div className="container">
     {/* Header */}
     <motion.div
       className="text-center mb-16"
@@ -1295,7 +1296,13 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
                   <Button 
                     onClick={() => onNavigate("Tile Calculator")}
                     variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 h-12 px-8 rounded-xl [&_svg]:text-white"
+                    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
                   >
                     Try Tile Calculator
                   </Button>

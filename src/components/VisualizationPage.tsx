@@ -84,7 +84,7 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
         title="Visualize Your Space in 2D & 3D"
         subtitle="See Your Space Before You Decide"
         description="See how our tiles look in your real spaces & rooms before you buy - using our 2D and interactive 3D visualizer. Test designs, finishes, and layouts in real time help you make confident design decisions."
-       
+       showWave={false}
         variant="gradient"
         badge="Live Preview | Free 3D Experience | Easy to Use | VR Ready"
         breadcrumbs={[

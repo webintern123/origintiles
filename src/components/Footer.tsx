@@ -19,7 +19,8 @@ export function Footer({ onNavigate }: FooterProps) {
   const [isSubscribing, setIsSubscribing] = useState(false);
   
   return (
-    <footer className="relative bg-[#223B57] text-white overflow-hidden">
+    <footer className="relative bg-[#223B57] text-white overflow-visible">
+
       {/* Premium Background with Pattern */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback 
@@ -83,11 +84,14 @@ export function Footer({ onNavigate }: FooterProps) {
       {/* Main Footer Content */}
       <div className="relative z-10 container py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
-          {/* Company Info - Premium Design */}
-          <div className="lg:col-span-4">
-          {/* Logo Section */}
-<div className="flex items-start mb-3 relative -translate-y-6">
-  <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+  {/* Logo + Company Info */}
+ <div className="lg:col-span-4 flex flex-col items-start">
+
+
+    {/* Logo */}
+   {/* Logo Wrapper */}
+<div className="absolute top-0 left-8 md:left-56 lg:left-[30rem] -translate-y-1/3 z-50">
+  <div className="w-100 h-70 md:w-90 md:h-90 flex items-center justify-center">
     <img
       src={OriginLogo}
       alt="Origin Tiles Logo"
@@ -98,61 +102,45 @@ export function Footer({ onNavigate }: FooterProps) {
 </div>
 
 
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 
-<p className="text-sm text-white/80 leading-relaxed mb-6">
-              Leading manufacturer of premium ceramic tiles, delivering exceptional quality, innovative designs, and timeless elegance to transform your spaces.
-            </p>
 
-            {/* Social Media - Premium Style */}
-            <div className="mb-6">
-              <div className="text-sm font-semibold text-white mb-3">Follow Us</div>
-              <div className="flex gap-3">
-                <button
-                  className="group relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white border border-white/20 hover:border-white flex items-center justify-center transition-all duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5 text-white/70 group-hover:text-[#223B57] transition-colors" strokeWidth={1.5} />
-                </button>
-                <button
-                  className="group relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white border border-white/20 hover:border-white flex items-center justify-center transition-all duration-300"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5 text-white/70 group-hover:text-[#223B57] transition-colors" strokeWidth={1.5} />
-                </button>
-                <button
-                  className="group relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white border border-white/20 hover:border-white flex items-center justify-center transition-all duration-300"
-                  aria-label="X"
-                >
-                  <XIcon className="w-5 h-5 text-white/70 group-hover:text-[#223B57] transition-colors" />
-                </button>
-                <button
-                  className="group relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white border border-white/20 hover:border-white flex items-center justify-center transition-all duration-300"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5 text-white/70 group-hover:text-[#223B57] transition-colors" strokeWidth={1.5} />
-                </button>
-                <button
-                  className="group relative w-11 h-11 rounded-xl bg-white/5 hover:bg-white border border-white/20 hover:border-white flex items-center justify-center transition-all duration-300"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-5 h-5 text-white/70 group-hover:text-[#223B57] transition-colors" strokeWidth={1.5} />
-                </button>
-              </div>
-            </div>
 
-            {/* Awards */}
-            <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <Award className="w-10 h-10 text-yellow-400" />
-              <div>
-                <div className="text-xs text-white/60">Award Winning</div>
-                <div className="font-semibold text-white text-sm">Best Ceramic Tiles 2024</div>
-              </div>
-            </div>
-          </div>
+    {/* Description */}
+    {/* Description */}
+<div className="mt-64 md:mt-80 lg:mt-80"> {/* Adjust values to match logo height */}
+  <p className="text-sm text-white/80 leading-relaxed mb-6">
+    Leading manufacturer of premium ceramic tiles, delivering exceptional quality, innovative designs, and timeless elegance to transform your spaces.
+  </p>
+</div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h3 className="text-white font-bold mb-6 flex items-center gap-2">
+
+    {/* Social Media */}
+    <div className="flex gap-3 mb-6">
+      <Facebook className="w-6 h-6 text-white/70 hover:text-[#223B57]" />
+      <Instagram className="w-6 h-6 text-white/70 hover:text-[#223B57]" />
+      <XIcon className="w-6 h-6 text-white/70 hover:text-[#223B57]" />
+      <Linkedin className="w-6 h-6 text-white/70 hover:text-[#223B57]" />
+      <Youtube className="w-6 h-6 text-white/70 hover:text-[#223B57]" />
+    </div>
+
+    {/* Award Card */}
+    <div className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+      <Award className="w-10 h-10 text-yellow-400" />
+      <div>
+        <div className="text-xs text-white/60">Award Winning</div>
+        <div className="font-semibold text-white text-sm">Best Ceramic Tiles 2024</div>
+      </div>
+    </div>
+  </div>
+
+  {/* Quick Links */}
+  <div className="lg:col-span-2 mt-0">            
+    <h3 className="text-white font-bold mb-6 flex items-center gap-2">
               <div className="w-1 h-6 bg-white rounded-full"></div>
               Quick Links
             </h3>
@@ -179,7 +167,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
 
           {/* Resources */}
-          <div className="lg:col-span-2">
+           <div className="lg:col-span-2 mt-0">
             <h3 className="text-white font-bold mb-6 flex items-center gap-2">
               <div className="w-1 h-6 bg-white rounded-full"></div>
               Resources
@@ -207,7 +195,7 @@ export function Footer({ onNavigate }: FooterProps) {
           </div>
 
           {/* Newsletter - Premium Design */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 mt-0">
             <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10">
               <h3 className="text-white font-bold mb-3">Stay Connected</h3>
               <p className="text-sm text-white/70 mb-5 leading-relaxed">

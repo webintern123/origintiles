@@ -1,4 +1,4 @@
-import { ArrowRight, Award, Truck, Shield, HeadphonesIcon, Star, Users, Eye, Calculator, Sparkles, ChevronRight, ChevronLeft, TrendingUp, Palette, Building2, MapPin, Package,Zap, Gift, HelpCircle, Phone, CheckCircle2, Pause, Play } from "lucide-react";
+import { ArrowRight, Award, Truck, Shield,Microscope,Cpu, Star,Download,Clock, Users, Eye, Calculator, Sparkles, ChevronRight, ChevronLeft, TrendingUp, Palette, Building2, MapPin, Package,Zap, Gift, HelpCircle, Phone, CheckCircle2, Pause, Play } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
@@ -264,6 +264,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 </Button>
               </div>
 
+              {/* Hero Taglines - Horizontal, Single Line, Responsive */}
+
+  <span className="flex-shrink-0">Where Quality Meets Creativity|More Than Tiles – A Design Partner|
+Designed for Elegance, Engineered for Strength|   
+</span>
+ 
+
+
+
               {/* Trust Indicators */}
               <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-white/30">
                 <motion.div 
@@ -423,18 +432,22 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="section-padding bg-[#F5F3F0]">
         <div className="container">
           <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Explore Our SIGNATURE Collections
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              Designed for Every Space, Built to Last
-            </p>
-          </motion.div>
+  className="text-center mb-16"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+  <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+    Explore Our SIGNATURE Collections
+  </h2>
+  <p className="text-lg text-neutral-600 mb-2 font-bold">
+    &quot;Designed for Every Space, Built to Last&quot;
+  </p>
+  <p className="text-neutral-600 max-w-2xl mx-auto">
+    See our carefully curated tile collections, created to suit modern homes, luxury projects, and high-performance spaces.
+  </p>
+</motion.div>
+
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {collections.map((collection, index) => (
@@ -504,29 +517,40 @@ export function HomePage({ onNavigate }: HomePageProps) {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                icon: Award,
-                title: "ISO Certified",
-                description: "Manufactured in ISO-certified facilities."
-              },
-              {
-                icon: Truck,
-                title: "Free Delivery on Bulk Orders",
-                description: "Easy delivery for large and project orders."
-              },
-              {
-                icon: Shield,
-                title: "Lifetime Warranty",
-                description: "Long-term coverage on quality and performance."
-              },
-              {
-                icon: HeadphonesIcon,
-                title: "24×7 Customer Support",
-                description: "Support available anytime you need help."
-              }
-            ].map((feature, index) => (
+  {
+    icon: Award, // ✅ Perfect for certification
+    title: "ISO Certified",
+    description: "Manufactured in ISO-certified facilities."
+  },
+  {
+    icon: Truck, // ✅ Delivery
+    title: "Free Delivery on Bulk Orders",
+    description: "Easy delivery for large and project orders."
+  },
+  {
+    icon: Shield, // ✅ Warranty / protection
+    title: "Lifetime Warranty",
+    description: "Long-term coverage on quality and performance."
+  },
+  {
+    icon: Cpu, // 🖥 Manufacturing consistency (precision / automation)
+    title: "Manufacturing Consistency",
+    description: "Consistent quality across every production batch."
+  },
+  {
+    icon: Palette, // 🎨 Batch color control (colors / shades)
+    title: "Batch Colour Control",
+    description: "Uniform shades throughout your project."
+  },
+  {
+    icon: Microscope, // 🔬 Premium quality testing
+    title: "Premium Quality Testing Standards",
+    description: "Strict testing for strength and finish."
+  }
+]
+.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -565,7 +589,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
       {/* === FEATURED PRODUCTS - Premium Card Design === */}
       <section className="py-20 bg-white">
-        <div className="container">
+       <div className="container">
           <motion.div 
             className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4"
             initial={{ opacity: 0, y: 20 }}
@@ -675,18 +699,21 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="section-padding bg-[#F5F3F0]">
         <div className="container">
           <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Inspiring Designs by Space
-            </h2>
-            <p className="text-lg text-neutral-600">
-              See How Our Tiles Come to Life
-            </p>
-          </motion.div>
+  className="text-center mb-16"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+>
+  <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+   Inspiring Designs by Space
+  </h2>
+  <p className="text-lg text-neutral-600 mb-2 font-bold">
+    &quot;See How Our Tiles Come to Life &quot;
+  </p>
+  <p className="text-neutral-600 max-w-2xl mx-auto">
+    Get inspired by real homes & spaces designed using Origin Tiles.
+  </p>
+</motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {inspirationGallery.map((item, index) => (
@@ -881,22 +908,22 @@ export function HomePage({ onNavigate }: HomePageProps) {
         {
           icon: Package,
           title: "Carefully Selected Raw Materials",
-          description: "Premium-grade raw materials ensure structural integrity and long life."
+          
         },
         {
           icon: Zap,
           title: "Advanced Manufacturing Technology",
-          description: "Modern machinery delivers precision, consistency, and reliability."
+          
         },
         {
           icon: Award,
-          title: "Uniform Firing for Strength",
-          description: "Controlled firing process ensures even density and durability."
+          title: "Uniform Firing For Consistent Strength",
+         
         },
         {
           icon: Shield,
-          title: "Wear & Fade Resistant Surfaces",
-          description: "Surfaces stay strong and visually consistent over years of use."
+          title: "Durable Surfaces That Resist Wear And Fading.",
+          
         }
       ].map((item, index) => (
         <motion.div
@@ -914,9 +941,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               <h3 className="text-xl font-bold text-[#223B57] mb-3">
                 {item.title}
               </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
-                {item.description}
-              </p>
+              
             </CardContent>
           </Card>
         </motion.div>
@@ -948,6 +973,76 @@ export function HomePage({ onNavigate }: HomePageProps) {
    
       
     </div>
+     {/* Why Use Our Resources Section */}
+          
+            <div className="container max-w-4xl">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                
+                
+              </motion.div>
+    
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    icon: CheckCircle2,
+                    title: "Professionally Prepared",
+                    description: "All guides and videos are developed with input from experienced tile professionals."
+                  },
+                  {
+                    icon: Download,
+                    title: "Free to Access",
+                    description: "No sign-ups or charges. Download as many resources as you need, anytime."
+                  },
+                  {
+                    icon: Clock,
+                    title: "Regularly Updated",
+                    description: "Content is refreshed to reflect current installation methods and best practices."
+                  },
+                  {
+                    icon: Shield,
+                    title: "Accuracy You Can Trust",
+                    description: "Each resource is checked for correctness and aligned with recognised installation standards."
+                  }
+                ].map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="relative border-0 shadow-lg bg-white/60 backdrop-blur-md rounded-2xl overflow-hidden h-full border-l-4 border-l-[#223B57]">
+                      <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
+                      
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0">
+                            <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center">
+                              <benefit.icon className="w-6 h-6 text-[#223B57]" />
+                            </div>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-[#223B57] mb-2">
+                              {benefit.title}
+                            </h4>
+                            <p className="text-sm text-neutral-600 leading-relaxed">
+                              {benefit.description}
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+         <br></br>
+    
 
     {/* Professional Zones */}
     <div className="relative flex flex-col md:flex-row justify-center gap-12 md:gap-24 max-w-6xl mx-auto">
@@ -966,8 +1061,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Architect & Designer Zone
             </h3>
             <p className="text-neutral-600 leading-relaxed">
-              Access technical data, samples, and dedicated project support to
-              confidently translate design concepts into reality.
+               Access Technical Data, Samples, and Project Support.
             </p>
           </CardContent>
         </Card>
@@ -988,8 +1082,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               Builder & Dealer Support
             </h3>
             <p className="text-neutral-600 leading-relaxed">
-              Bulk supply, logistics coordination, and dependable after-sales
-              service for smooth and timely project execution.
+                            Bulk supply, Logistics Support, and After-Sales Service.
             </p>
           </CardContent>
         </Card>
@@ -1123,69 +1216,52 @@ export function HomePage({ onNavigate }: HomePageProps) {
         </div>
       </section>
 
-      {/* === STATS SECTION - Premium Layout === */}
-      <section className="relative py-16 md:py-20 overflow-hidden">
-        {/* Premium Dark Background with Subtle Pattern */}
-        <div className="absolute inset-0 bg-[#223B57]">
-          {/* Subtle Grid Pattern Overlay */}
-          <div className="absolute inset-0 opacity-5" style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }}></div>
-          {/* Gradient Overlay for Depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#223B57] via-[#2d4a6a]/50 to-[#223B57]"></div>
-        </div>
+      
+      {/* === STATS SECTION - Single Line Layout (Compact Numbers) === */}
+<section className="relative py-12 md:py-16 overflow-hidden">
+  <div className="absolute inset-0 bg-[#223B57]">
+    {/* Subtle Grid Pattern Overlay */}
+    <div className="absolute inset-0 opacity-5" style={{
+      backgroundImage: `
+        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+      `,
+      backgroundSize: '50px 50px'
+    }}></div>
+    {/* Gradient Overlay for Depth */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#223B57] via-[#2d4a6a]/50 to-[#223B57]"></div>
+  </div>
 
-        <div className="container relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
-            {[
-              { value: 200, suffix: "+", label: "Finishes", icon: Users },
-              { value: 100, suffix: "%", label: "Trusted Quality", icon: Package },
-              { value: 5000 , suffix: "+", label: "Homes", icon: MapPin },
-              { value: 100, suffix: "+", label: "Projects", icon: Award }
-            
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center group relative"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-              >
-                {/* Icon accent above number */}
-                <div className="mb-4 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
-                  <stat.icon className="w-8 h-8 mx-auto text-white" />
-                </div>
-                
-                {/* Stat Number - Enhanced */}
-                <div className="mb-2">
-                  <div className="inline-block relative">
-                    {/* Enhanced glow effect on hover */}
-                    <div className="absolute inset-0 blur-xl bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-150"></div>
-                    <div className="relative text-white font-bold tracking-tight leading-none text-4xl md:text-5xl lg:text-6xl group-hover:scale-105 transition-transform duration-300">
-                      <AnimatedCounter end={stat.value} suffix={stat.suffix} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Stat Label - Enhanced */}
-                <div className="text-white/70 text-sm lg:text-base font-normal group-hover:text-white/90 transition-colors duration-300">
-                  {stat.label}
-                </div>
-
-                {/* Separator Line - Desktop Only */}
-                {index < 3 && (
-                  <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
-                )}
-              </motion.div>
-            ))}
+  <div className="container relative z-10">
+    <div className="flex flex-nowrap justify-between gap-6 lg:gap-8 text-center">
+      {[
+        { value: "200+", label: "Finishes" },
+        { value: "100%", label: "Trusted Quality" },
+        { value: "ISO Certified", label: "Excellence" },
+        { value: "5000+", label: "Homes" },
+        { value: "100+", label: "Projects" },
+        { value: "80% Fewer", label: "Installation Errors" }
+      ].map((stat, index) => (
+        <motion.div
+          key={index}
+          className="flex-1"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+        >
+          <div className="text-white font-bold text-2xl md:text-3xl lg:text-4xl tracking-tight mb-1">
+            {stat.value}
           </div>
-        </div>
-      </section>
+          <div className="text-white/70 text-xs md:text-sm lg:text-base font-normal group-hover:text-white/90 transition-colors duration-300">
+            {stat.label}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* === FAQ QUICK SECTION - Top Questions === */}
       <section className="section-padding bg-[#F5F3F0]">
@@ -1345,14 +1421,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     <span className="text-sm font-semibold text-[#223B57]">Visit Our Showrooms</span>
                   </motion.div>
 
-                  <motion.h2
-                    className="text-3xl md:text-4xl font-bold text-[#223B57] mb-4"
+                  <motion.h3
+                    className="text-3xl md:text-3xl font-bold text-[#223B57] mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    Experience Tiles in Person Before You Choose
-                  </motion.h2>
+                    See, Feel & Experience Tiles in Person Before You Choose
+                    
+                  </motion.h3>
 
                   <motion.p
                     className="text-lg text-neutral-600 mb-8 leading-relaxed"
@@ -1361,7 +1438,13 @@ export function HomePage({ onNavigate }: HomePageProps) {
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                   >
-                    Visit our showrooms to see the designs, finishes, and textures firsthand. Our experts are there to help you make the right selection.
+                    Visit our showrooms to see the designs, finishes, and textures firsthand. Our experts are there to help you make the right selection.<br></br>
+                    ●	50+ showrooms across India<br></br>
+●	Pan India Delivery<br></br>
+●	Expert staff assistance<br></br>
+●	Exclusive Offers<br></br>
+●	City-wise quick links
+
                   </motion.p>
 
                   <motion.div
@@ -1655,14 +1738,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
       <section className="relative section-padding overflow-hidden bg-[#F5F3F0]">
         <div className="container">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+       <div className="grid grid-cols-1 lg:grid-cols-2 
+  min-h-[420px] md:min-h-[480px] lg:min-h-[520px] items-stretch">
+
+
+
               {/* Left: Image with Overlay */}
-              <div className="relative h-80 lg:h-auto order-2 lg:order-1">
+            <div className="relative w-full h-full flex order-2 lg:order-1">
+
+
+
+
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1525578309444-30d2f67cf02f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1000&q=80"
-                  alt="Tile Calculator"
-                  className="w-full h-full object-cover"
-                />
+  src="https://images.unsplash.com/photo-1525578309444-30d2f67cf02f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1000&q=80"
+  alt="Tile Calculator"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/80 via-[#223B57]/60 to-transparent"></div>
                 
@@ -1677,7 +1769,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                 <div className="absolute bottom-8 left-8 right-8 grid grid-cols-3 gap-4">
                   {[
                     { value: "98%", label: "Accuracy" },
-                    { value: "5min", label: "Quick" },
+                    { value: "Quick", label: "Quick" },
                     { value: "Free", label: "Always" }
                   ].map((stat, i) => (
                     <motion.div
@@ -1696,7 +1788,10 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
 
               {/* Right: Content with Premium Design */}
-              <div className="relative bg-white p-8 lg:p-12 flex items-center order-1 lg:order-2">
+            <div className="relative bg-white p-6 lg:p-10 order-1 lg:order-2 flex flex-col">
+
+
+
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
                   <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -1722,15 +1817,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </motion.div>
 
                   {/* Heading */}
-                  <motion.h2 
-                    className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#223B57] mb-4 leading-tight"
+                  <motion.h3 
+                    className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#223B57] mb-4 leading-tight"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
                   >
                     Calculate Your Tile Requirement
-                  </motion.h2>
+                  </motion.h3>
 
                   {/* Subheading */}
                   <motion.p 
@@ -1795,8 +1890,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   </motion.div>
 
                   {/* Trust Badge */}
-                  <motion.div 
-                    className="flex items-center gap-3 mt-8 pt-8 border-t border-neutral-200"
+                 <motion.div className="flex items-center gap-3 mt-auto pt-8 border-t border-neutral-200"
+
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -1825,7 +1920,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
        {/* === CTA SECTION === */}
             <section className="py-20 bg-white">
-              <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+              <div className="container">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -1868,14 +1963,22 @@ export function HomePage({ onNavigate }: HomePageProps) {
                           <Palette className="w-4 h-4 mr-2 text-[#223B57]" />
                           Explore Collections
                         </Button>
-                        <Button
-                          onClick={() => onNavigate("Contact")}
-                          variant="outline"
-                          className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 hover:border-white/50 rounded-xl h-12 px-8 [&_svg]:text-white"
-                        >
-                          Talk to an Expert
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Button>
+                       <Button
+  onClick={() => onNavigate("Contact")}
+  variant="outline"
+  className="
+    bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
+>
+  Talk to an Expert
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Button>
+
                       </div>
                     </div>
                   </div>

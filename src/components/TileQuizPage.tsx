@@ -178,6 +178,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
           icon={CheckCircle2}
           variant="gradient"
           badge="Personalized Recommendations • Expert Matched"
+          showWave={false}
           breadcrumbs={[
             { label: "Home", onClick: () => onNavigate("Home") },
             { label: "Tools", onClick: () => onNavigate("Tools") },
