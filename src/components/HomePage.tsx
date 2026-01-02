@@ -231,11 +231,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <span className="text-sm font-medium">Crafting Premium Tiles for Over 2 Decades</span>
                 </motion.div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-                  Grounded in Earth, 
-                  <span className="block text-[#F5F3F0] mt-2 drop-shadow-[0_2px_8px_rgba(245,243,240,0.3)]">Elevated in Design</span>
-                </h1>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+  <span className="block">Grounded in</span>
 
+  <span className="block text-[#F5F3F0] drop-shadow-[0_2px_8px_rgba(245,243,240,0.3)]">
+    Earth, Elevated
+  </span>
+
+  <span className="block">in Design</span>
+</h1>
+<br></br>
+<br></br>
                 <p className="text-xl text-white/90 leading-relaxed max-w-xl">
                   Explore high-quality tiles designed for homes, commercial spaces, and architectural projects. At Origin Tiles, thoughtful design and lasting strength come together to create spaces that stay beautiful over time.
                 </p>
@@ -266,21 +272,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
               {/* Hero Taglines - Horizontal, Single Line, Responsive */}
 
-  <span className="flex-shrink-0">Where Quality Meets Creativity|More Than Tiles – A Design Partner|
-Designed for Elegance, Engineered for Strength|   
+  <span className="flex-shrink-0 mb-4">Where Quality Meets Creativity | More Than Tiles – A Design Partner |
+Designed for Elegance, Engineered for Strength  
 </span>
- 
+          <br></br>
+  <br></br>
+  
 
 
 
               {/* Trust Indicators */}
-              <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-white/30">
+              <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-white/30 ">
                 <motion.div 
                   className="flex items-center gap-3"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="flex -space-x-1">
+                  <div className="flex -space-x-1 mb-4">
                    
                   </div>
                   <div>

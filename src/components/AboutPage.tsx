@@ -103,7 +103,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
         variant="image"
         backgroundImage="https://images.unsplash.com/photo-1662749061774-8da69c898e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=80"
         badge="Design. Detail. Durability. Delivered."
-        showWave={false}
+        
       />
 
       {/* === QUICK STATS CARDS - Floating Above === */}

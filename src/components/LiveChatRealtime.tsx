@@ -495,12 +495,13 @@ export function LiveChatRealtime({
                 {!isMinimized && (
                   <motion.div
                     initial={{ height: 0 }}
-                    animate={{ height: 450 }}
+                    animate={{ height: 350 }}
                     exit={{ height: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="overflow-hidden"
+                      className="flex flex-col"
                   >
-                    <div className="h-[450px] overflow-y-auto p-4 space-y-4 bg-[#F5F3F0]">
+                   <div className="h-[350px] overflow-y-auto p-4 space-y-4 bg-[#F5F3F0]">
+
                       {messages.map((message, index) => (
                         <motion.div
                           key={message.id}
@@ -511,13 +512,23 @@ export function LiveChatRealtime({
                         >
                           <div className={`max-w-[85%] ${message.sender === 'user' ? 'order-2' : 'order-1'}`}>
                             <div
-                              className={`px-4 py-3 rounded-2xl shadow-sm ${
-                                message.sender === 'user'
-                                  ? 'bg-[#223b57] text-white rounded-br-sm'
-                                  : 'bg-white text-gray-800 rounded-bl-sm border border-gray-200'
-                              }`}
-                            >
-                              <p className="text-sm leading-relaxed whitespace-pre-line">{message.text}</p>
+  className={`px-4 py-3 rounded-2xl shadow-sm ${
+    message.sender === 'user'
+      ? 'bg-[#223b57] text-white rounded-br-sm'
+      : 'bg-white text-gray-800 rounded-bl-sm border border-gray-200'
+  }`}
+>
+
+                             <p
+  className={`text-sm leading-relaxed whitespace-pre-line ${
+    message.sender === 'user'
+      ? 'text-white !text-white'
+      : 'text-gray-800'
+  }`}
+>
+  {message.text}
+</p>
+
                             </div>
                             <div className={`flex items-center gap-1.5 mt-1 px-2 ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                               <span className="text-xs text-gray-500">
