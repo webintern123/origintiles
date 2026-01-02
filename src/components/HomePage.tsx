@@ -241,7 +241,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
   <span className="block">in Design</span>
 </h1>
 <br></br>
-<br></br>
+
                 <p className="text-xl text-white/90 leading-relaxed max-w-xl">
                   Explore high-quality tiles designed for homes, commercial spaces, and architectural projects. At Origin Tiles, thoughtful design and lasting strength come together to create spaces that stay beautiful over time.
                 </p>
