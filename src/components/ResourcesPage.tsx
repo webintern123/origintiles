@@ -177,22 +177,31 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       </section>
 
       {/* All Resources by Category */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="container max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-[#223B57] mb-4">
-              Explore All Resources
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Use Filters To Quickly Find What You’re Looking For<br></br>
-              Browse our complete library of guides, catalogues, technical documents, and videos. Use category filters to narrow down resources based on your needs.
-            </p>
-          </motion.div>
+     <section className="py-20 bg-[#F5F3F0]">
+  <div className="container max-w-6xl">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center mb-12"
+    >
+      {/* Main Heading */}
+      <h2 className="text-4xl font-bold text-[#223B57] mb-4">
+        Explore All Resources
+      </h2>
+
+      {/* Sub Heading */}
+      <p className="text-xl font-semibold text-[#223B57] mb-4">
+        Use Filters To Quickly Find What You’re Looking For
+      </p>
+
+      {/* Description */}
+      <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+        Browse our complete library of guides, catalogues, technical documents, and videos.
+        Use category filters to narrow down resources based on your needs.
+      </p>
+    </motion.div>
+  
 
           <Tabs defaultValue="all" className="space-y-8">
             <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto bg-white/60 backdrop-blur-md p-2 rounded-2xl shadow-lg border border-white/20">
@@ -932,7 +941,13 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                   <Button 
                     onClick={() => onNavigate("Dealers Locator")}
                     variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 h-12 px-8 rounded-xl"
+                    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
                   >
                     Locate an Installer 
                   </Button>

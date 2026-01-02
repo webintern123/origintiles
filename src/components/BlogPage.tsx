@@ -267,6 +267,129 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
         </section>
       )}
 
+      {/* === CONTENT TOPICS SECTION === */}
+<section className="py-24 bg-[#F5F3F0]">
+  <div className="container max-w-7xl">
+
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        Content Topics
+      </Badge>
+
+      <h2 className="text-3xl md:text-4xl font-semibold text-[#223B57] mb-4">
+        What We Write About
+      </h2>
+
+      <p className="text-neutral-600 text-lg">
+        Explore our collection of articles, organised by topic, to help you
+        choose, use, and maintain tiles with confidence.
+      </p>
+    </motion.div>
+
+    {/* Topics Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Bathroom & Wet Areas",
+          description:
+            "Tile solutions for bathrooms, wash areas, and moisture-prone spaces",
+          count: "3 Articles",
+        },
+        {
+          title: "Interior Design Ideas",
+          description:
+            "Design inspiration, layout ideas, and styling tips for modern interiors",
+          count: "3 Articles",
+        },
+        {
+          title: "Sustainability & Eco Practices",
+          description:
+            "Responsible manufacturing, eco-friendly processes, and sustainable materials",
+          count: "3 Articles",
+        },
+        {
+          title: "Tile Selection Guides",
+          description:
+            "Help choosing the right tile based on space, usage, finish, and size",
+          count: "3 Articles",
+        },
+        {
+          title: "Design Trends",
+          description:
+            "Latest tile trends, colours, patterns, and surface finishes",
+          count: "1 Article",
+        },
+        {
+          title: "Safety & Standards",
+          description:
+            "Slip resistance, quality standards, and application guidelines",
+          count: "1 Article",
+        },
+        {
+          title: "Care & Maintenance Tips",
+          description:
+            "Cleaning, upkeep, and long-term care for different tile finishes",
+          count: "3 Articles",
+        },
+        {
+          title: "Health & Indoor Safety",
+          description:
+            "Low-emission materials, indoor safety, and hygiene-focused tile choices",
+          count: "2 Articles",
+        },
+        {
+          title: "Tile Comparisons",
+          description:
+            "Comparisons between ceramic, porcelain, GVT, PGVT, and other tile types",
+          count: "2 Articles",
+        },
+      ].map((topic, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.05 }}
+          className="group"
+        >
+          <Card className="relative h-full border-0 rounded-2xl bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer">
+            {/* Glass Border */}
+            <div className="absolute inset-0 border border-white/30 rounded-2xl pointer-events-none"></div>
+
+            {/* Hover Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+            <CardContent className="relative p-8 flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[#223B57] mb-3">
+                {topic.title}
+              </h3>
+
+              <p className="text-neutral-600 text-sm leading-relaxed flex-1 mb-6">
+                {topic.description}
+              </p>
+
+              <div className="flex items-center justify-between mt-auto">
+                <span className="text-sm font-medium text-[#223B57]">
+                  {topic.count}
+                </span>
+
+                
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
       {/* Search & Filter Section */}
       <section className="py-20 bg-[#F5F3F0]">
         <div className="container max-w-6xl">
@@ -359,10 +482,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
 
                       {/* Meta Info */}
                       <div className="flex items-center justify-between text-xs text-neutral-500 mb-4 pb-4 border-b border-neutral-200">
-                        <div className="flex items-center gap-2">
-                          <User className="w-3.5 h-3.5" />
-                          <span>{post.author}</span>
-                        </div>
+                        
                         <div className="flex items-center gap-2">
                           <Clock className="w-3.5 h-3.5" />
                           <span>{post.readTime}</span>

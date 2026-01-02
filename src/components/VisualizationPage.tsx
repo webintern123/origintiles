@@ -897,7 +897,13 @@ export function VisualizationPage({ onNavigate }: VisualizationPageProps) {
                   <Button 
                     onClick={() => onNavigate("Tools")}
                     variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 h-12 px-8 rounded-xl"
+                    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
                   >
                     Explore More Tools
                   </Button>

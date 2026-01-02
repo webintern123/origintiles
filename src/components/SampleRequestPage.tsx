@@ -1268,21 +1268,13 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
 
   <Button
     variant="outline"
-    className="
-      h-12
-      sm:h-14
-      px-8
-      rounded-xl
-      bg-white/10
-      backdrop-blur-md
-      text-white
-      border-white/30
-      hover:bg-white/20
-      font-semibold
-      transition-all
-      duration-300
-      whitespace-nowrap
-    "
+    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
   >
    Subscribe
   </Button>

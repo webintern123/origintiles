@@ -708,7 +708,13 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 </Card>
               ))}
             </motion.div>
+            
           </div>
+          <br></br>
+          <p className="pt-4 text-center text-sm text-neutral-500 italic">
+    "Tip: Record measurements clearly in feet or metres."
+  </p>
+  
         </div>
       </section>
 
@@ -735,6 +741,16 @@ This ensures practical accuracy for real-site conditions.
             </p>
             
           </motion.div>
+          {/* Left aligned sub-heading above cards */}
+<div className="max-w-5xl mx-auto mb-6">
+  <h3 className="text-2xl font-semibold text-[#223B57] mb-2">
+    Simple Steps for Accurate Results
+  </h3>
+  <p className="text-neutral-600 max-w-2xl">
+    Our tile calculator follows standard calculation methods to give you reliable estimates.
+  </p>
+</div>
+
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
@@ -784,6 +800,7 @@ This ensures practical accuracy for real-site conditions.
                     </p>
                   </CardContent>
                 </Card>
+                
               </motion.div>
             ))}
           </div>
@@ -956,10 +973,18 @@ This ensures practical accuracy for real-site conditions.
       <h2 className="text-4xl font-bold text-[#223B57] mb-4">
         Choose The Right Tiles After Calculation
       </h2>
-      <p className="text-neutral-600 text-lg">
-        Once your quantity is calculated, explore tiles that suit your space.
-      </p>
+      
     </motion.div>
+    {/* Left aligned sub-heading above cards */}
+<div className="max-w-5xl mx-auto mb-6">
+  <h3 className="text-2xl font-semibold text-[#223B57] mb-2">
+    Simple Steps for Accurate Results
+  </h3>
+  <p className="text-neutral-600 max-w-2xl">
+    Our tile calculator follows standard calculation methods to give you reliable estimates.
+  </p>
+</div>
+
 
     <div className="grid md:grid-cols-3 gap-6">
       {[
@@ -1037,7 +1062,8 @@ This ensures practical accuracy for real-site conditions.
             
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
             {[
               {
                 icon: Factory,
@@ -1052,6 +1078,11 @@ This ensures practical accuracy for real-site conditions.
               {
                 icon: Package,
                 title: "	Supports All Tile Sizes and Formats",
+                
+              },
+               {
+                icon: Package,
+                title: "Simple Enough For Homeowners.",
                 
               },
              
@@ -1250,7 +1281,13 @@ This ensures practical accuracy for real-site conditions.
                   <Button 
                     onClick={() => onNavigate("Tile Pattern Builder")}
                     variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 h-12 px-8 rounded-xl"
+                    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
                   >
                     Pattern Builder
                   </Button>

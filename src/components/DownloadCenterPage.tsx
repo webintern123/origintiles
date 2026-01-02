@@ -849,17 +849,28 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
                 size="lg"
                 variant="outline"
                 onClick={handleRequestQuote}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm [&_svg]:text-white"
+                className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
               >
                 Request Custom Documents
               </Button>
-              <Button
-                size="lg"
-                onClick={() => onNavigate('Contact')}
-                className="bg-white text-[#223B57] hover:bg-white/90 [&_svg]:text-[#223B57]"
-              >
-                Get Support
-              </Button>
+             <Button
+  size="lg"
+  onClick={() => onNavigate('Contact')}
+  className="bg-white text-[#223B57]
+             hover:bg-white/90
+             hover:text-[#223B57]
+             [&_svg]:text-[#223B57]
+             transition-colors"
+>
+  Get Support
+</Button>
+
             </div>
           </motion.div>
         </div>
@@ -1119,21 +1130,13 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
 
   <Button
     variant="outline"
-    className="
-      h-12
-      sm:h-14
-      px-8
-      rounded-xl
-      bg-white/10
-      backdrop-blur-md
-      text-white
-      border-white/30
-      hover:bg-white/20
-      font-semibold
-      transition-all
-      duration-300
-      whitespace-nowrap
-    "
+    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
   >
     Notify Me →
   </Button>

@@ -1464,14 +1464,23 @@ Designed for Elegance, Engineered for Strength|
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
                     <Button
-                      onClick={() => onNavigate("Sample Request")}
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white active:bg-[#223B57] active:text-white active:scale-95 h-14 px-8 transition-all"
-                    >
-                      <Package className="mr-2 w-5 h-5" />
-                      Book Showroom Visit
-                    </Button>
+  onClick={() => onNavigate("Sample Request")}
+  size="lg"
+  variant="outline"
+  className="group border-2 border-[#223B57]
+             text-[#223B57]
+             hover:bg-[#223B57] hover:text-white
+             active:bg-[#223B57] active:text-white
+             h-14 px-8 transition-all"
+>
+  <Package
+    className="mr-2 w-5 h-5
+               text-[#223B57]
+               group-hover:text-white"
+  />
+  Book Showroom Visit
+</Button>
+
                   </motion.div>
 
                   {/* Quick Contact */}
@@ -1878,15 +1887,23 @@ Designed for Elegance, Engineered for Strength|
                       Start Calculator
                       <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                    <Button 
-                      onClick={() => onNavigate("Visualization")}
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white h-14 px-8"
-                    >
-                      <Eye className="mr-2 w-5 h-5" />
-                      Visualize Design
-                    </Button>
+                   <Button 
+  onClick={() => onNavigate("Visualization")}
+  size="lg"
+  variant="outline"
+  className="group border-2 border-[#223B57]
+             text-[#223B57]
+             hover:bg-[#223B57] hover:text-white
+             h-14 px-8 transition-all"
+>
+  <Eye
+    className="mr-2 w-5 h-5
+               text-[#223B57]
+               group-hover:text-white"
+  />
+  Visualize Design
+</Button>
+
                   </motion.div>
 
                   {/* Trust Badge */}

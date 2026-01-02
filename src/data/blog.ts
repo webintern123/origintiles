@@ -18,8 +18,8 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: '10 Tile Design Trends to Watch in 2025',
-    excerpt: 'Explore the ceramic tile styles and design ideas shaping modern homes and commercial spaces this year.',
+    title: 'Modern Tile Design Trends for 2025',
+    excerpt: 'Explore the tile styles shaping homes and commercial spaces this year.  Discover colours, patterns, and finishes trends.',
     content: `The world of ceramic tile design is evolving rapidly, bringing fresh perspectives and innovative solutions to both residential and commercial spaces. As we move through 2025, several key trends are emerging that are reshaping how we think about tile design.
 
 ## 1. Large Format Tiles
@@ -84,8 +84,8 @@ These trends represent the cutting edge of tile design, but the best choice alwa
   },
   {
     id: 2,
-    title: 'Complete Guide to Tile Installation: Step by Step',
-    excerpt: 'Learn professional tile installation techniques for perfect results every time.',
+    title: 'Complete Tile Installation Guide – Step by Step',
+    excerpt: 'A practical & professional guide tips covering the full tile installation process from start to finish to achieve a clean and durable finish.',
     content: `Installing ceramic tiles can seem daunting, but with the right preparation, tools, and techniques, you can achieve professional-quality results. This comprehensive guide walks you through every step of the tile installation process.
 
 ## Pre-Installation Planning
@@ -181,7 +181,7 @@ With patience, proper preparation, and attention to detail, you can achieve beau
   {
     id: 3,
     title: 'Choosing the Right Tile Size for Your Space',
-    excerpt: 'Size matters! Understand how different tile dimensions impact your room aesthetics.',
+    excerpt: 'See how tile size affects room appearance and layout.',
     content: `Selecting the perfect tile size is crucial for achieving your desired aesthetic and making the most of your space. The right tile dimensions can make a room feel larger, create visual interest, or establish a specific design style. Here's everything you need to know about choosing tile sizes.
 
 ## Understanding Standard Tile Sizes
@@ -275,7 +275,7 @@ The right tile size depends on your space, style preferences, and practical need
   {
     id: 4,
     title: 'Bathroom Tile Maintenance: Expert Tips',
-    excerpt: 'Keep your bathroom tiles looking new with these professional cleaning and maintenance tips.',
+    excerpt: 'Simple ways to keep bathroom tiles clean and fresh.',
     category: 'Maintenance',
     author: 'Vikram Patel',
     date: '2024-10-15',
@@ -283,10 +283,11 @@ The right tile size depends on your space, style preferences, and practical need
     image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=500&fit=crop',
     featured: false
   },
+
   {
     id: 5,
-    title: 'Porcelain vs Ceramic: Which is Right for You?',
-    excerpt: 'A comprehensive comparison to help you make the best choice for your project.',
+    title: 'Porcelain vs Ceramic Tiles: Which Should You Choose?',
+    excerpt: 'A simple & clear comparison to help you decide the right tile based on usage and budget.',
     category: 'Tips & Guides',
     author: 'Meera Reddy',
     date: '2024-10-12',
@@ -296,15 +297,251 @@ The right tile size depends on your space, style preferences, and practical need
   },
   {
     id: 6,
-    title: 'Creating Statement Walls with Feature Tiles',
-    excerpt: 'Transform any room with dramatic feature walls using designer ceramic tiles.',
+    title: 'Creating Feature Walls with Designer Tiles',
+    excerpt: 'Learn how to use feature tiles to add character to any room.',
     category: 'Design Trends',
     author: 'Amit Singh',
     date: '2024-10-08',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&h=500&fit=crop',
     featured: false
-  }
+  },
+  {
+    id: 7,
+    title: 'Choosing the Right Tile Finish for Interiors',
+    excerpt: 'Understand how finishes like glossy, matte, and textured change the look of a space.',
+    category: 'Design Trends',
+    author: 'Amit Singh',
+    date: '2024-10-08',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=800&h=500&fit=crop',
+    featured: false
+  },
+   {
+    id: 8,
+    title: 'Common Tile Installation Mistakes to Avoid',
+    excerpt: 'Learn what to watch out for during tile installation.',
+    content: `Installing ceramic tiles can seem daunting, but with the right preparation, tools, and techniques, you can achieve professional-quality results. This comprehensive guide walks you through every step of the tile installation process.
+
+## Pre-Installation Planning
+
+Before you begin, proper planning is essential. Measure your space carefully, order 10-15% extra tiles to account for cuts and breakage, and gather all necessary tools and materials.
+
+### Essential Tools:
+- Tile cutter or wet saw
+- Trowel (appropriate notch size for your tiles)
+- Tile spacers
+- Level
+- Rubber mallet
+- Grout float
+- Sponges and buckets
+
+## Step 1: Surface Preparation
+
+The foundation of a successful tile installation is a properly prepared surface. Your substrate must be clean, level, dry, and structurally sound.
+
+**Key Actions:**
+- Remove all debris, dust, and old adhesive
+- Repair any cracks or damage
+- Ensure the surface is level (use self-leveling compound if needed)
+- Apply primer if required
+
+## Step 2: Layout Planning
+
+Never start tiling without a proper layout plan. This step prevents awkward cuts and ensures a balanced, professional appearance.
+
+**Layout Tips:**
+- Find the center of the room
+- Do a dry layout before applying adhesive
+- Plan to avoid narrow tile pieces at edges
+- Consider the pattern direction
+
+## Step 3: Mixing and Applying Adhesive
+
+Use the correct adhesive for your tile type and substrate. Mix according to manufacturer instructions and work in small sections.
+
+**Application Process:**
+- Apply adhesive with the flat side of the trowel
+- Create ridges using the notched side
+- Work in 3-4 square foot sections
+- Maintain consistent ridge height
+
+## Step 4: Setting Tiles
+
+Place tiles carefully, using spacers to maintain consistent grout lines. Press firmly but don't slide tiles into position.
+
+**Installation Guidelines:**
+- Use a slight twisting motion when setting
+- Check level frequently
+- Use a rubber mallet for large format tiles
+- Clean excess adhesive immediately
+
+## Step 5: Grouting
+
+Wait 24-48 hours before grouting to allow adhesive to cure fully. Choose grout color carefully as it significantly impacts the final appearance.
+
+**Grouting Process:**
+- Remove spacers
+- Mix grout to peanut butter consistency
+- Apply at 45-degree angle
+- Remove excess at 45-degree angle
+- Clean with damp sponge
+
+## Step 6: Sealing and Finishing
+
+After grout has cured (48-72 hours), apply sealer to protect against stains and moisture. Clean tiles with appropriate cleaner.
+
+## Common Mistakes to Avoid
+
+- Skipping surface preparation
+- Using incorrect adhesive
+- Not using spacers
+- Grouting too soon
+- Ignoring manufacturer instructions
+
+## Conclusion
+
+With patience, proper preparation, and attention to detail, you can achieve beautiful, long-lasting tile installations. Remember, taking your time during each step will result in a superior finished product.`,
+    category: 'Installation',
+    author: 'Rajesh Kumar',
+    authorBio: 'Master tile installer and technical trainer with 18 years of hands-on experience in residential and commercial installations.',
+    authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
+    date: '2024-10-20',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f1a4b1b?w=800&h=500&fit=crop',
+    featured: false,
+    views: 12850,
+    tags: ['Installation', 'DIY', 'How-To', 'Professional Tips']
+  },
+   {
+    id: 9,
+    title: 'Preparing Surfaces Before Tile Installation',
+    excerpt: 'Why surface preparation matters and how to do it right.',
+    content: `Installing ceramic tiles can seem daunting, but with the right preparation, tools, and techniques, you can achieve professional-quality results. This comprehensive guide walks you through every step of the tile installation process.
+
+## Pre-Installation Planning
+
+Before you begin, proper planning is essential. Measure your space carefully, order 10-15% extra tiles to account for cuts and breakage, and gather all necessary tools and materials.
+
+### Essential Tools:
+- Tile cutter or wet saw
+- Trowel (appropriate notch size for your tiles)
+- Tile spacers
+- Level
+- Rubber mallet
+- Grout float
+- Sponges and buckets
+
+## Step 1: Surface Preparation
+
+The foundation of a successful tile installation is a properly prepared surface. Your substrate must be clean, level, dry, and structurally sound.
+
+**Key Actions:**
+- Remove all debris, dust, and old adhesive
+- Repair any cracks or damage
+- Ensure the surface is level (use self-leveling compound if needed)
+- Apply primer if required
+
+## Step 2: Layout Planning
+
+Never start tiling without a proper layout plan. This step prevents awkward cuts and ensures a balanced, professional appearance.
+
+**Layout Tips:**
+- Find the center of the room
+- Do a dry layout before applying adhesive
+- Plan to avoid narrow tile pieces at edges
+- Consider the pattern direction
+
+## Step 3: Mixing and Applying Adhesive
+
+Use the correct adhesive for your tile type and substrate. Mix according to manufacturer instructions and work in small sections.
+
+**Application Process:**
+- Apply adhesive with the flat side of the trowel
+- Create ridges using the notched side
+- Work in 3-4 square foot sections
+- Maintain consistent ridge height
+
+## Step 4: Setting Tiles
+
+Place tiles carefully, using spacers to maintain consistent grout lines. Press firmly but don't slide tiles into position.
+
+**Installation Guidelines:**
+- Use a slight twisting motion when setting
+- Check level frequently
+- Use a rubber mallet for large format tiles
+- Clean excess adhesive immediately
+
+## Step 5: Grouting
+
+Wait 24-48 hours before grouting to allow adhesive to cure fully. Choose grout color carefully as it significantly impacts the final appearance.
+
+**Grouting Process:**
+- Remove spacers
+- Mix grout to peanut butter consistency
+- Apply at 45-degree angle
+- Remove excess at 45-degree angle
+- Clean with damp sponge
+
+## Step 6: Sealing and Finishing
+
+After grout has cured (48-72 hours), apply sealer to protect against stains and moisture. Clean tiles with appropriate cleaner.
+
+## Common Mistakes to Avoid
+
+- Skipping surface preparation
+- Using incorrect adhesive
+- Not using spacers
+- Grouting too soon
+- Ignoring manufacturer instructions
+
+## Conclusion
+
+With patience, proper preparation, and attention to detail, you can achieve beautiful, long-lasting tile installations. Remember, taking your time during each step will result in a superior finished product.`,
+    category: 'Installation',
+    author: 'Rajesh Kumar',
+    authorBio: 'Master tile installer and technical trainer with 18 years of hands-on experience in residential and commercial installations.',
+    authorImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop',
+    date: '2024-10-20',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f1a4b1b?w=800&h=500&fit=crop',
+    featured: false,
+    views: 12850,
+    tags: ['Installation', 'DIY', 'How-To', 'Professional Tips']
+  },
+  {
+    id: 10,
+    title: 'How to Select Tiles for High-Traffic Areas',
+    excerpt: 'Tips for choosing durable tiles for busy spaces.',
+    category: 'Tips & Guides',
+    author: 'Meera Reddy',
+    date: '2024-10-12',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1503127431568-0f4b2f4e56e1?w=800&h=500&fit=crop',
+    featured: false
+  },
+  {
+    id: 11,
+    title: 'Daily Cleaning Tips for Ceramic Tiles',
+    excerpt: 'Easy cleaning habits for long-lasting tile finish.',
+    category: 'Maintenance',
+    author: 'Vikram Patel',
+    date: '2024-10-15',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=500&fit=crop',
+    featured: false
+  },
+   {
+    id: 12,
+    title: 'How to Remove Stains from Tile Surfaces',
+    excerpt: 'Practical solutions for common tile stains.',
+    category: 'Maintenance',
+    author: 'Vikram Patel',
+    date: '2024-10-15',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&h=500&fit=crop',
+    featured: false
+  },
 ];
 
 export const blogCategories = ['All', 'Design Trends', 'Installation', 'Tips & Guides', 'Maintenance'];

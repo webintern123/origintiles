@@ -178,7 +178,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
           icon={CheckCircle2}
           variant="gradient"
           badge="Personalized Recommendations • Expert Matched"
-          showWave={false}
+         showWave={false}
           breadcrumbs={[
             { label: "Home", onClick: () => onNavigate("Home") },
             { label: "Tools", onClick: () => onNavigate("Tools") },
@@ -1126,7 +1126,13 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
                   <Button 
                     onClick={() => onNavigate("Products")}
                     variant="outline"
-                    className="bg-white/10 backdrop-blur-md text-white border-white/30 hover:bg-white/20 h-12 px-8 rounded-xl"
+                    className="bg-white/10 backdrop-blur-md
+    text-white border-white/30
+    hover:bg-white/20 hover:border-white/50
+    hover:text-white
+    rounded-xl h-12 px-8
+    [&_svg]:text-white hover:[&_svg]:text-white
+  "
                   >
                     Browse All Tiles
                   </Button>
