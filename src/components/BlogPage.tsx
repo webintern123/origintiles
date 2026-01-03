@@ -629,7 +629,7 @@ export function BlogPage({ onNavigate }: BlogPageProps) {
                        </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F3F0]">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -242,14 +242,14 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                       <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
                         Get In Touch
                       </Badge>
-                      <h2 className="text-[#223B57] mb-3">Expert Help For Choosing The Right Tiles</h2>
+                      <h2 className="font-semibold text-[#223B57] mb-3">Expert Help For Choosing The Right Tiles</h2>
                       <p className="text-neutral-600">Request samples, product details, or expert guidance by filling out the form below. Our team will get in touch within 24 hours.</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-7">
                       <div className="grid grid-cols-12 gap-6">
                         <div className="col-span-12 md:col-span-6">
-                          <Label htmlFor="name" className="text-[#223B57] mb-3 block">Full Name *</Label>
+                          <Label htmlFor="name" className="font-semibold text-[#223B57] mb-3 block">Full Name *</Label>
                           <Input
                             id="name"
                             type="text"
@@ -265,7 +265,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                         </div>
                         
                         <div className="col-span-12 md:col-span-6">
-                          <Label htmlFor="email" className="text-[#223B57] mb-3 block">Email Address *</Label>
+                          <Label htmlFor="email" className="font-semibold text-[#223B57] mb-3 block">Email Address *</Label>
                           <Input
                             id="email"
                             type="email"
@@ -282,7 +282,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
                         {/* Phone + City (same row) */}
 <div className="col-span-12 md:col-span-6">
-  <Label htmlFor="phone" className="text-[#223B57] mb-3 block">
+  <Label htmlFor="phone" className="font-semibold text-[#223B57] mb-3 block">
     Phone Number *
   </Label>
   <Input
@@ -298,7 +298,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12 md:col-span-6">
-  <Label htmlFor="city" className="text-[#223B57] mb-3 block">
+  <Label htmlFor="city" className="font-semibold text-[#223B57] mb-3 block">
     City / Location *
   </Label>
   <Input
@@ -315,7 +315,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
 {/* Company (full width below) */}
 <div className="col-span-12">
-  <Label htmlFor="company" className="text-[#223B57] mb-3 block">
+  <Label htmlFor="company" className="font-semibold text-[#223B57] mb-3 block">
     Company / Firm Name (Optional)
   </Label>
   <Input
@@ -331,7 +331,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
                         <div className="col-span-12">
-  <Label className="mb-3 block text-[#223B57]">Enquiry Type *</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Enquiry Type *</Label>
   <div className="grid md:grid-cols-2 gap-3">
     {[
       "General Enquiry",
@@ -356,7 +356,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12">
-  <Label className="mb-3 block text-[#223B57]">
+  <Label className="mb-3 block font-semibold text-[#223B57]">
     Collection / Product Interest
   </Label>
   <div className="grid md:grid-cols-2 gap-3">
@@ -383,7 +383,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12 md:col-span-6">
-  <Label className="mb-3 block text-[#223B57]">Project Type</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Project Type</Label>
   <Select onValueChange={(v) => setFormData({ ...formData, projectType: v })}>
     <SelectTrigger className={buttonLikeInput}>
       <SelectValue placeholder="Select Project Type" />
@@ -399,7 +399,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12 md:col-span-6">
-  <Label className="mb-3 block text-[#223B57]">Approximate Quantity</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Approximate Quantity</Label>
   <Select onValueChange={(v) => setFormData({ ...formData, quantity: v })}>
     <SelectTrigger className={buttonLikeInput}>
       <SelectValue placeholder="Select Area Size" />
@@ -414,7 +414,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12 md:col-span-6">
-  <Label className="mb-3 block text-[#223B57]">Purchase Timeline</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Purchase Timeline</Label>
   <Select onValueChange={(v) => setFormData({ ...formData, timeline: v })}>
     <SelectTrigger className={buttonLikeInput}>
       <SelectValue placeholder="Select Timeline" />
@@ -429,7 +429,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12 md:col-span-6">
-  <Label className="mb-3 block text-[#223B57]">Urgency Level</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Urgency Level</Label>
   <Select onValueChange={(v) => setFormData({ ...formData, urgency: v })}>
     <SelectTrigger className={buttonLikeInput}>
       <SelectValue placeholder="Select Urgency" />
@@ -444,7 +444,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
 
 <div className="col-span-12">
-  <Label className="mb-3 block text-[#223B57]">
+  <Label className="mb-3 block font-semibold text-[#223B57]">
     Additional Details
   </Label>
   <Label className="mb-2 block text-sm text-neutral-600">
@@ -466,7 +466,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
 
 <div className="col-span-12">
-  <Label className="mb-3 block text-[#223B57]">Upload Files (Optional)</Label>
+  <Label className="mb-3 block font-semibold text-[#223B57]">Upload Files (Optional)</Label>
   <Input
     type="file"
     multiple
@@ -490,7 +490,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
                       </div>
                       {/* === CONTACT PREFERENCES === */}
 <div className="col-span-12">
-  <Label className="mb-4 block text-[#223B57]">
+  <Label className="mb-4 block font-semibold text-[#223B57]">
     Contact Preferences
   </Label>
 
@@ -498,7 +498,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
     
     {/* Preferred Contact Method */}
     <div>
-      <Label className="mb-3 block text-sm">
+      <Label className="mb-3 block font-semibold text-sm">
         Preferred Contact Method
       </Label>
       <Select
@@ -519,7 +519,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 
     {/* Preferred Contact Time */}
     <div>
-      <Label className="mb-3 block text-sm">
+      <Label className="mb-3 block font-semibold text-sm">
         Preferred Contact Time
       </Label>
       <Select
@@ -542,7 +542,7 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
 </div>
 
 <div className="col-span-12">
-  <Label className="mb-3 block text-[#223B57]">
+  <Label className="mb-3 block font-semibold text-[#223B57]">
     How Did You Hear About Us?
   </Label>
   <Select onValueChange={(v) => setFormData({ ...formData, heardFrom: v })}>
@@ -587,15 +587,16 @@ export function ContactPage({ onNavigate }: ContactPageProps) {
   
 </div>
 
-                      <Button 
-                        type="submit" 
-                        size="lg"
-                        className="w-full h-14"
-                        disabled={!agreedToTerms}
-                      >
-                        <Send className="w-4 h-4 mr-2" />
-                          Submit Enquiry
-                      </Button>
+                     <Button 
+  type="submit" 
+  size="lg"
+  className="w-full h-14 bg-[#223B57] text-[#F5F3F0] hover:bg-[#1a2d43] disabled:bg-[#223B57]/50 disabled:text-[#F5F3F0] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+  disabled={!agreedToTerms}
+>
+  <Send className="w-4 h-4 mr-2 text-[#F5F3F0]" />
+  Submit Enquiry
+</Button>
+
                     </form>
                   </CardContent>
                 </Card>

@@ -785,17 +785,7 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
       </h2>
     </motion.div>
 
-    {/* LEFT-ALIGNED SUBHEADING */}
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      className="mb-6"
-    >
-      <p className="text-[#223B57] font-semibold text-lg">
-        Each recommended tile includes:
-      </p>
-    </motion.div>
+
 
     {/* Cards */}
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -841,14 +831,18 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
       ))}
     </div>
 <br></br>
+<br></br>
+
+
     <motion.p
   initial={{ opacity: 0 }}
   whileInView={{ opacity: 1 }}
   viewport={{ once: true }}
-  className="mt-10 text-neutral-600 text-base text-center italic"
+  className="mt-10 font-semibold text-[#223B57] text-lg text-center italic"
 >
   “This makes comparison easy and transparent.”
 </motion.p>
+
 
   </div>
 </section>
@@ -979,13 +973,14 @@ export function TileQuizPage({ onNavigate }: TileQuizPageProps) {
 
     {/* Closing Line */}
     <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="text-center text-neutral-600 text-base italic"
-    >
-      “This makes your journey smooth from selection to purchase.”
-    </motion.p>
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+  className="text-center font-semibold text-[#223B57] text-lg italic mt-6"
+>
+  “This makes your journey smooth from selection to purchase.”
+</motion.p>
+
 
   </div>
 </section>

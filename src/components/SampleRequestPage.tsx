@@ -224,15 +224,15 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] mb-8">
        Why Request Samples?
       </Badge>
 
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-8">
        See the Tile Before You Decide
       </h2>
 
-      <p className="text-lg text-neutral-600 mb-4">
+      <p className="text-lg text-neutral-600 mb-8">
         Choosing tiles is easier when you can see and feel them in person. Our samples help you make confident decisions before placing an order.
       </p>
     </motion.div>
@@ -396,43 +396,18 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
           </div>
         </div>
       </section>
- <section className="py-20 bg-[#F5F3F0]">
-  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-    <motion.div
-      className="text-center mb-16"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-        Need Assistance?
-      </h2>
-
-      <p className="text-lg text-neutral-600 max-w-3xl mx-auto mb-8">
-        Origin Tiles support team is happy to help you choose the right samples and recommend suitable tiles for your project.
-      </p>
-
-      {/* Contact Support Button */}
-      <Button
-        size="lg"
-        className="bg-[#223B57] hover:bg-[#1a2d43] text-white px-10 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
-        onClick={() => onNavigate("Contact")}
-      >
-        Contact Support
-      </Button>
-    </motion.div>
-  </div>
-</section>
-{/* Info Text below Contact Support */}
+      
+ {/* Info Text below Contact Support */}
 <div className="mt-10 max-w-4xl mx-auto text-center">
-  <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] px-4 py-2">
+  <br></br>
+  <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57] px-4 py-3">
            Sample Request Form
             </Badge>
-  <h3 className="text-4xl font-bold text-[#223B57] mb-3">
+  <h3 className="text-4xl font-bold text-[#223B57] mb-8">
     Select Your Samples & Submit the Request
   </h3>
 
-  <p className="text-lg text-[#223B57] mb-2">
+  <p className="text-lg text-[#223B57] mb-8">
     Choose the tiles you’d like to experience and share your delivery details. This helps us ensure the right samples reach you on time.
   </p>
   <div className="bg-white/70 backdrop-blur-md border border-[#223B57]/10 rounded-2xl p-6 text-left shadow-md">
@@ -981,7 +956,35 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
           </div>
         </div>
       </section>
-       <section className="py-20 bg-white">
+     <section className="py-20 bg-white">
+  <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-[300px]">
+    <motion.div
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Need Assistance?
+      </h2>
+
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto mb-8">
+        Origin Tiles support team is happy to help you choose the right samples and recommend suitable tiles for your project.
+      </p>
+
+      {/* Contact Support Button */}
+      <Button
+        size="lg"
+        className="bg-[#223B57] hover:bg-[#1a2d43] text-white px-10 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+        onClick={() => onNavigate("Contact")}
+      >
+        Contact Support
+      </Button>
+    </motion.div>
+  </div>
+</section>
+
+       <section className="py-20 bg-[#F5F3F0]">
         <div className="container">
           <motion.div
             className="text-center mb-16"
@@ -989,7 +992,7 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-8">
              Free Sample Guidelines
             </h2>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
@@ -1067,7 +1070,7 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
       </section>
 
       {/* === FAQ QUICK SECTION - Top Questions === */}
-                             <section className="section-padding bg-[#F5F3F0]">
+                             <section className="section-padding bg-white">
                                <div className="container">
                                  <motion.div
                                    className="text-center mb-12"
@@ -1168,15 +1171,15 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
                                  </motion.div>
                                </div>
                              </section>
-   <section className="py-20 bg-white">
-  <div className="max-w-[1440px] mx-auto px-6 md:px-12">
+   <section className="py-20 bg-[#F5F3F0]">
+  <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-[60vh]">
     <motion.div
-      className="text-center mb-16"
+      className="text-center"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-8">
         Looking for a Specific Tile?
       </h2>
 
@@ -1208,8 +1211,9 @@ export function SampleRequestPage({ onNavigate }: SampleRequestPageProps) {
     </motion.div>
   </div>
 </section>
+
  {/* === STAY UPDATED CTA SECTION === */}
-<section className="py-20 bg-[#F5F3F0]">
+<section className="py-20 bg-white">
   <div className="container">
     <motion.div
       initial={{ opacity: 0, y: 20 }}

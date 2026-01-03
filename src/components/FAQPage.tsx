@@ -28,8 +28,9 @@ export function FAQPage() {
   { icon: Users, title: "35+  ", description: "Common Questions Answered" },
   { icon: FileText, title: "Within 2 Hours ", description: "Quick Responses" },
   { icon: Clock, title: "99% ", description: "Customer Satisfaction" },
-  
+  { icon: Shield, title: "24/7 ", description: "Support Availability" }
 ];
+
 
 
   return (

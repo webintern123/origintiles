@@ -809,6 +809,7 @@ This ensures practical accuracy for real-site conditions.
       </section>
 
       {/* Why 10% Wastage Section */}
+{/* Why 10% Wastage Section */}
 <section className="py-20 bg-white">
   <div className="container max-w-4xl">
     <motion.div
@@ -828,78 +829,82 @@ This ensures practical accuracy for real-site conditions.
       </p>
     </motion.div>
 
-    <div className="grid md:grid-cols-3 gap-6">
-      {/* Main reasons grid takes 2/3 of width */}
-      <div className="md:col-span-2 grid md:grid-cols-2 gap-6">
-        {[
-          {
-            icon: Package,
-            title: "Tile Cutting",
-            description: "Edge and corner tiles need to be cut, which creates unused pieces."
-          },
-          {
-            icon: CheckCircle2,
-            title: "Size Variations",
-            description: "Minor size variations or small defects may require extra tiles."
-          },
-          {
-            icon: Layers,
-            title: "Pattern & Layout Matching",
-            description: "Certain layouts need specific tile alignment, increasing material use."
-          },
-          {
-            icon: Zap,
-            title: "Future Repairs",
-            description: "Extra tiles from the same batch help maintain colour and finish consistency later."
-          }
-        ].map((reason, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <Card className="border-0 shadow-lg bg-gradient-to-br from-neutral-50 to-white rounded-2xl h-full group hover:shadow-xl transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center group-hover:bg-[#223B57] group-hover:scale-110 transition-all duration-300">
-                      <reason.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={1.5} />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-[#223B57] mb-2">
-                      {reason.title}
-                    </h3>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
-                      {reason.description}
-                    </p>
+    <div className="grid md:grid-cols-2 gap-6">
+      {/* Main reasons grid takes full width on mobile, 2 columns on desktop */}
+      {[ 
+        {
+          icon: Package,
+          title: "Tile Cutting",
+          description: "Edge and corner tiles need to be cut, which creates unused pieces."
+        },
+        {
+          icon: CheckCircle2,
+          title: "Size Variations",
+          description: "Minor size variations or small defects may require extra tiles."
+        },
+        {
+          icon: Layers,
+          title: "Pattern & Layout Matching",
+          description: "Certain layouts need specific tile alignment, increasing material use."
+        },
+        {
+          icon: Zap,
+          title: "Future Repairs",
+          description: "Extra tiles from the same batch help maintain colour and finish consistency later."
+        }
+      ].map((reason, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+        >
+          <Card className="border-0 shadow-lg bg-gradient-to-br from-neutral-50 to-white rounded-2xl h-full group hover:shadow-xl transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#223B57]/10 flex items-center justify-center group-hover:bg-[#223B57] group-hover:scale-110 transition-all duration-300">
+                    <reason.icon className="w-6 h-6 text-[#223B57] group-hover:text-white transition-colors" strokeWidth={1.5} />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
+                <div>
+                  <h3 className="font-bold text-[#223B57] mb-2">
+                    {reason.title}
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      ))}
 
-      {/* Small side card for Recommended Wastage */}
-      <div className="md:col-span-1">
-        <Card className="border border-red-400 bg-red-50 p-4 rounded-xl shadow-sm">
-          <h4 className="text-red-600 font-semibold text-sm mb-2">Recommended Wastage</h4>
-          <ul className="text-red-600 text-xs list-disc list-inside space-y-1">
-            <li>Straight Pattern: 10%</li>
-            <li>Diagonal Pattern: 15%</li>
-            <li>Complex Layouts: 20%</li>
-          </ul>
-          <p className="text-red-600 text-[10px] mt-1">
-            Including wastage ensures smoother installation and better long-term results.
-          </p>
-        </Card>
-      </div>
+      {/* Recommended Wastage card centered below */}
+<div className="md:col-span-2 mt-6 flex justify-center">
+  <Card className="border border-red-400 bg-red-50 p-5 rounded-xl shadow-sm w-72">
+    <h4 className="text-red-600 font-semibold text-base mb-3 text-center">
+      Recommended Wastage
+    </h4>
+    <ul className="text-red-600 text-sm list-disc list-inside space-y-1">
+      <li>Straight Pattern: 10%</li>
+      <li>Diagonal Pattern: 15%</li>
+      <li>Complex Layouts: 20%</li>
+    </ul>
+    <p className="text-red-600 text-xs mt-2 text-center">
+      Including wastage ensures smoother installation and better long-term results.
+    </p>
+  </Card>
+</div>
+
+
+
     </div>
   </div>
 </section>
+
 {/* Multiple Rooms Planning Section */}
 <section className="py-20 bg-[#F5F3F0]">
   <div className="container max-w-4xl">

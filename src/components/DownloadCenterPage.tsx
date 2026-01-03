@@ -248,9 +248,10 @@ export function DownloadCenterPage({ onNavigate }: DownloadCenterPageProps) {
       <h3 className="text-2xl font-bold text-[#223B57] mb-8 text-center">
         Browse by Resource Type
       </h3>
-       <p className="text-lg text-neutral-600 max-w-3xl text-left ml-6 mb-4">
+      <p className="text-lg text-neutral-600 max-w-3xl text-center mx-auto mb-8">
   Explore documents by category for faster access:
 </p>
+
 
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

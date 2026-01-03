@@ -184,16 +184,16 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57]">
           Quick Guide
         </Badge>
   
-        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-8">
           Find an Origin Tiles Dealer Near You
           
         </h2>
   
-        <p className="text-lg text-neutral-600 mb-4">
+        <p className="text-lg text-neutral-600 mb-8">
           Use our easy search options to locate the nearest authorised Origin Tiles dealer in just a few steps.
         </p>
       </motion.div>
@@ -283,16 +283,16 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57]">
           Our Dealer Network
         </Badge>
   
-        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+        <h2 className="text-3xl md:text-3xl font-bold text-[#223B57] mb-8">
          Why Buy from Origin Tiles Authorised Dealers
           
         </h2>
   
-        <p className="text-lg text-neutral-600 mb-4">
+        <p className="text-lg text-neutral-600 mb-8">
           Our authorised dealers are trusted partners who offer genuine products and reliable support across India.
         </p>
       </motion.div>
@@ -379,7 +379,7 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
     Advanced Search
   </Badge>
 
-  <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-3">
+  <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-8">
     Find Dealers Easily with Smart Filters
   </h2>
 
@@ -923,28 +923,29 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         </div>
       </section>
    <section className="py-20 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-                <Package className="w-3 h-3 mr-1" />
-                Partnership Opportunity
-              </Badge>
-              <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
-                Become an Origin Tiles Authorised Dealer 
-              </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-                Partner with Origin Tiles and grow your business with a premium tile brand trusted by customers across India. We support our dealers with the right products, guidance, and long-term partnership.
-              </p>
-            </motion.div>
-  
-           
-          </div>
-        </section>
+  <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col items-center justify-center min-h-[60vh]">
+    <motion.div
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20 inline-flex items-center gap-1">
+        <Package className="w-3 h-3" />
+        Partnership Opportunity
+      </Badge>
+
+      <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-8">
+        Become an Origin Tiles Authorised Dealer 
+      </h2>
+
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        Partner with Origin Tiles and grow your business with a premium tile brand trusted by customers across India. We support our dealers with the right products, guidance, and long-term partnership.
+      </p>
+    </motion.div>
+  </div>
+</section>
+
 <section className="py-20 bg-[#F5F3F0]">
   <div className="container">
     <motion.div
@@ -1024,68 +1025,63 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      
-
       <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
         Dealer Requirements
       </h2>
-
-      
     </motion.div>
 
     {/* Content Grid */}
- <div className="grid grid-cols-1 lg:grid-cols-2 gap-40">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch"> {/* added items-stretch */}
 
-
-
-
-      
       {/* === BUSINESS CRITERIA === */}
       <motion.div
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-      >
-        <Card className="relative h-full border-0 shadow-lg bg-white/70 backdrop-blur-md rounded-3xl">
-          <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
+  initial={{ opacity: 0, x: -30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  className="flex" // flex wrapper
+>
+  <Card className="relative border-0 shadow-lg bg-white/70 backdrop-blur-md rounded-3xl flex-1 flex flex-col justify-center"> 
+    {/* flex flex-col justify-center centers content vertically */}
+    <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
 
-          <CardContent className="p-10">
-            <h3 className="text-2xl font-bold text-[#223B57] mb-6">
-              Business Criteria:
-            </h3>
+    <CardContent className="p-6">
+      <h3 className="text-2xl font-bold text-[#223B57] mb-4">
+        Business Criteria:
+      </h3>
 
-            <ul className="space-y-4 text-neutral-700">
-              {[
-                "GST-registered business",
-                "Adequate showroom or display space for tiles",
-                "Experience in tiles, building materials, or interiors preferred",
-                "Ability to manage stock and local distribution",
-              ].map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </motion.div>
+      <ul className="space-y-3 text-neutral-700">
+        {[
+          "GST-registered business",
+          "Adequate showroom or display space for tiles",
+          "Experience in tiles, building materials, or interiors preferred",
+          "Ability to manage stock and local distribution",
+        ].map((item, index) => (
+          <li key={index} className="flex items-start gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5" />
+            <span className="text-sm">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </CardContent>
+  </Card>
+</motion.div>
 
       {/* === WHAT YOU’LL RECEIVE === */}
       <motion.div
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
+        className="flex"
       >
-        <Card className="relative h-full border-0 shadow-lg bg-white/70 backdrop-blur-md rounded-3xl">
+        <Card className="relative border-0 shadow-lg bg-white/70 backdrop-blur-md rounded-3xl flex-1">
           <div className="absolute inset-0 border border-white/30 rounded-3xl pointer-events-none"></div>
 
-          <CardContent className="p-10">
-            <h3 className="text-2xl font-bold text-[#223B57] mb-6">
+          <CardContent className="p-6">
+            <h3 className="text-2xl font-bold text-[#223B57] mb-4">
               What You’ll Receive
             </h3>
 
-            <div className="space-y-5">
+            <div className="space-y-4">
               {[
                 {
                   title: "Complete Sample Display Kit",
@@ -1104,15 +1100,11 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
                   desc: "Competitive margins and dealer-focused benefits.",
                 },
               ].map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <Star className="w-5 h-5 text-[#223B57] mt-1" />
+                <div key={index} className="flex items-start gap-3">
+                  <Star className="w-4 h-4 text-[#223B57] mt-1" />
                   <div>
-                    <h4 className="font-semibold text-[#223B57]">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-neutral-600">
-                      {item.desc}
-                    </p>
+                    <h4 className="font-semibold text-[#223B57] text-sm">{item.title}</h4>
+                    <p className="text-xs text-neutral-600">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -1137,11 +1129,11 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57]">
           Trusted Across India
         </Badge>
   
-        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-8">
          Our Dealer Network at a Glance
           
         </h2>
@@ -1234,22 +1226,22 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+        <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57]">
           Helpful Tips
         </Badge>
   
-        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
+        <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-8">
           Make the Most of Your Dealer Visit
           
         </h2>
 
-         <p className="text-lg text-neutral-600 mb-4">
+         <p className="text-lg text-neutral-600 mb-8">
           A few simple steps can help you choose the right tiles with confidence.
         </p>
   
         
       </motion.div>
-  
+  <br></br>
       {/* Technical Points Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -1331,10 +1323,10 @@ export function DealersLocatorPage({ onNavigate }: DealersLocatorPageProps) {
                                      whileInView={{ opacity: 1, y: 0 }}
                                      viewport={{ once: true }}
                                    >
-                                     <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+                                     <Badge className="mb-8 bg-[#223B57]/10 text-[#223B57]">
         Have Questions?
         </Badge>                           
-                                     <h2 className="text-3xl md:text-5xl font-bold text-[#223B57] mb-4">
+                                     <h2 className="text-3xl md:text-5xl font-bold text-[#223B57] mb-8">
                                       Frequently Asked Dealer Locator Questions
                                      </h2>
                                      <p className="text-lg text-neutral-600">

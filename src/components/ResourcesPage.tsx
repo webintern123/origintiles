@@ -749,7 +749,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
 
 
        {/* === FAQ QUICK SECTION - Top Questions === */}
-                 <section className="section-padding bg-[#F5F3F0]">
+                 <section className="section-padding bg-white">
                    <div className="container">
                      <motion.div
                        className="text-center mb-12"
@@ -849,7 +849,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
                  </section>
 
             {/* Professional Installation Support Section */}
-<section className="py-20 bg-white">
+<section className="py-20 bg-[#F5F3F0]">
   <div className="container max-w-5xl">
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -906,7 +906,7 @@ export function ResourcesPage({ onNavigate }: ResourcesPageProps) {
 
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#F5F3F0]">
+      <section className="py-20 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
