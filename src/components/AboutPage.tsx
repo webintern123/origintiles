@@ -283,6 +283,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       ))}
      
     </div>
+    <br></br>
      {/* Timeline Footer Quote */}
 <div className="text-center mt-16">
   <p className="text-2xl md:text-3xl font-semibold text-[#223B57]">
@@ -319,7 +320,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
                 Our Story
               </Badge>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-8 leading-tight">
+              <h2 className="text-3xl md:text-2xl font-bold text-[#223B57] mb-8 leading-tight">
                 Creating Better Spaces with Premium Ceramic Tiles
               </h2>
               
@@ -416,16 +417,17 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20 ">
         <Building2 className="w-3.5 h-3.5 mr-2" />
         Projects & Partnerships
       </Badge>
 
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+      <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
         Built for Projects of Every Scale
       </h2>
+      <br></br>
 
-      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto mb-4">
         Whether it’s a single home renovation or a large commercial development,
         Origin Tiles is equipped to support projects of all sizes.
       </p>
@@ -567,6 +569,7 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
               Mission & Vision
             </h2>
+            
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
               Guided by Quality, Shaped by Innovation
             </p>

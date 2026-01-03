@@ -22,7 +22,9 @@ export interface Collection {
   id: string;
   name: string;
   brand: string;
+
   description: string;
+   bestFor?: string;
   image: string;
   productCount?: number;
   recommended?: boolean;

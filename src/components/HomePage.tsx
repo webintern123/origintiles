@@ -231,7 +231,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   <span className="text-sm font-medium">Crafting Premium Tiles for Over 2 Decades</span>
                 </motion.div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] space-y-3">
   <span className="block">Grounded in</span>
 
   <span className="block text-[#F5F3F0] drop-shadow-[0_2px_8px_rgba(245,243,240,0.3)]">
@@ -240,11 +240,16 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
   <span className="block">in Design</span>
 </h1>
+
+
 <br></br>
 
-                <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-                  Explore high-quality tiles designed for homes, commercial spaces, and architectural projects. At Origin Tiles, thoughtful design and lasting strength come together to create spaces that stay beautiful over time.
-                </p>
+               <p className="text-xl text-white/90 leading-relaxed max-w-xl text-left md:text-justify">
+  Explore high-quality tiles designed for homes, commercial spaces, and architectural projects.
+  At Origin Tiles, thoughtful design and lasting strength come together to create spaces that stay
+  beautiful over time.
+</p>
+
               </div>
 
               {/* CTA Buttons */}
@@ -451,9 +456,10 @@ Designed for Elegance, Engineered for Strength
   <p className="text-lg text-neutral-600 mb-2 font-bold">
     &quot;Designed for Every Space, Built to Last&quot;
   </p>
-  <p className="text-neutral-600 max-w-2xl mx-auto">
-    See our carefully curated tile collections, created to suit modern homes, luxury projects, and high-performance spaces.
-  </p>
+ <p className="text-neutral-600 max-w-2xl mx-auto text-justify leading-relaxed">
+  See our carefully curated tile collections, created to suit modern homes, luxury projects, and high-performance spaces.
+</p>
+
 </motion.div>
 
 
@@ -486,13 +492,30 @@ Designed for Elegance, Engineered for Strength
                       {collection.brand}
                     </div>
                     <h3 className="text-3xl font-bold mb-3 text-white">{collection.name}</h3>
-                    <p className="text-white/90 mb-4 max-w-md">
-                      {collection.description}
-                    </p>
-                    <div className="inline-flex items-center gap-2 text-white group-hover:gap-3 transition-all font-semibold">
-                      <span>See Our Collection </span>
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                   <p className="text-white/90 mb-4 max-w-md">
+  {collection.description}
+</p>
+
+{/* Best For Badge */}
+{collection.bestFor && (
+  <div className="mb-6">
+    <span
+      className="inline-flex items-center px-4 py-1.5 rounded-full
+                 bg-white/20 backdrop-blur-md
+                 border border-white/30
+                 text-sm text-white font-semibold">
+      Best for: {collection.bestFor}
+    </span>
+  </div>
+)}
+
+{/* CTA */}
+<div className="flex items-center gap-2 text-white font-semibold
+                group-hover:gap-3 transition-all">
+  <span>See Our Collection</span>
+  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</div>
+
                   </div>
                 </div>
 
@@ -520,6 +543,7 @@ Designed for Elegance, Engineered for Strength
             <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
               Why Choose Origin Tiles
             </h2>
+            <br></br>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
               Every tile is made with care, combining reliable quality and modern design. 
             </p>
@@ -605,7 +629,7 @@ Designed for Elegance, Engineered for Strength
             viewport={{ once: true }}
           >
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-2">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#223B57] mb-8">
                 Top Highlighted Products
               </h2>
               <p className="text-neutral-600">
@@ -715,10 +739,10 @@ Designed for Elegance, Engineered for Strength
   <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
    Inspiring Designs by Space
   </h2>
-  <p className="text-lg text-neutral-600 mb-2 font-bold">
+  <p className="text-lg text-neutral-600 mb-2 font-bold mb-4">
     &quot;See How Our Tiles Come to Life &quot;
   </p>
-  <p className="text-neutral-600 max-w-2xl mx-auto">
+  <p className="text-neutral-600 max-w-2xl mx-auto mb-4">
     Get inspired by real homes & spaces designed using Origin Tiles.
   </p>
 </motion.div>
@@ -783,13 +807,12 @@ Designed for Elegance, Engineered for Strength
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57]">
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] mb-4">
         Technical Excellence
       </Badge>
 
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-        Engineered for Performance,
-        <span className="block">Tested for Trust</span>
+      <h2 className="text-3xl md:text-3xl font-bold text-[#223B57] mb-4">
+        Engineered for Performance, Tested for Trust
       </h2>
 
       <p className="text-lg text-neutral-600 mb-4">
@@ -797,7 +820,7 @@ Designed for Elegance, Engineered for Strength
         suitable for both residential and commercial use.
       </p>
     </motion.div>
-
+<br></br>
     {/* Technical Points Grid */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {[
@@ -876,18 +899,20 @@ Designed for Elegance, Engineered for Strength
         </motion.div>
       ))}
     </div>
-<br></br>
-    {/* Tagline */}
-    <motion.div
-      className="text-center mt-20"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-    >
-      <p className="text-2xl font-semibold text-[#223B57] italic">
-        “Beyond Tiles, a Promise of Perfection”
-      </p>
-    </motion.div>
+    <br></br>
+    <br></br>
+<motion.div
+  className="text-center mt-28"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+>
+
+  <p className="text-2xl font-semibold text-[#223B57] italic">
+    “Beyond Tiles, a Promise of Perfection”
+  </p>
+</motion.div>
+
   </div>
 </section> 
       
@@ -902,10 +927,10 @@ Designed for Elegance, Engineered for Strength
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+      <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-4">
         What Makes Our Tiles Last Longer?
       </h2>
-      <p className="text-lg text-neutral-600 mb-4">
+      <p className="text-lg text-neutral-600 mb-8">
         It’s not just design — it’s how the tile is made.
       </p>
     </motion.div>
@@ -972,7 +997,9 @@ Designed for Elegance, Engineered for Strength
     >
       <h2 className="text-4xl md:text-4xl font-bold text-[#223B57] mb-3">
         Trusted by Architects, Designers & Builders
+
       </h2>
+      <br></br>
       <p className="text-lg text-neutral-600 mb-4">
         Professionals across India and global markets rely on Origin Tiles for:
       </p>
@@ -1062,17 +1089,34 @@ Designed for Elegance, Engineered for Strength
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <Card className="h-full rounded-3xl border-0 shadow-lg bg-white">
-          <CardContent className="p-10 flex flex-col justify-center h-full">
-            <Palette className="w-10 h-10 mb-5 text-[#223B57]" />
-            <h3 className="text-2xl font-bold text-[#223B57] mb-4">
-              Architect & Designer Zone
-            </h3>
-            <p className="text-neutral-600 leading-relaxed">
-               Access Technical Data, Samples, and Project Support.
-            </p>
-          </CardContent>
-        </Card>
+       <Card className="h-full rounded-3xl border-0 shadow-lg bg-white">
+  <CardContent className="p-10 flex flex-col justify-center h-full">
+    <Palette className="w-10 h-10 mb-5 text-[#223B57]" />
+
+    <h3 className="text-2xl font-bold text-[#223B57] mb-6">
+      Architect & Designer Zone
+    </h3>
+
+    <ul className="space-y-4">
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span> Access Technical Data</span>
+      </li>
+
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span>Samples</span>
+      </li>
+
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span>Project Support</span>
+      </li>
+    </ul>
+  </CardContent>
+</Card>
+
+
       </motion.div>
 
       {/* Builder & Dealer Support */}
@@ -1084,16 +1128,32 @@ Designed for Elegance, Engineered for Strength
         transition={{ delay: 0.08 }}
       >
         <Card className="h-full rounded-3xl border-0 shadow-lg bg-white relative">
-          <CardContent className="p-10 flex flex-col justify-center h-full">
-            <Building2 className="w-10 h-10 mb-5 text-[#223B57]" />
-            <h3 className="text-2xl font-bold text-[#223B57] mb-3">
-              Builder & Dealer Support
-            </h3>
-            <p className="text-neutral-600 leading-relaxed">
-                            Bulk supply, Logistics Support, and After-Sales Service.
-            </p>
-          </CardContent>
-        </Card>
+  <CardContent className="p-10 flex flex-col justify-center h-full">
+    <Building2 className="w-10 h-10 mb-5 text-[#223B57]" />
+
+    <h3 className="text-2xl font-bold text-[#223B57] mb-6">
+      Builder & Dealer Support
+    </h3>
+
+    <ul className="space-y-4">
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span>Bulk supply</span>
+      </li>
+
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span>Logistics Support</span>
+      </li>
+
+      <li className="flex items-start gap-3 text-neutral-600">
+        <CheckCircle2 className="w-5 h-5 text-[#223B57] mt-0.5" />
+        <span>After-Sales Service.</span>
+      </li>
+    </ul>
+  </CardContent>
+</Card>
+
       </motion.div>
 
     </div>
@@ -1102,30 +1162,29 @@ Designed for Elegance, Engineered for Strength
 
 
 {/* === COLLECTION SHOWCASE === */}
-      <section className="py-20 bg-[#F5F3F0]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
-              <Package className="w-3 h-3 mr-1" />
-              Proven Performance in Real Spaces
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
-              Real Projects & Case Studies 
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              Explore completed Residential, Commercial, and Architectural Projects where Origin Tiles were used - showing tile type, application, and results.
-            </p>
-          </motion.div>
+      <section className="py-20 bg-[#F5F3F0] flex items-center">
+  <div className="max-w-[1440px] mx-auto px-6 md:px-12 w-full">
+    <motion.div
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+    >
+      <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
+        <Package className="w-3 h-3 mr-1" />
+        Proven Performance in Real Spaces
+      </Badge>
 
-         
-        </div>
-      </section>
+      <h2 className="text-4xl md:text-5xl font-bold text-[#223B57] mb-4">
+        Real Projects & Case Studies
+      </h2>
 
+      <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        Explore completed Residential, Commercial, and Architectural Projects where Origin Tiles were used – showing tile type, application, and results.
+      </p>
+    </motion.div>
+  </div>
+</section>
       {/* === HOW IT WORKS SECTION - 3 Step Process === */}
       <section className="section-padding bg-white">
         <div className="container">

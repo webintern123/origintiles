@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 interface PageBannerProps {
   title: string;
   subtitle?: string;
-  description?: string;
+ description?: React.ReactNode;
   icon?: LucideIcon;
   variant?: "default" | "gradient" | "image";
   backgroundImage?: string;
@@ -277,33 +277,32 @@ export function PageBanner({
                 </motion.div>
               )}
 
-              <motion.h2
+              <motion.h3
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.45 }}
-                className="text-white text-3xl md:text-4xl lg:text-6xl font-bold leading-tight tracking-tight"
+                className="text-white text-2xl md:text-3xl lg:text-5xl font-bold leading-tight tracking-tight"
                 style={{
                   textShadow: '0 2px 20px rgba(0,0,0,0.3)'
                 }}
               >
                 {title}
-              </motion.h2>
+              </motion.h3>
             </div>
 
             {/* Description with Better Spacing */}
             {description && (
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.55 }}
-                className="text-white/95 text-lg md:text-xl leading-relaxed max-w-3xl mb-10"
-                style={{
-                  textShadow: '0 1px 10px rgba(0,0,0,0.2)'
-                }}
-              >
-                {description}
-              </motion.p>
-            )}
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, delay: 0.55 }}
+    className="text-white/95 text-lg md:text-xl leading-relaxed max-w-3xl space-y-4 mb-10"
+    style={{ textShadow: '0 1px 10px rgba(0,0,0,0.2)' }}
+  >
+    {description}
+  </motion.div>
+)}
+
 
             {/* Call-to-Action Button */}
             {actionLabel && onAction && (

@@ -141,21 +141,30 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
 
       {/* Calculator Section */}
       <section className="py-20 bg-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-  <h2 className="text-3xl font-bold text-[#223B57] mb-4">
-    Plan Your Tile Needs with Confidence
-  </h2>
-  <p className="text-neutral-600 text-lg mb-4">
-    Use this calculator to estimate tile quantity for floors or walls based on room size, tile size, and layout type. It helps reduce guesswork and avoids shortages during installation.
-  </p>
-  <h2 className="text-3xl font-bold text-[#223B57] mb-4">
-    Enter Your Room Details
-  </h2>
-</div>
+  <div className="container">
+    {/* Main Title & Description */}
+    <div className="max-w-3xl mx-auto text-center mb-12">
+      <h2 className="text-3xl font-bold text-[#223B57] mb-4">
+        Plan Your Tile Needs with Confidence
+      </h2>
+      <p className="text-neutral-600 text-lg mb-4">
+        Use this calculator to estimate tile quantity for floors or walls based on room size, tile size, and layout type. It helps reduce guesswork and avoids shortages during installation.
+      </p>
+    </div>
+
+  
+
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {/* Input Form */}
+            
+  {/* Left Side - Form */}
+  <div className="space-y-6 w-full">
+    {/* Heading for form */}
+    <h2 className="text-3xl font-bold text-[#223B57] mb-4">
+      Enter Your Room Details
+    </h2>
+
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -296,6 +305,7 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
                 </CardContent>
               </Card>
             </motion.div>
+            </div>
 
             {/* Result & Info */}
             <div className="space-y-6">
@@ -711,10 +721,10 @@ export function TileCalculator({ onNavigate }: TileCalculatorProps) {
             
           </div>
           <br></br>
-          <p className="pt-4 text-center text-sm text-neutral-500 italic">
-    "Tip: Record measurements clearly in feet or metres."
-  </p>
-  
+          <p className="pt-4 text-center text-lg font-bold" style={{ color: "#223B57" }}>
+  " Tip: Record measurements clearly in feet or metres."
+</p>
+
         </div>
       </section>
 
@@ -741,16 +751,7 @@ This ensures practical accuracy for real-site conditions.
             </p>
             
           </motion.div>
-          {/* Left aligned sub-heading above cards */}
-<div className="max-w-5xl mx-auto mb-6">
-  <h3 className="text-2xl font-semibold text-[#223B57] mb-2">
-    Simple Steps for Accurate Results
-  </h3>
-  <p className="text-neutral-600 max-w-2xl">
-    Our tile calculator follows standard calculation methods to give you reliable estimates.
-  </p>
-</div>
-
+         
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[

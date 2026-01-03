@@ -528,6 +528,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
           
         </div>
         <br></br>
+        <br></br>
         {/* Tagline */}
             <motion.div
               className="text-center mt-20 mb-4"
@@ -544,7 +545,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
       
 
       {/* === FEATURED PRODUCTS CAROUSEL === */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#F5F3F0]">
         <div className="container">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-[#223B57]/10 text-[#223B57] border-[#223B57]/20">
@@ -703,7 +704,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
       </section>
 
       {/* === SAMPLE REQUEST SECTION === */}
-      <section className="py-20 bg-[#F5F3F0]">
+      <section className="py-20 bg-white">
         <div className="container">
           <div className="grid grid-cols-12 gap-12 items-center">
             {/* Left: Sample Request Content */}
@@ -840,7 +841,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         </div>
       </section>
 
-     <section className="py-24 bg-white relative overflow-hidden">
+     <section className="py-24 bg-[#F5F3F0] relative overflow-hidden">
   {/* Soft Background Accent */}
   <div className="absolute inset-0 bg-gradient-to-br from-[#223B57]/5 via-transparent to-transparent pointer-events-none"></div>
 
@@ -941,7 +942,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
 </section>
 
  {/* === FINISH & SURFACE GUIDE - PREMIUM CARDS WITH BULLETS === */}
-<section className="py-20 bg-[#F5F3F0]">
+<section className="py-20 bg-white">
   <div className="container">
     {/* Header */}
     <motion.div
@@ -1054,6 +1055,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
       ))}
     </div>
 <br></br>
+<br></br>
     {/* Footer Note */}
     <p className="text-center text-neutral-600 mt-14 max-w-3xl mx-auto mb-4">
       Finish availability may vary by collection. Our team can help you choose the right finish
@@ -1063,7 +1065,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
 </section>
 
 {/* === TECHNICAL EXCELLENCE SECTION === */}
-<section className="relative py-24 bg-white ">
+<section className="relative py-24 bg-[#F5F3F0]">
   {/* Subtle Background Pattern */}
   <div className="absolute inset-0 bg-gradient-to-br from-[#F5F3F0] to-white"></div>
 
@@ -1150,17 +1152,36 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
       ))}
     </div>
 <br></br>
-    {/* Tagline */}
-    <motion.div
-      className="text-center mt-20"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+   {/* Tagline with Buttons */}
+<motion.div
+  className="text-center mt-12 flex flex-col md:flex-row items-center justify-center gap-4"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  viewport={{ once: true }}
+>
+  {/* Optional Tagline */}
+  
+
+  {/* Buttons */}
+  <div className="flex flex-col md:flex-row gap-4">
+    <Button
+      onClick={() => onNavigate("Contact")}
+      className="bg-[#223B57] text-white hover:bg-[#1a2d43] rounded-xl h-12 px-6 shadow-lg hover:shadow-xl transition-all duration-300"
     >
-      <p className="text-1xl font-semibold text-[#223B57] italic">
-        “Contact Our Experts | Try Tile Calculator”
-      </p>
-    </motion.div>
+      Contact Our Experts
+    </Button>
+
+    <Button
+      onClick={() => onNavigate("Tile Calculator")}
+      variant="outline"
+      className="border-[#223B57] text-[#223B57] hover:bg-[#223B57] hover:text-white rounded-xl h-12 px-6 transition-all duration-300"
+    >
+      Try Tile Calculator
+    </Button>
+  </div>
+</motion.div>
+
+
   </div>
 </section> 
 {/* === FAQ QUICK SECTION - Top Questions === */}
@@ -1260,7 +1281,7 @@ export function CollectionPage({ onNavigate }: CollectionPageProps) {
         </div>
       </section>
       {/* === CTA SECTION === */}
-      <section className="py-20 bg-[#F5F3F0]">
+      <section className="py-20 bg-white">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

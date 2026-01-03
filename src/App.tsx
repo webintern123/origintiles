@@ -122,10 +122,11 @@ export default function App() {
       case "Tile Quiz":
         return <TileQuizPage onNavigate={handleNavigation} />;
       case "Privacy Policy":
-        return <PrivacyPolicyPage />;
+        return <PrivacyPolicyPage onNavigate={handleNavigation} />;
       case "Terms & Conditions":
-      case "Terms and Conditions":
-        return <TermsConditionsPage />;
+case "Terms and Conditions":
+  return <TermsConditionsPage onNavigate={handleNavigation} />;
+
       case "Sitemap":
         return <SitemapPage onNavigate={handleNavigation} />;
       case "Compare":
